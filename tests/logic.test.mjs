@@ -48,3 +48,65 @@ test('serializeProgress produces parseable pretty JSON', () => {
   assert.ok(s.includes('\n'));
   assert.deepEqual(parseProgress(s, 'oot').progress, p);
 });
+
+import { flattenSteps, computeState, sectionProgress } from '../logic.js';
+
+const G = {
+  id: 'g', title: 'G',
+  counters: [{ id: 'heart', label: 'Heart pieces', total: 2 }, { id: 'song', label: 'Songs', total: 1 }],
+  sections: [
+    { id: 'a', title: 'A', steps: [
+      { id: 'g-0001', text: 'one' },
+      { id: 'g-0002', text: 'two', collect: { counter: 'heart', n: 1 } },
+    ] },
+    { id: 'b', title: 'B', steps: [
+      { id: 'g-0003', text: 'three', collect: { counter: 'song', n: 1 } },
+      { id: 'g-0004', text: 'four', collect: { counter: 'heart', n: 2 } },
+    ] },
+  ],
+};
+const prog = (done, flags = {}) => ({ ...emptyProgress('g'), done, flags });
+
+test('flattenSteps keeps file order and section', () => {
+  const f = flattenSteps(G);
+  assert.deepEqual(f.map((x) => x.step.id), ['g-0001', 'g-0002', 'g-0003', 'g-0004']);
+  assert.equal(f[2].section.id, 'b');
+});
+
+test('computeState with nothing done', () => {
+  const s = computeState(G, prog({}));
+  assert.equal(s.furthest, -1);
+  assert.equal(s.currentIndex, 0);
+  assert.equal(s.complete, false);
+  assert.deepEqual(s.skipped, []);
+  assert.deepEqual(s.counters.map((c) => [c.id, c.done, c.total]), [['heart', 0, 2], ['song', 0, 1]]);
+  assert.equal(s.index.get('g-0003'), 2);
+});
+
+test('computeState: current is after the furthest done, skipped are earlier undone', () => {
+  const s = computeState(G, prog({ 'g-0001': 1, 'g-0003': 3 }));
+  assert.equal(s.furthest, 2);
+  assert.equal(s.currentIndex, 3);
+  assert.deepEqual(s.skipped, [1]);
+  assert.deepEqual(s.counters.map((c) => c.done), [0, 1]);
+});
+
+test('computeState: far-ahead done moves current forward; all done is complete', () => {
+  const s = computeState(G, prog({ 'g-0004': 1 }));
+  assert.equal(s.currentIndex, 4);
+  assert.equal(s.complete, true);
+  assert.deepEqual(s.skipped, [0, 1, 2]);
+  const all = computeState(G, prog({ 'g-0001': 1, 'g-0002': 1, 'g-0003': 1, 'g-0004': 1 }));
+  assert.equal(all.complete, true);
+  assert.deepEqual(all.skipped, []);
+  assert.deepEqual(all.counters.map((c) => c.done), [2, 1]);
+});
+
+test('computeState: flagged indices', () => {
+  const s = computeState(G, prog({}, { 'g-0002': 'wrong' }));
+  assert.deepEqual(s.flagged, [1]);
+});
+
+test('sectionProgress counts done steps in a section', () => {
+  assert.deepEqual(sectionProgress(G.sections[1], prog({ 'g-0003': 1 })), { done: 1, total: 2 });
+});

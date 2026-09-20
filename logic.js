@@ -42,3 +42,33 @@ export function mergeProgress(existing, incoming, now) {
 export function serializeProgress(progress) {
   return JSON.stringify(progress, null, 2);
 }
+
+export function flattenSteps(game) {
+  const out = [];
+  for (const section of game.sections) for (const step of section.steps) out.push({ step, section });
+  return out;
+}
+
+export function sectionProgress(section, progress) {
+  let done = 0;
+  for (const step of section.steps) if (progress.done[step.id]) done++;
+  return { done, total: section.steps.length };
+}
+
+export function computeState(game, progress) {
+  const flat = flattenSteps(game);
+  const index = new Map(flat.map((f, i) => [f.step.id, i]));
+  let furthest = -1;
+  flat.forEach((f, i) => { if (progress.done[f.step.id]) furthest = i; });
+  const currentIndex = furthest + 1;
+  const complete = flat.length > 0 && currentIndex >= flat.length;
+  const skipped = [];
+  for (let i = 0; i < furthest; i++) if (!progress.done[flat[i].step.id]) skipped.push(i);
+  const flagged = [];
+  flat.forEach((f, i) => { if (progress.flags[f.step.id] !== undefined) flagged.push(i); });
+  const counters = game.counters.map((c) => ({
+    ...c,
+    done: flat.filter((f) => progress.done[f.step.id] && f.step.collect && f.step.collect.counter === c.id).length,
+  }));
+  return { flat, index, furthest, currentIndex, complete, skipped, flagged, counters };
+}
