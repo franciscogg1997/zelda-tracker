@@ -21,6 +21,7 @@ Live: https://franciscogg1997.github.io/zelda-tracker/
 
 ## Content
 - Rules: `docs/content-style.md`
+- Step ids are frozen. Progress is stored against them, so a renumber would silently move your checkmarks to other steps. Edit text freely; never reuse or reassign an id.
 - Fixing a step: edit its text in `data/oot.json`, keep its id, run `npm run validate`, push. Progress is unaffected.
 - Adding a step: give it the next unused id number (search the file for the highest `oot-` number), place it in play order, validate.
 - Each step carries `kind`: `main` (needed to finish the game) or `side` (optional for a 100% run).

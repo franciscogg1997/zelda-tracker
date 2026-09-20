@@ -1,0 +1,536 @@
+{
+  "id": "oot",
+  "title": "Ocarina of Time",
+  "counters": [
+    {
+      "id": "heart",
+      "label": "Heart pieces",
+      "unit": "Heart piece",
+      "total": 36
+    },
+    {
+      "id": "skulltula",
+      "label": "Skulltulas",
+      "unit": "Skulltula",
+      "total": 100
+    },
+    {
+      "id": "song",
+      "label": "Songs",
+      "unit": "Song",
+      "total": 12
+    },
+    {
+      "id": "bottle",
+      "label": "Bottles",
+      "unit": "Bottle",
+      "total": 4
+    },
+    {
+      "id": "upgrade",
+      "label": "Upgrades",
+      "unit": "Upgrade",
+      "total": 23
+    }
+  ],
+  "sections": [
+    {
+      "id": "c14-gerudo-training-ground",
+      "title": "Gerudo Training Ground",
+      "subtitle": "Adult · Dungeon",
+      "steps": [
+        {
+          "id": "oot-1951",
+          "text": "Cross the Haunted Wasteland east from the Desert Colossus and go through the gate back into Gerudo's Fortress.",
+          "detail": "Follow the flag poles back the way you came and cross the river of sand on the plank bridge. If you are somewhere else in Hyrule, ride Epona from Hyrule Field through Gerudo Valley instead.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1952",
+          "text": "Before going in, top up: a full quiver of arrows, a few bombs, a bottled fairy, and a full Magic Meter for the Lens of Truth.",
+          "detail": "This whole place leans on the Longshot, the Lens of Truth, the Hover Boots, the Megaton Hammer, the Silver Gauntlets, the Fairy Bow, the Iron Boots and the Zora Tunic. There is no fairy fountain inside, but the lobby has a Song of Storms fairy spot.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1953",
+          "text": "Walk to the barred doorway at the front of the fortress grounds, talk to the Gerudo in white standing in front of it, and show the Gerudo Membership Card to be let in.",
+          "detail": "The card is what gets you in, but keep a few rupees on you just in case. You need every carpenter rescued before she will even talk to you.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1954",
+          "text": "In the lobby, turn around and shoot the gold eye switch on the wall above the door you came in through.",
+          "detail": "Back up a couple of steps first so the switch is in view, then aim in first person with C-up. Two small chests drop into the room.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1955",
+          "text": "Open one of the two chests that appeared for a Blue Rupee.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1956",
+          "text": "Open the other chest for a bundle of Arrows.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1957",
+          "text": "Take the door on the left side of the lobby into the sandy Stalfos room.",
+          "detail": "The lobby has three doors. The two side doors start a loop that comes back here; the door straight across from the entrance leads to the locked doors and the Ice Arrows, so save that one for last.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1958",
+          "text": "Kill both Stalfos before the one-minute timer runs out.",
+          "detail": "Keep moving so the sand does not bog you down. Z-target one at a time, block the overhead swing and counter; the Biggoron's Sword drops each in a few hits. If the timer expires, step back out the door and come in again to reset the challenge.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1959",
+          "text": "Open the chest that appears for a Small Key (1 of 9).",
+          "detail": "Nothing in this outer loop is locked. Every Small Key you find goes to the ring of locked doors in the middle of the dungeon, which you tackle at the end.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1960",
+          "text": "Go through the door on the far side of the Stalfos room into the rolling-boulder maze.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1961",
+          "text": "Run forward, turn left down the corridor, and wait at the corner until the rolling boulder passes.",
+          "detail": "A one minute thirty timer starts the moment you enter, and five Silver Rupees are hidden in the corridors. A Wallmaster patrols the middle; ignore it and keep moving. Fail the timer and you reset the room by leaving through the door you came in and re-entering.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1962",
+          "text": "Turn left behind the boulder and grab the first Silver Rupee.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1963",
+          "text": "Head right up the corridor, ducking into the side crevices whenever the boulder comes at you, and take the second Silver Rupee at the top.",
+          "detail": "The crevices are the only safe spots in this stretch. Wait in one until the boulder rolls past, then sprint to the next.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1964",
+          "text": "Move over to the raised middle corridor, the one with no flames in it, and turn right.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1965",
+          "text": "Jump off the ledge at the end of the middle corridor to land on the third Silver Rupee.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1966",
+          "text": "Go back into the middle corridor and along its right side, wait out the boulder once more, then round the corner clockwise for the fourth Silver Rupee.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1967",
+          "text": "Longshot the target on the ceiling straight ahead and drop onto the fifth Silver Rupee. The timer stops and the door unbars.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1968",
+          "text": "Work your way up to the door, dodging the flames that flare out of the walls, then Longshot the ceiling target by the door and go through it.",
+          "detail": "The flames are invisible until they burst, and they block the last stretch on foot. The Longshot pull carries you over them.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1969",
+          "text": "Kill the two Wolfos and two White Wolfos that drop into the hall of fake doors.",
+          "detail": "White Wolfos block attacks from the front. Z-target, backflip so one lunges past you, then slash its exposed side. Din's Fire thins the pack in one go if your magic is full.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1970",
+          "text": "Hold up the Lens of Truth and face the fake door: a hidden ledge with a Longshot target appears above it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1971",
+          "text": "Longshot the target on the hidden ledge above the fake door.",
+          "detail": "Keep the Lens on while you aim, or the target vanishes before you fire.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1972",
+          "text": "Step on the floor switch up on the ledge; the barred doors down in the room below open.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1973",
+          "text": "Jump back down and push the giant silver block with the Silver Gauntlets until it drops into the hole in the floor.",
+          "detail": "Walk into it and hold A to shove. Without the Silver Gauntlets from the Spirit Temple, Link cannot move it at all.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1974",
+          "text": "Take the door the silver block was blocking, into the small Like Like room.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1975",
+          "text": "Kill the three Like Likes; two extra chests appear when the last one dies.",
+          "detail": "Shoot them with arrows or the Longshot from across the room so they cannot swallow your shield or tunic. If one does eat your gear, killing it drops the gear back on the floor.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1976",
+          "text": "Open one of the two new chests at the front of the room for a Blue Rupee.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1977",
+          "text": "Open the other new chest for a Gold Rupee worth 200 rupees.",
+          "detail": "You need the Giant's Wallet to hold the whole thing; with the Adult's Wallet it just tops you out at 200.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1978",
+          "text": "Leave the chest on the raised platform in the middle alone: it is a trap that freezes Link solid.",
+          "detail": "There is nothing in it. If you open it anyway, mash buttons to shake the ice off and eat the damage.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1979",
+          "text": "Hold up the Lens of Truth over the last sandy pit in the room to reveal an invisible chest sitting in it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1980",
+          "text": "Drop into the pit and open the invisible chest for a Small Key (2 of 9).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1981",
+          "text": "Go back through the door into the hall of fake doors.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1982",
+          "text": "Longshot the target on the hidden ledge again and take the door up there into the eye statue room.",
+          "detail": "Use the Lens of Truth once more if the target is not showing.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1983",
+          "text": "Stand on the upper walkway facing the barred door and play the Scarecrow's Song while Navi is green to plant Pierre there.",
+          "detail": "Optional, but it gives you an easy Longshot target to get back up here. Skip it if you never learned the Scarecrow's Song: jumping into the lava below also puts Link back on this ledge, just for a little damage.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1984",
+          "text": "Jump down into the pit onto the outer ring platform, which starts spinning the moment you land.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1985",
+          "text": "Face the statue on the island in the middle and shoot one of its eyes with an arrow.",
+          "detail": "Aim in first person with C-up and fire as the spin swings you into line. A missed arrow costs nothing but the arrow.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1986",
+          "text": "Shoot the statue's other eye; a small chest appears on the island beside it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1987",
+          "text": "Longshot across to the island and open the chest for a Small Key (3 of 9).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1988",
+          "text": "Longshot the target near where you dropped into the pit to pull yourself back out.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1989",
+          "text": "Get back up to the upper walkway: Longshot Pierre, or jump into the lava and let it drop you back on the ledge.",
+          "detail": "The lava costs a little health but always works. Either way, the door up there is no longer barred.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1990",
+          "text": "Go through the door on the upper walkway that was barred before.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1991",
+          "text": "Open the chest inside for a Small Key (4 of 9).",
+          "detail": "If the room looks empty, hold up the Lens of Truth.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1992",
+          "text": "Come back out, drop down to the bottom of the statue room, and take the other door out of it into the flame room.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1993",
+          "text": "Kill the two Fire Keese and the Torch Slugs; the far door opens and a chest appears.",
+          "detail": "Pick the Fire Keese off with arrows or the Longshot before they reach you, and hit the Torch Slugs from behind when their flame dips.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1994",
+          "text": "Open the chest that appeared; the contents are minor.",
+          "detail": "Nothing in it matters. The prize in this room is the key sitting inside the ring of fire in the middle.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1995",
+          "text": "Smash the statues dotted around the room with the Megaton Hammer for the rupees and hearts hidden under them.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1996",
+          "text": "Smash the statue in the northeast corner with the Megaton Hammer to uncover a floor switch sunk in a hole.",
+          "detail": "Northeast is the far right corner as you came in. This is the only statue that hides a switch.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1997",
+          "text": "Step on the switch, then sprint straight to the chest in the middle of the room and open it for a Small Key (5 of 9) before the fire comes back.",
+          "detail": "You get only a few seconds. Line yourself up with the chest before you press the switch, and do not wear the Hover Boots: they slide you past it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1998",
+          "text": "Take the next door out of the flame room into the lava room.",
+          "detail": "If you ever want to come back through here the other way, shoot the gold eye switch in this room to reopen the door to the statue room.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-1999",
+          "text": "Step forward a little, turn around, and Longshot the ceiling target directly above the doorway to snag the first Silver Rupee.",
+          "detail": "Five Silver Rupees in this room open the east door.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2000",
+          "text": "Drop down onto the platform in front of you and take the second Silver Rupee on it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2001",
+          "text": "Equip the Hover Boots and float across to the middle platform.",
+          "detail": "The boots glide for about a second, so leave the edge at a run and do not stop halfway.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2002",
+          "text": "Face the spot straight ahead where Navi turns green and play the Song of Time; two Time Blocks appear over the lava.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2003",
+          "text": "Float over to the Time Blocks and climb all the way to the top of them.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2004",
+          "text": "Pick up the Small Key lying loose on top (6 of 9).",
+          "detail": "It is a freestanding key, not a chest. Do not take the door up here: it drops you into the locked maze from the wrong end, where you would need nine keys instead of seven.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2005",
+          "text": "Drop off the side of the platform onto the ledge with the lone floor switch and step on it; the flames on the platforms across the room go out.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2006",
+          "text": "With the Hover Boots still on, float along the line of platforms and collect the third Silver Rupee.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2007",
+          "text": "Keep going to the far side of the room and grab the fourth Silver Rupee there.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2008",
+          "text": "Run back to the middle of the room and take the fifth Silver Rupee last; the east door opens.",
+          "detail": "Save the middle one for last on purpose. If you finish on an outer platform, the lava can return during the door-opening cutscene and knock Link in, restarting the whole room.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2009",
+          "text": "Go through the east door into the water room.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2010",
+          "text": "Play the Song of Time to remove the Time Blocks in your way.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2011",
+          "text": "Put on the Zora Tunic and the Iron Boots and sink to the floor of the room.",
+          "detail": "The Zora Tunic is what lets you breathe down here; without it you will be surfacing for air every few seconds.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2012",
+          "text": "Kill the four Shell Blades with the Longshot, keeping clear of the Blade Trap spinning in the middle of the floor.",
+          "detail": "Shell Blades snap shut on anything that swims close, so never melee them. Two Longshot hits each is usually enough.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2013",
+          "text": "Walk a circle around the Blade Trap in the middle of the floor and pick up the first Silver Rupee.",
+          "detail": "Five Silver Rupees down here. Stay just outside the trap's swing and it never touches you.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2014",
+          "text": "On the west wall, line up so the second Silver Rupee sits between you and the Longshot target, then fire: you grab it in flight and land on the third Silver Rupee.",
+          "detail": "If you overshoot the third one, just walk back and step on it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2015",
+          "text": "Do the same on the east wall: line up with that target through the fourth Silver Rupee and fire the Longshot.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2016",
+          "text": "Take off the Iron Boots and float up to the ceiling of the room for the fifth Silver Rupee.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2017",
+          "text": "Collecting all five rupees opens the way on: take the key or the opened door the room gives you and head back out.",
+          "detail": "The source guide skips this room's reward, so confirm in game what the five rupees produce here, then flag this step if it is wrong. Iron Boots make the swim back down easier.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2018",
+          "text": "Take off the Iron Boots, swim up, and go back through the door into the lava room.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2019",
+          "text": "Float across the lava room with the Hover Boots to the door on the left and head south through it into the Dinalfos room.",
+          "detail": "The lava is still out and the platform path is exactly as you left it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2020",
+          "text": "Throw a Bomb at the Beamos in the middle of the room to get it out of the fight.",
+          "detail": "Only a bomb kills a Beamos. Do it first, or its laser will be tracking you the whole time you deal with the Dinalfos.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2021",
+          "text": "Kill the two Dinalfos.",
+          "detail": "Unlike most Z-targeted enemies these two do not take turns, so you get attacked from both sides. Keep circling, sidestep the fire breath, and get in two or three slashes between their swings. The Biggoron's Sword ends each one quickly.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2022",
+          "text": "Open the chest that appears for a Small Key (8 of 9); the barred door opens at the same moment.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2023",
+          "text": "Go through the door that just opened, which brings you back to the lobby.",
+          "detail": "That closes the loop. You have eight Small Keys now.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2024",
+          "text": "Stand in the middle of the lobby where Navi turns green and play the Song of Storms to summon a fairy.",
+          "detail": "Free health before the last stretch, and you can bottle it if you have an empty bottle.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2025",
+          "text": "Take the door straight across from the entrance into the hall of locked doors.",
+          "detail": "From this side you only need seven of your eight keys to reach the Ice Arrows, and there is a ninth key hidden just inside.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2026",
+          "text": "Use a Small Key on the door on the left and go through it.",
+          "detail": "The rule for this whole maze is simple: always take the door on the left.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2027",
+          "text": "Stop here, hold up the Lens of Truth and look at the ceiling on your left: a hidden hole opens up above you.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2028",
+          "text": "Climb the metal grating on the wall up through the hole into the secret room.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2029",
+          "text": "Open the chest in the secret room for the ninth and last Small Key.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2030",
+          "text": "Climb back down into the passage.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2031",
+          "text": "Unlock the second door on the left and go through.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2032",
+          "text": "Open the small chests you pass in these maze rooms for arrows and rupees.",
+          "detail": "None of them hold anything you need. The only chest that matters is the one at the very center.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2033",
+          "text": "Unlock the third door on the left and keep going.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2034",
+          "text": "Unlock the fourth door on the left and keep going.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2035",
+          "text": "Unlock the fifth door on the left and keep going.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2036",
+          "text": "Unlock the sixth door on the left and keep going.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2037",
+          "text": "Unlock the seventh and last door; it opens into the small room at the center of the maze.",
+          "detail": "If a door will not open, you have wandered off the left-hand path; back up and take the other branch.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2038",
+          "text": "Open the chest in the center room for the Ice Arrows.",
+          "detail": "Set them to a C button and fire one to see it freeze whatever it hits. They are never required, but they are the only way to fully clear the Gerudo Training Ground.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2039",
+          "text": "Walk back out through the doors you unlocked to the lobby and leave the Gerudo Training Ground.",
+          "detail": "Every door you opened stays unlocked, so retracing is quick. Outside, you are back in Gerudo's Fortress and free to head for Ganon's Castle.",
+          "kind": "side"
+        }
+      ]
+    }
+  ]
+}

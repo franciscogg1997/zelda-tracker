@@ -2,11 +2,36 @@
   "id": "oot",
   "title": "Ocarina of Time",
   "counters": [
-    { "id": "heart", "label": "Heart pieces", "unit": "Heart piece", "total": 36 },
-    { "id": "skulltula", "label": "Skulltulas", "unit": "Skulltula", "total": 100 },
-    { "id": "song", "label": "Songs", "unit": "Song", "total": 12 },
-    { "id": "bottle", "label": "Bottles", "unit": "Bottle", "total": 4 },
-    { "id": "upgrade", "label": "Upgrades", "unit": "Upgrade", "total": 23 }
+    {
+      "id": "heart",
+      "label": "Heart pieces",
+      "unit": "Heart piece",
+      "total": 36
+    },
+    {
+      "id": "skulltula",
+      "label": "Skulltulas",
+      "unit": "Skulltula",
+      "total": 100
+    },
+    {
+      "id": "song",
+      "label": "Songs",
+      "unit": "Song",
+      "total": 12
+    },
+    {
+      "id": "bottle",
+      "label": "Bottles",
+      "unit": "Bottle",
+      "total": 4
+    },
+    {
+      "id": "upgrade",
+      "label": "Upgrades",
+      "unit": "Upgrade",
+      "total": 23
+    }
   ],
   "sections": [
     {
@@ -17,427 +42,538 @@
         {
           "id": "oot-1351",
           "text": "Play the Serenade of Water to warp to Lake Hylia.",
-          "detail": "You need the Iron Boots and the Zora Tunic from the Ice Cavern. The lake is still drained, so the ruins on the lakebed are exposed."
+          "detail": "You need the Iron Boots and the Zora Tunic from the Ice Cavern. The lake is still drained, so the ruins on the lakebed are exposed.",
+          "kind": "main"
         },
         {
           "id": "oot-1352",
           "text": "Enter the Lakeside Laboratory on the west shore, put on the Iron Boots and sink to the bottom of the small pool inside.",
-          "detail": "The pool is the square of water in the lab floor. Keep the Zora Tunic on so you can stay under as long as you like."
+          "detail": "The pool is the square of water in the lab floor. Keep the Zora Tunic on so you can stay under as long as you like.",
+          "kind": "main"
         },
         {
           "id": "oot-1353",
           "text": "Roll into the wooden crate at the bottom of the lab pool, kill the Gold Skulltula that pops out with the Hookshot and grab its token.",
           "detail": "Stay in the Iron Boots so you do not float off. Walk into the token or pull it in with the Hookshot.",
-          "collect": { "counter": "skulltula", "n": 71 }
+          "collect": {
+            "counter": "skulltula",
+            "n": 71
+          },
+          "kind": "side"
         },
         {
           "id": "oot-1354",
           "text": "Leave the lab and follow the exposed ruins down the drained lakebed to its deepest point, then sink through the remaining pool with the Iron Boots to the temple's barred entrance.",
-          "detail": "The entrance is at the foot of the island with the lone tree and the Water Temple signpost. Wear the Zora Tunic so you can breathe underwater."
+          "detail": "The entrance is at the foot of the island with the lone tree and the Water Temple signpost. Wear the Zora Tunic so you can breathe underwater.",
+          "kind": "main"
         },
         {
           "id": "oot-1355",
-          "text": "Wearing the Iron Boots and Zora Tunic, stand right in front of the gate and Hookshot the crystal switch above the doorway to lift it. Enter the Water Temple."
+          "text": "Wearing the Iron Boots and Zora Tunic, stand right in front of the gate and Hookshot the crystal switch above the doorway to lift it. Enter the Water Temple.",
+          "kind": "main"
         }
       ]
     },
     {
       "id": "c10-water-temple",
       "title": "Water Temple",
-      "subtitle": "Adult · Dungeon",
+      "subtitle": "Adult \u00b7 Dungeon",
       "steps": [
         {
           "id": "oot-1356",
           "text": "Walk forward into the big central chamber (the main room). The water starts at its HIGH level.",
-          "detail": "You will come back here constantly. The main room has a central pillar, three floors (bottom, middle, top) and a passage on each side (north, east, south, west). Three Triforce symbols set the water to LOW, MIDDLE or HIGH. Every step tagged [Water LOW/MIDDLE/HIGH] tells you the level the main room must be at for that step."
+          "detail": "You will come back here constantly. The main room has a central pillar, three floors (bottom, middle, top) and a passage on each side (north, east, south, west). Three Triforce symbols set the water to LOW, MIDDLE or HIGH. Every step tagged [Water LOW/MIDDLE/HIGH] tells you the level the main room must be at for that step.",
+          "kind": "main"
         },
         {
           "id": "oot-1357",
           "text": "[Water HIGH] Put on the Iron Boots, jump in and sink to the bottom floor of the main room. Hookshot the Spikes patrolling the floor before they touch you.",
-          "detail": "Spikes are the rolling spiked balls; Z-target and Hookshot them from a distance. The Zora Tunic lets you breathe indefinitely."
+          "detail": "Spikes are the rolling spiked balls; Z-target and Hookshot them from a distance. The Zora Tunic lets you breathe indefinitely.",
+          "kind": "main"
         },
         {
           "id": "oot-1358",
           "text": "[Water HIGH] On the bottom floor, take the east passage between the two torches and follow the S-shaped corridor to the cutscene with adult Princess Ruto.",
-          "detail": "Ruto floats up the shaft after she finishes talking."
+          "detail": "Ruto floats up the shaft after she finishes talking.",
+          "kind": "main"
         },
         {
           "id": "oot-1359",
-          "text": "[Water HIGH] Take off the Iron Boots, float all the way up the shaft where Ruto vanished and go through the door at the top."
+          "text": "[Water HIGH] Take off the Iron Boots, float all the way up the shaft where Ruto vanished and go through the door at the top.",
+          "kind": "main"
         },
         {
           "id": "oot-1360",
           "text": "Kill the four Spikes in the small room, then open the big chest that appears for the Dungeon Map.",
-          "detail": "Hookshot them from a distance, or throw a Deku Nut to stun all four at once and slash them."
+          "detail": "Hookshot them from a distance, or throw a Deku Nut to stun all four at once and slash them.",
+          "kind": "main"
         },
         {
           "id": "oot-1361",
           "text": "Go back out to the top of Ruto's shaft and play Zelda's Lullaby in front of the Triforce symbol on the wall. The water drops to LOW.",
-          "detail": "This is the first of the three water controls. Any Triforce symbol in the game means: play Zelda's Lullaby here."
+          "detail": "This is the first of the three water controls. Any Triforce symbol in the game means: play Zelda's Lullaby here.",
+          "kind": "main"
         },
         {
           "id": "oot-1362",
           "text": "[Water LOW] Jump down the now-empty shaft to the floor where you met Ruto and light the two unlit torches beside the door there.",
-          "detail": "The centre torch is lit now that the water is gone. Shoot arrows through its flame at the two torches flanking the door, or cast Din's Fire between them."
+          "detail": "The centre torch is lit now that the water is gone. Shoot arrows through its flame at the two torches flanking the door, or cast Din's Fire between them.",
+          "kind": "main"
         },
         {
           "id": "oot-1363",
           "text": "[Water LOW] Enter the door, kill the Shell Blades inside and open the chest that appears for a Small Key (1 key). Walk back out to the main room.",
-          "detail": "Z-target a Shell Blade and Hookshot or shoot it while its shell is open, or get close and cast Din's Fire to hit them all at once."
+          "detail": "Z-target a Shell Blade and Hookshot or shoot it while its shell is open, or get close and cast Din's Fire to hit them all at once.",
+          "kind": "main"
         },
         {
           "id": "oot-1364",
-          "text": "[Water LOW] Back on the bottom floor of the main room, take the south passage (immediately to your left as you come out of the east passage) and bomb the cracked floor at the dead end."
+          "text": "[Water LOW] Back on the bottom floor of the main room, take the south passage (immediately to your left as you come out of the east passage) and bomb the cracked floor at the dead end.",
+          "kind": "main"
         },
         {
           "id": "oot-1365",
           "text": "[Water LOW] Drop into the hole, put on the Iron Boots, get past the Shell Blade on the bottom and surface on the far side.",
-          "detail": "Either Hookshot the Shell Blade or take the boots off and swim over it."
+          "detail": "Either Hookshot the Shell Blade or take the boots off and swim over it.",
+          "kind": "main"
         },
         {
           "id": "oot-1366",
-          "text": "Climb onto the small platform and step on the floor switch to raise the water in this room a little."
+          "text": "Climb onto the small platform and step on the floor switch to raise the water in this room a little.",
+          "kind": "main"
         },
         {
           "id": "oot-1367",
           "text": "Climb up one level: the statue that was underwater now shows a Hookshot target. Hookshot across and kill the two Tektites.",
-          "detail": "It is easier to move past them first so you are not knocked back into the water while fighting."
+          "detail": "It is easier to move past them first so you are not knocked back into the water while fighting.",
+          "kind": "main"
         },
         {
           "id": "oot-1368",
           "text": "Walk up to the barred gate and do a Spin Attack to hit the crystal switch behind it; the gate opens. Grab the Gold Skulltula token inside.",
           "detail": "On N64 the crystal switch sits beyond the bars, so charge a spin attack right in front of the gate (the 3DS version puts the switch in front). Take the goodies from the jars too.",
-          "collect": { "counter": "skulltula", "n": 72 }
+          "collect": {
+            "counter": "skulltula",
+            "n": 72
+          },
+          "kind": "side"
         },
         {
           "id": "oot-1369",
-          "text": "[Water LOW] Return to the main room: back through the switch room, down the hole and up the south passage."
+          "text": "[Water LOW] Return to the main room: back through the switch room, down the hole and up the south passage.",
+          "kind": "main"
         },
         {
           "id": "oot-1370",
           "text": "[Water LOW] Take the west passage on the bottom floor. Stand on the platform and push the block ahead until it drops into a hole and locks underwater, then sink after it and climb up on the far side.",
-          "detail": "Iron Boots on to walk under, boots off to float up onto the far ledge."
+          "detail": "Iron Boots on to walk under, boots off to float up onto the far ledge.",
+          "kind": "main"
         },
         {
           "id": "oot-1371",
           "text": "Slash the crystal switch near the entrance, jump onto the water pillar that shoots up and hop across to the far ledge. Run past the Tektite to the door.",
-          "detail": "If you fall into the pit, Hookshot the target to get back up."
+          "detail": "If you fall into the pit, Hookshot the target to get back up.",
+          "kind": "main"
         },
         {
           "id": "oot-1372",
           "text": "Spinning water room: put on the Iron Boots, jump in and settle on the body of the iron dragon statue in the corner opposite the door.",
-          "detail": "Without the boots the current spins you around the room. The dragon weaves in and out of the walls; land where its body is solid and stop moving."
+          "detail": "Without the boots the current spins you around the room. The dragon weaves in and out of the walls; land where its body is solid and stop moving.",
+          "kind": "main"
         },
         {
           "id": "oot-1373",
-          "text": "From the dragon's body, Hookshot the crystal switch in the dragon's mouth: the nearby door opens for a few seconds. Hookshot the target on the wall in the alcove and run through before it shuts."
+          "text": "From the dragon's body, Hookshot the crystal switch in the dragon's mouth: the nearby door opens for a few seconds. Hookshot the target on the wall in the alcove and run through before it shuts.",
+          "kind": "main"
         },
         {
           "id": "oot-1374",
           "text": "In the alcove passage, take off the Iron Boots as you approach so you float over the two Shell Blades and rise into the small chamber. Climb up and open the chest for a Small Key (2 keys).",
-          "detail": "The Shell Blades are a pain to fight here; just float past them."
+          "detail": "The Shell Blades are a pain to fight here; just float past them.",
+          "kind": "main"
         },
         {
           "id": "oot-1375",
           "text": "Hit the crystal switch in the key chamber to reopen the door, swim back down and out to the spinning room's entrance door before it shuts, and go through it.",
-          "detail": "A Bomb beside the switch gives the most time; a sword hit also works if you leave immediately. Put the Iron Boots on for the crossing so the current does not carry you."
+          "detail": "A Bomb beside the switch gives the most time; a sword hit also works if you leave immediately. Put the Iron Boots on for the crossing so the current does not carry you.",
+          "kind": "main"
         },
         {
           "id": "oot-1376",
           "text": "Back in the water pillar room, kill the Tektite, Hookshot the target across (or shoot the crystal switch with an arrow to raise the pillar) and return to the main room.",
-          "detail": "At the block passage, wear the Iron Boots and Hookshot up onto the ledge you pushed the block from."
+          "detail": "At the block passage, wear the Iron Boots and Hookshot up onto the ledge you pushed the block from.",
+          "kind": "main"
         },
         {
           "id": "oot-1377",
-          "text": "[Water LOW] With 2 Small Keys, open the locked door at the base of the central pillar on the bottom floor of the main room (1 key left)."
+          "text": "[Water LOW] With 2 Small Keys, open the locked door at the base of the central pillar on the bottom floor of the main room (1 key left).",
+          "kind": "main"
         },
         {
           "id": "oot-1378",
-          "text": "Inside the pillar, run forward, turn around and Hookshot the target on the underside of the platform above you. Climb up and play Zelda's Lullaby at the Triforce symbol: the water rises to MIDDLE."
+          "text": "Inside the pillar, run forward, turn around and Hookshot the target on the underside of the platform above you. Climb up and play Zelda's Lullaby at the Triforce symbol: the water rises to MIDDLE.",
+          "kind": "main"
         },
         {
           "id": "oot-1379",
           "text": "[Water MIDDLE] Do not leave yet. Stand on one of the two raised platforms, put on the Iron Boots and step off between them: you land on the platform that rose with the water. Sink into the hole beneath it.",
-          "detail": "This hidden hole is the step most players miss. The cutscene of the water rising showed the lower platform lifting and uncovering it."
+          "detail": "This hidden hole is the step most players miss. The cutscene of the water rising showed the lower platform lifting and uncovering it.",
+          "kind": "main"
         },
         {
           "id": "oot-1380",
           "text": "Round the corner in the flooded basement and Hookshot the lone crystal switch from a distance: a gate opens and enemies drop down. Kill them one at a time while inching forward.",
-          "detail": "Keep the Iron Boots on and Z-target each one as it comes. Once all are dead, the gate on the far side opens."
+          "detail": "Keep the Iron Boots on and Z-target each one as it comes. Once all are dead, the gate on the far side opens.",
+          "kind": "main"
         },
         {
           "id": "oot-1381",
-          "text": "Take off the Iron Boots, float up through the opened gate and open the chest for a Small Key (2 keys). Go back up to the pillar's Triforce room and leave through its door onto the middle floor of the main room."
+          "text": "Take off the Iron Boots, float up through the opened gate and open the chest for a Small Key (2 keys). Go back up to the pillar's Triforce room and leave through its door onto the middle floor of the main room.",
+          "kind": "main"
         },
         {
           "id": "oot-1382",
-          "text": "[Water MIDDLE] On the middle floor, enter the east passage (the one with two jars at its mouth) and follow it until you reach the floor spikes."
+          "text": "[Water MIDDLE] On the middle floor, enter the east passage (the one with two jars at its mouth) and follow it until you reach the floor spikes.",
+          "kind": "main"
         },
         {
           "id": "oot-1383",
-          "text": "Hookshot onto the platform across from the floor spikes, then turn around and Hookshot the farthest target on the ceiling to ride all the way up."
+          "text": "Hookshot onto the platform across from the floor spikes, then turn around and Hookshot the farthest target on the ceiling to ride all the way up.",
+          "kind": "main"
         },
         {
           "id": "oot-1384",
           "text": "Hit the crystal switch up here and open the chest before its timer runs out for the Compass.",
-          "detail": "Drop a Bomb beside the switch and run to the chest, or stand at the chest and shoot the switch with an arrow."
+          "detail": "Drop a Bomb beside the switch and run to the chest, or stand at the chest and shoot the switch with an arrow.",
+          "kind": "main"
         },
         {
           "id": "oot-1385",
-          "text": "[Water MIDDLE] Return to the main room. Drop down carefully so you do not land on the floor spikes."
+          "text": "[Water MIDDLE] Return to the main room. Drop down carefully so you do not land on the floor spikes.",
+          "kind": "main"
         },
         {
           "id": "oot-1386",
-          "text": "[Water MIDDLE] Put on the Iron Boots, sink to the bottom floor and go through the east passage between the torches again. Boots off, float up Ruto's shaft to the cracked wall partway up and bomb it."
+          "text": "[Water MIDDLE] Put on the Iron Boots, sink to the bottom floor and go through the east passage between the torches again. Boots off, float up Ruto's shaft to the cracked wall partway up and bomb it.",
+          "kind": "main"
         },
         {
           "id": "oot-1387",
-          "text": "Open the small chest behind the cracked wall for a Small Key (3 keys), then return to the main room."
+          "text": "Open the small chest behind the cracked wall for a Small Key (3 keys), then return to the main room.",
+          "kind": "main"
         },
         {
           "id": "oot-1388",
-          "text": "[Water MIDDLE] Go through the locked door on the west side of the main room's middle floor (2 keys left)."
+          "text": "[Water MIDDLE] Go through the locked door on the west side of the main room's middle floor (2 keys left).",
+          "kind": "main"
         },
         {
           "id": "oot-1389",
-          "text": "Walk up to the spot where the water pillar rises to lure the Tektite down from above, and kill it."
+          "text": "Walk up to the spot where the water pillar rises to lure the Tektite down from above, and kill it.",
+          "kind": "main"
         },
         {
           "id": "oot-1390",
-          "text": "Stand on the water pillar spot and hit the crystal switch across the room with an arrow or a Bomb. Ride the pillar up and go through the door above."
+          "text": "Stand on the water pillar spot and hit the crystal switch across the room with an arrow or a Bomb. Ride the pillar up and go through the door above.",
+          "kind": "main"
         },
         {
           "id": "oot-1391",
-          "text": "You come out in a small alcove of the main room beside the third Triforce symbol. Play Zelda's Lullaby to raise the water to HIGH."
+          "text": "You come out in a small alcove of the main room beside the third Triforce symbol. Play Zelda's Lullaby to raise the water to HIGH.",
+          "kind": "main"
         },
         {
           "id": "oot-1392",
           "text": "[Water HIGH] Enter the locked door on the west side of the top floor of the main room (1 key left).",
-          "detail": "If you have fewer than 2 keys here, one earlier chest was skipped: the Shell Blade room (LOW), the spinning dragon room (LOW), the basement under the pillar (MIDDLE) or the cracked wall in Ruto's shaft (MIDDLE)."
+          "detail": "If you have fewer than 2 keys here, one earlier chest was skipped: the Shell Blade room (LOW), the spinning dragon room (LOW), the basement under the pillar (MIDDLE) or the cracked wall in Ruto's shaft (MIDDLE).",
+          "kind": "main"
         },
         {
           "id": "oot-1393",
           "text": "Waterfall room: kill the two Keese first, then jump down to the lowest platform directly below you.",
-          "detail": "The Gold Skulltula on the wall here is out of Hookshot range; you come back for it with the Longshot."
+          "detail": "The Gold Skulltula on the wall here is out of Hookshot range; you come back for it with the Longshot.",
+          "kind": "main"
         },
         {
           "id": "oot-1394",
           "text": "Hookshot across to the platforms sliding down the waterfall and keep Hookshotting upward from platform to platform until you can reach the ledge by the far locked door. Enter it (0 keys left).",
-          "detail": "The platforms keep descending, so pick a high one and move quickly. Falling drops you back to the bottom of the room."
+          "detail": "The platforms keep descending, so pick a high one and move quickly. Falling drops you back to the bottom of the room.",
+          "kind": "main"
         },
         {
           "id": "oot-1395",
           "text": "Statue room: Hookshot the crystal switch in the centre to raise this room's water, then lure the Tektites to your starting platform and kill them.",
-          "detail": "Raising the water floats the statues up and reveals Hookshot targets on them. If you fall in while the water is low, put on the Iron Boots and Hookshot the switch to raise it again."
+          "detail": "Raising the water floats the statues up and reveals Hookshot targets on them. If you fall in while the water is low, put on the Iron Boots and Hookshot the switch to raise it again.",
+          "kind": "main"
         },
         {
           "id": "oot-1396",
-          "text": "With the room's water raised, Hookshot to the next platform clockwise."
+          "text": "With the room's water raised, Hookshot to the next platform clockwise.",
+          "kind": "main"
         },
         {
           "id": "oot-1397",
-          "text": "Hit the switch to lower the water, Hookshot the target on the left side of the next platform and climb across the statue's head."
+          "text": "Hit the switch to lower the water, Hookshot the target on the left side of the next platform and climb across the statue's head.",
+          "kind": "main"
         },
         {
           "id": "oot-1398",
-          "text": "Raise the water again and Hookshot to the last platform."
+          "text": "Raise the water again and Hookshot to the last platform.",
+          "kind": "main"
         },
         {
           "id": "oot-1399",
-          "text": "Lower the water, climb on top of the statue's head, then raise the water once more to ride up to the top ledge."
+          "text": "Lower the water, climb on top of the statue's head, then raise the water once more to ride up to the top ledge.",
+          "kind": "main"
         },
         {
           "id": "oot-1400",
           "text": "Up top, kill the two Blue Tektites, then kill the Like Like across the spikes with a Spin Attack or Bombs. Hookshot the ceiling target to cross over and go through the door.",
-          "detail": "Break the jars for hearts and magic first: a mini-boss is next."
+          "detail": "Break the jars for hearts and magic first: a mini-boss is next.",
+          "kind": "main"
         },
         {
           "id": "oot-1401",
           "text": "Room of Illusions: walk across the shallow water to the far door, then turn around. Dark Link is waiting by the tree. Defeat him.",
-          "detail": "He mirrors your moves at first, blocks most Z-targeted slashes and gets more aggressive as the fight goes on. Easiest: cast Din's Fire repeatedly (it hits him every time), or hack away with the Biggoron's Sword if you have it. With the Master Sword, Z-target and keep tapping B: he blocks 3 or 4 times, then a hit lands. Never thrust at him while Z-targeting: he hops onto your blade and counters. Slashing without Z-targeting connects more often but leaves you open. Megaton Hammer jump attacks also work. The invisible walls around the room stop you at the edges."
+          "detail": "He mirrors your moves at first, blocks most Z-targeted slashes and gets more aggressive as the fight goes on. Easiest: cast Din's Fire repeatedly (it hits him every time), or hack away with the Biggoron's Sword if you have it. With the Master Sword, Z-target and keep tapping B: he blocks 3 or 4 times, then a hit lands. Never thrust at him while Z-targeting: he hops onto your blade and counters. Slashing without Z-targeting connects more often but leaves you open. Megaton Hammer jump attacks also work. The invisible walls around the room stop you at the edges.",
+          "kind": "main"
         },
         {
           "id": "oot-1402",
-          "text": "Go through the door that opens after the fight and open the big chest for the Longshot."
+          "text": "Go through the door that opens after the fight and open the big chest for the Longshot.",
+          "kind": "main"
         },
         {
           "id": "oot-1403",
-          "text": "Stand next to the Time Block on the far side of the chest and play the Song of Time to make it vanish, then drop into the cavern below."
+          "text": "Stand next to the Time Block on the far side of the chest and play the Song of Time to make it vanish, then drop into the cavern below.",
+          "kind": "main"
         },
         {
           "id": "oot-1404",
           "text": "Raging water cavern: jump in and swim to the end of the first stretch, hugging the left wall to get past the first vortex.",
-          "detail": "A vortex sucks you down and restarts the room. Swimming slowly works better than the Iron Boots here because the sloped floor makes you slide; press B for a burst of speed when you need it."
+          "detail": "A vortex sucks you down and restarts the room. Swimming slowly works better than the Iron Boots here because the sloped floor makes you slide; press B for a burst of speed when you need it.",
+          "kind": "main"
         },
         {
           "id": "oot-1405",
           "text": "At the next corner, put on the Iron Boots, Longshot the Gold Skulltula on the wall and grab its token.",
-          "collect": { "counter": "skulltula", "n": 73 }
+          "collect": {
+            "counter": "skulltula",
+            "n": 73
+          },
+          "kind": "side"
         },
         {
           "id": "oot-1406",
           "text": "Take the Iron Boots off, round the corner hugging the right wall and swim past the two vortexes ahead along the right side to the ledge with two jars. Climb up.",
-          "detail": "Do not wear the boots on this stretch: you would slide into a vortex."
+          "detail": "Do not wear the boots on this stretch: you would slide into a vortex.",
+          "kind": "main"
         },
         {
           "id": "oot-1407",
           "text": "Jump in from the corner of the jar ledge, wait until you are floating on the surface, then swim across to the small platform opposite (between you and the closed corridor) and climb up.",
-          "detail": "If the current worries you, inch across with the Iron Boots on and take them off to climb out."
+          "detail": "If the current worries you, inch across with the Iron Boots on and take them off to climb out.",
+          "kind": "main"
         },
         {
           "id": "oot-1408",
-          "text": "Shoot the golden eye switch on the wall across from you with the Fairy Bow: the doorway opens for a few seconds. Jump across and open the chest for a Small Key (1 key)."
+          "text": "Shoot the golden eye switch on the wall across from you with the Fairy Bow: the doorway opens for a few seconds. Jump across and open the chest for a Small Key (1 key).",
+          "kind": "main"
         },
         {
           "id": "oot-1409",
           "text": "[Water HIGH] Drop down into the spinning dragon room from earlier and go back through the water pillar room and the block passage to the main room. Float up to the top floor.",
-          "detail": "Iron Boots on for the dragon room and the block passage, boots off to float up in the main room."
+          "detail": "Iron Boots on for the dragon room and the block passage, boots off to float up in the main room.",
+          "kind": "main"
         },
         {
           "id": "oot-1410",
           "text": "[Water HIGH] On the top floor, go through the west door into the waterfall room again. Longshot the Gold Skulltula on the right-hand wall and grab its token, then return to the main room.",
-          "collect": { "counter": "skulltula", "n": 74 }
+          "collect": {
+            "counter": "skulltula",
+            "n": 74
+          },
+          "kind": "side"
         },
         {
           "id": "oot-1411",
-          "text": "[Water HIGH] Put on the Iron Boots, sink to the bottom floor, go through the east passage between the torches, float up Ruto's shaft and play Zelda's Lullaby at the first Triforce: the water drops to LOW."
+          "text": "[Water HIGH] Put on the Iron Boots, sink to the bottom floor, go through the east passage between the torches, float up Ruto's shaft and play Zelda's Lullaby at the first Triforce: the water drops to LOW.",
+          "kind": "main"
         },
         {
           "id": "oot-1412",
-          "text": "[Water LOW] Enter the central pillar through its bottom door, Longshot up to the platform and play Zelda's Lullaby at the second Triforce: the water rises to MIDDLE."
+          "text": "[Water LOW] Enter the central pillar through its bottom door, Longshot up to the platform and play Zelda's Lullaby at the second Triforce: the water rises to MIDDLE.",
+          "kind": "main"
         },
         {
           "id": "oot-1413",
           "text": "[Water MIDDLE] Before leaving the pillar, look straight up and Longshot the Gold Skulltula at the very top of the pillar's interior. Grab its token.",
-          "collect": { "counter": "skulltula", "n": 75 }
+          "collect": {
+            "counter": "skulltula",
+            "n": 75
+          },
+          "kind": "side"
         },
         {
           "id": "oot-1414",
-          "text": "[Water MIDDLE] Exit the pillar onto the middle floor and face the south passage, which has a golden eye switch and an iron grating. Lure the Blue Tektites down and kill them first."
+          "text": "[Water MIDDLE] Exit the pillar onto the middle floor and face the south passage, which has a golden eye switch and an iron grating. Lure the Blue Tektites down and kill them first.",
+          "kind": "main"
         },
         {
           "id": "oot-1415",
           "text": "Shoot the eye switch with an arrow and immediately Longshot through the raised grating into the corridor before it drops.",
-          "detail": "Only the Longshot reaches far enough to get in before the grating closes; that is why this was impossible earlier."
+          "detail": "Only the Longshot reaches far enough to get in before the grating closes; that is why this was impossible earlier.",
+          "kind": "main"
         },
         {
           "id": "oot-1416",
-          "text": "Walk down the corridor to the red block and pull it back until it locks in place. Turn around, go back down the corridor and Longshot up to the target to return to the main room."
+          "text": "Walk down the corridor to the red block and pull it back until it locks in place. Turn around, go back down the corridor and Longshot up to the target to return to the main room.",
+          "kind": "main"
         },
         {
           "id": "oot-1417",
-          "text": "[Water MIDDLE] Drop back down to the middle floor, shoot the eye switch again and Longshot through the grating a second time."
+          "text": "[Water MIDDLE] Drop back down to the middle floor, shoot the eye switch again and Longshot through the grating a second time.",
+          "kind": "main"
         },
         {
           "id": "oot-1418",
-          "text": "Now push the red block forward: an opening appears on the right. Run in and open the chest for the last Small Key (2 keys). Longshot up to the target and return to the main room."
+          "text": "Now push the red block forward: an opening appears on the right. Run in and open the chest for the last Small Key (2 keys). Longshot up to the target and return to the main room.",
+          "kind": "main"
         },
         {
           "id": "oot-1419",
-          "text": "[Water MIDDLE] Put on the Iron Boots, sink to the bottom floor and enter the north passage (the sandy area with a ditch and two Spikes). Sink through and float back up into a room where a spiked wall blocks the far door."
+          "text": "[Water MIDDLE] Put on the Iron Boots, sink to the bottom floor and enter the north passage (the sandy area with a ditch and two Spikes). Sink through and float back up into a room where a spiked wall blocks the far door.",
+          "kind": "main"
         },
         {
           "id": "oot-1420",
-          "text": "Turn around, climb onto the ledge behind you and Longshot the target on the other side of the room. Enter the locked door there (1 key left)."
+          "text": "Turn around, climb onto the ledge behind you and Longshot the target on the other side of the room. Enter the locked door there (1 key left).",
+          "kind": "main"
         },
         {
           "id": "oot-1421",
           "text": "Rolling boulder room: cross the zig-zagging rushing water past the Blue Tektites and rolling boulders to the door on the far side.",
-          "detail": "Six Blue Tektites and two boulders patrol here. Safest: lure the Tektites over by shooting arrows or swimming out and back, and kill them first. Otherwise stay on the right side near the end and swim under them; if you drift toward a vortex, put on the Iron Boots."
+          "detail": "Six Blue Tektites and two boulders patrol here. Safest: lure the Tektites over by shooting arrows or swimming out and back, and kill them first. Otherwise stay on the right side near the end and swim under them; if you drift toward a vortex, put on the Iron Boots.",
+          "kind": "main"
         },
         {
           "id": "oot-1422",
           "text": "Kill the Stingers in the next room first.",
-          "detail": "They leap out of the water; Z-target and Longshot or slash them."
+          "detail": "They leap out of the water; Z-target and Longshot or slash them.",
+          "kind": "main"
         },
         {
           "id": "oot-1423",
           "text": "Bomb both walls at the south end of the room to open two passages: together they form a U with a large block in the middle.",
-          "detail": "One wall is visibly cracked and the other looks slightly off as well. Place a Bomb against each."
+          "detail": "One wall is visibly cracked and the other looks slightly off as well. Place a Bomb against each.",
+          "kind": "main"
         },
         {
           "id": "oot-1424",
           "text": "Push and pull the block out of the back room and into the water so it lands on the submerged floor switch. The water rises: climb up and go through the door.",
-          "detail": "This takes several trips back and forth around the U."
+          "detail": "This takes several trips back and forth around the U.",
+          "kind": "main"
         },
         {
           "id": "oot-1425",
           "text": "Second water pillar room: lure and kill the Tektites, then hit the crystal switch and cross the water pillars to the far door before the timer ends (the same timer opens that door).",
-          "detail": "Shoot the Tektites with arrows from the ledge, or jump down and get close to the far side to draw them toward you."
+          "detail": "Shoot the Tektites with arrows from the ledge, or jump down and get close to the far side to draw them toward you.",
+          "kind": "main"
         },
         {
           "id": "oot-1426",
           "text": "You are now in one of the upper alcoves of the boulder room. Inch to the edge, look right and Longshot the Gold Skulltula; grab its token.",
-          "collect": { "counter": "skulltula", "n": 76 }
+          "collect": {
+            "counter": "skulltula",
+            "n": 76
+          },
+          "kind": "side"
         },
         {
           "id": "oot-1427",
-          "text": "Wait for a boulder to pass, put on the Iron Boots, jump into the water and walk toward the waterfall, sinking into the deeper channel."
+          "text": "Wait for a boulder to pass, put on the Iron Boots, jump into the water and walk toward the waterfall, sinking into the deeper channel.",
+          "kind": "main"
         },
         {
           "id": "oot-1428",
-          "text": "Round the corner slowly and Longshot the Shell Blade waiting there. Take off the Iron Boots, float up and open the locked door with your last Small Key (0 keys)."
+          "text": "Round the corner slowly and Longshot the Shell Blade waiting there. Take off the Iron Boots, float up and open the locked door with your last Small Key (0 keys).",
+          "kind": "main"
         },
         {
           "id": "oot-1429",
           "text": "Open the ornate chest for the Boss Key, then backtrack all the way to the main room.",
-          "detail": "Back through the boulder room and the north passage; use the Iron Boots to sink through the ditch and float up in the main room."
+          "detail": "Back through the boulder room and the north passage; use the Iron Boots to sink through the ditch and float up in the main room.",
+          "kind": "main"
         },
         {
           "id": "oot-1430",
-          "text": "[Water MIDDLE] Raise the water to HIGH: from the middle floor take the west door, hit the crystal switch and ride the water pillar up, and play Zelda's Lullaby at the third Triforce in the alcove."
+          "text": "[Water MIDDLE] Raise the water to HIGH: from the middle floor take the west door, hit the crystal switch and ride the water pillar up, and play Zelda's Lullaby at the third Triforce in the alcove.",
+          "kind": "main"
         },
         {
           "id": "oot-1431",
-          "text": "[Water HIGH] On the top floor, Longshot the target on the dragon statue on the north side of the main room. Fill any empty bottles with the Fairies in the jars nearby, then enter the door."
+          "text": "[Water HIGH] On the top floor, Longshot the target on the dragon statue on the north side of the main room. Fill any empty bottles with the Fairies in the jars nearby, then enter the door.",
+          "kind": "main"
         },
         {
           "id": "oot-1432",
           "text": "Spike trap corridor: pick the left or right edge and run straight up the ramp without stopping or rolling until you reach the boss door at the top.",
-          "detail": "Slowing down makes you slide back to the bottom, usually into a spike trap. Wait until the lowest trap is on your side of the ramp before you start."
+          "detail": "Slowing down makes you slide back to the bottom, usually into a spike trap. Wait until the lowest trap is on your side of the ramp before you start.",
+          "kind": "main"
         },
         {
           "id": "oot-1433",
           "text": "Open the boss door and jump onto one of the platforms in the middle of the pool to fight Morpha.",
-          "detail": "Morpha is a nucleus that moves through the water and raises tentacles to grab you; listen for the sound and back away as one forms. When the nucleus travels up a tentacle, Z-target it and Longshot it out, then slash it, keeping open floor behind you so it does not bounce straight back into the water. Later it raises two, then three tentacles at once. If grabbed you get squeezed and thrown across the room. Fast method: stand in a corner, Longshot the nucleus, run around it so it sits between you and the corner, and keep slashing; it bounces off the walls and cannot escape."
+          "detail": "Morpha is a nucleus that moves through the water and raises tentacles to grab you; listen for the sound and back away as one forms. When the nucleus travels up a tentacle, Z-target it and Longshot it out, then slash it, keeping open floor behind you so it does not bounce straight back into the water. Later it raises two, then three tentacles at once. If grabbed you get squeezed and thrown across the room. Fast method: stand in a corner, Longshot the nucleus, run around it so it sits between you and the corner, and keep slashing; it bounces off the walls and cannot escape.",
+          "kind": "main"
         },
         {
           "id": "oot-1434",
-          "text": "Grab the Heart Container, then step into the blue light to leave."
+          "text": "Grab the Heart Container, then step into the blue light to leave.",
+          "kind": "main"
         },
         {
           "id": "oot-1435",
-          "text": "In the Chamber of Sages, receive the Water Medallion from Ruto."
+          "text": "In the Chamber of Sages, receive the Water Medallion from Ruto.",
+          "kind": "main"
         }
       ]
     },
     {
       "id": "c10-lake-hylia-cleanup",
       "title": "Lake Hylia",
-      "subtitle": "Adult · Cleanup",
+      "subtitle": "Adult \u00b7 Cleanup",
       "steps": [
         {
           "id": "oot-1436",
-          "text": "Watch Sheik's scene on the island as the lake fills back up."
+          "text": "Watch Sheik's scene on the island as the lake fills back up.",
+          "kind": "side"
         },
         {
           "id": "oot-1437",
           "text": "Stand just in front of the stone marker on the island and shoot the rising sun with an arrow. The Fire Arrows drop onto the small island nearby.",
-          "detail": "The marker tells you to shoot for the morning light. It is dawn automatically after the scene; if you miss the window, play the Sun's Song at night to bring back the morning and try again. Aim at the sun itself as it sits just above the horizon."
+          "detail": "The marker tells you to shoot for the morning light. It is dawn automatically after the scene; if you miss the window, play the Sun's Song at night to bring back the morning and try again. Aim at the sun itself as it sits just above the horizon.",
+          "kind": "side"
         },
         {
           "id": "oot-1438",
-          "text": "Swim out to the small island where the Fire Arrows landed and pick them up."
+          "text": "Swim out to the small island where the Fire Arrows landed and pick them up.",
+          "kind": "side"
         },
         {
           "id": "oot-1439",
           "text": "Play the Sun's Song until it is night, then go back to the island above the Water Temple entrance and Longshot up onto the tree there.",
-          "detail": "Aim upward at an angle so you land on the branch rather than the trunk. The Gold Skulltula only appears at night."
+          "detail": "Aim upward at an angle so you land on the branch rather than the trunk. The Gold Skulltula only appears at night.",
+          "kind": "side"
         },
         {
           "id": "oot-1440",
           "text": "Walk along the branch and look at the top of the tree: Longshot the Gold Skulltula and grab its token.",
-          "collect": { "counter": "skulltula", "n": 77 }
+          "collect": {
+            "counter": "skulltula",
+            "n": 77
+          },
+          "kind": "side"
         }
       ]
     }

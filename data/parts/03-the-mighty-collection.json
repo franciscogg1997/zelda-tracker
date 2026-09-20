@@ -1,0 +1,1071 @@
+{
+  "id": "oot",
+  "title": "Ocarina of Time",
+  "counters": [
+    {
+      "id": "heart",
+      "label": "Heart pieces",
+      "unit": "Heart piece",
+      "total": 36
+    },
+    {
+      "id": "skulltula",
+      "label": "Skulltulas",
+      "unit": "Skulltula",
+      "total": 100
+    },
+    {
+      "id": "song",
+      "label": "Songs",
+      "unit": "Song",
+      "total": 12
+    },
+    {
+      "id": "bottle",
+      "label": "Bottles",
+      "unit": "Bottle",
+      "total": 4
+    },
+    {
+      "id": "upgrade",
+      "label": "Upgrades",
+      "unit": "Upgrade",
+      "total": 23
+    }
+  ],
+  "sections": [
+    {
+      "id": "c03-graveyard",
+      "title": "Kakariko Graveyard",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0301",
+          "text": "Cross Hyrule Field to the north-east and climb the long stone stairway into Kakariko Village.",
+          "kind": "main",
+          "detail": "Impa told you to come here. It is also the way up to Death Mountain for the next chapter, so the trip is never wasted."
+        },
+        {
+          "id": "oot-0302",
+          "text": "Walk across the village to the far right side and take the exit at the top of the steps into the Graveyard.",
+          "kind": "side",
+          "detail": "Almost nothing in this chapter is needed to finish the game: it is Heart Pieces, Gold Skulltulas, bottles and capacity upgrades. Skip straight to Dodongo's Cavern if you only want the main quest."
+        },
+        {
+          "id": "oot-0303",
+          "text": "At the very back of the Graveyard, read the left and the right grave of the three large ones to summon the ghosts of the Composer Brothers.",
+          "kind": "side",
+          "detail": "Press A facing each headstone. Sharp and Flat wrote a song that moves the sun; they only talk, there is nothing to fight."
+        },
+        {
+          "id": "oot-0304",
+          "text": "Stand on the Triforce tile in front of the big middle grave and play Zelda's Lullaby.",
+          "kind": "side",
+          "detail": "Notes: C-Left, C-Up, C-Right, C-Left, C-Up, C-Right. A storm rolls in and lightning blows the tombstone apart."
+        },
+        {
+          "id": "oot-0305",
+          "text": "Drop into the hole the lightning opened, into the Royal Family's Tomb.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0306",
+          "text": "Walk down the ramp and kill all five Keese with the Fairy Slingshot to open the door at the far end.",
+          "kind": "side",
+          "detail": "Keese are bats. The door stays shut until every one of the five is dead; shoot them as they swoop in."
+        },
+        {
+          "id": "oot-0307",
+          "text": "Climb the huge steps and go through the door that opened.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0308",
+          "text": "Cross the next room along the stone ledges to the door on the far side, keeping away from the two ReDeads and out of the green pools.",
+          "kind": "side",
+          "detail": "ReDeads freeze you with a scream, then grab on and drain hearts, and they are only safe to kill from behind. The green sludge hurts too. Hug the edges and keep moving; you do not have to fight anything here."
+        },
+        {
+          "id": "oot-0309",
+          "text": "Press A at the big stone tablet in the last passage; Navi reads the inscription and you learn the Sun's Song.",
+          "kind": "side",
+          "collect": {
+            "counter": "song",
+            "n": 4
+          },
+          "detail": "Notes: C-Right, C-Down, C-Up, C-Right, C-Down, C-Up. Outdoors it flips day to night and night to day instantly, and it freezes ReDeads and Gibdos solid. The rest of this chapter leans on it constantly."
+        },
+        {
+          "id": "oot-0310",
+          "text": "Head back out through the ReDead room, playing the Sun's Song to freeze any ReDead that comes at you.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0311",
+          "text": "Step on the coloured pad in the first room to warp back up to the Graveyard.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0312",
+          "text": "Stand between the back row of graves and the Royal Family's Tomb facing the entrance, then pull back the fourth grave from the left and drop into the hole.",
+          "kind": "side",
+          "detail": "Grab the headstone with A and walk backwards to drag it clear of the hole."
+        },
+        {
+          "id": "oot-0313",
+          "text": "Play the Sun's Song to freeze the ReDead down here, walk around behind it and slash it until it dies.",
+          "kind": "side",
+          "detail": "Frozen, it cannot grab you. Get fully behind it before swinging; hits from the front barely hurt it, and if it grabs you it drains hearts fast."
+        },
+        {
+          "id": "oot-0314",
+          "text": "Stand on the steps of the raised platform and play the Sun's Song again to make a large chest appear.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0315",
+          "text": "Open the chest for a Piece of Heart.",
+          "kind": "side",
+          "collect": {
+            "counter": "heart",
+            "n": 1
+          }
+        },
+        {
+          "id": "oot-0316",
+          "text": "Warp out on the coloured pad, then go to the front row of graves near the entrance, pull back the one with three flowers in front of it and drop in.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0317",
+          "text": "Open the small chest for a free Hylian Shield.",
+          "kind": "side",
+          "detail": "The Bazaar in Castle Town sells one, so this chest just saves you the Rupees. Take it anyway: adult Link cannot use a Deku Shield at all, and the next dungeon is easier with it."
+        },
+        {
+          "id": "oot-0318",
+          "text": "Step on the coloured pad to leave the grave.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0319",
+          "text": "Play the Sun's Song if it is still daytime, then find Dampe the gravekeeper walking around the Graveyard.",
+          "kind": "side",
+          "detail": "His Heart-Pounding Gravedigging Tour only runs between 18:00 and 21:00. Straight after learning the Sun's Song you are already inside that window. The guard at the Kakariko entrance tells you the current time."
+        },
+        {
+          "id": "oot-0320",
+          "text": "Talk to Dampe and pay 10 Rupees to start the Heart-Pounding Gravedigging Tour.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0321",
+          "text": "Lead Dampe onto one of the soft soil spots and stand still so he digs there.",
+          "kind": "side",
+          "detail": "He follows you and digs wherever you stop. The prize in each hole is random: usually Rupees, sometimes nothing, and roughly one dig in ten is a Piece of Heart."
+        },
+        {
+          "id": "oot-0322",
+          "text": "Pick up whatever he throws out, pay another 10 Rupees and dig a different spot; keep repeating.",
+          "kind": "side",
+          "detail": "The Piece of Heart is guaranteed inside the first 15 holes he digs, and he uncovers enough Rupees that the game roughly pays for itself. If your wallet runs dry, leave it and come back later in the game; nothing is lost."
+        },
+        {
+          "id": "oot-0323",
+          "text": "The moment a dig throws out a Piece of Heart, run over and pick it up off the ground.",
+          "kind": "side",
+          "collect": {
+            "counter": "heart",
+            "n": 2
+          },
+          "missable": "Pick up Dampe's dug-up Piece of Heart before the tour ends or you leave the Graveyard, or it is gone for this playthrough.",
+          "detail": "WARNING: a dug-up Piece of Heart must be collected before the tour ends or before you leave the area. Walk away from it and the game still counts it as taken, and it never appears in another hole again."
+        }
+      ]
+    },
+    {
+      "id": "c03-kakariko-cuccos",
+      "title": "Kakariko Village",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0324",
+          "text": "Play the Sun's Song to bring back daytime, then walk down out of the Graveyard into Kakariko Village.",
+          "kind": "side",
+          "detail": "Anju the Cucco Lady only stands out by her pen during the day."
+        },
+        {
+          "id": "oot-0325",
+          "text": "Talk to Anju, the woman waving her arms in front of the small fenced pen near the Graveyard steps, to start the Cucco round-up.",
+          "kind": "side",
+          "detail": "Seven Cuccos are loose in the village and she pays out once all seven are inside the fence. Do not hit them: strike one too often and a flock swarms you until you leave the area or die."
+        },
+        {
+          "id": "oot-0326",
+          "text": "Cucco 1: pick up the one wandering between Anju's pen and the Graveyard steps and drop it inside the fence.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0327",
+          "text": "Cucco 2: knock the one on the ledge beside the House of Skulltula down with a Slingshot shot or a Deku Nut, then chase it and carry it to the pen.",
+          "kind": "side",
+          "detail": "You can also carry another Cucco up onto the unfinished building in the construction area and glide across to it."
+        },
+        {
+          "id": "oot-0328",
+          "text": "Cucco 3: grab the one by the village entrance gate and carry it to the pen.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0329",
+          "text": "Cucco 4: roll into the crate beside the stairs up to the higher part of the village, then carry the Cucco that pops out to the pen.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0330",
+          "text": "Cucco 5: pick up the one loitering by the ramp in front of the guard at the Death Mountain gate and take it down to the pen.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0331",
+          "text": "Pick up a spare Cucco and climb onto the platform by the windmill door.",
+          "kind": "side",
+          "detail": "The last two birds are in a walled-off corner in the north-east that has no normal way in. This is the setup for getting over the fence."
+        },
+        {
+          "id": "oot-0332",
+          "text": "Holding the Cucco, jump off that ledge at an angle so you glide onto the narrow fence on the left nearest the Potion Shop, then drop into the walled-off corner of the village.",
+          "kind": "side",
+          "detail": "Alternative: climb the lookout tower, hold Z facing the middle of the village and side-jump left onto the fence top. If you miss, pick the Cucco back up and try again; there is no penalty."
+        },
+        {
+          "id": "oot-0333",
+          "text": "Cucco 6: in the lower part of the walled corner, next to the open hole, pick up the Cucco and throw it over the fence.",
+          "kind": "side",
+          "detail": "Do not walk into the hole. Throw the bird well clear of the fence so you can find it again from outside."
+        },
+        {
+          "id": "oot-0334",
+          "text": "Cucco 7: climb the ladder in the walled corner and grab the Cucco waiting at the top.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0335",
+          "text": "Jump down holding that Cucco to glide back over the fence, then carry both loose birds into the pen.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0336",
+          "text": "With all seven Cuccos in the pen, talk to Anju for an Empty Bottle.",
+          "kind": "side",
+          "collect": {
+            "counter": "bottle",
+            "n": 1
+          },
+          "detail": "She explains she is allergic to her own chickens. Put the bottle on a C button: the next steps need it to carry bugs."
+        }
+      ]
+    },
+    {
+      "id": "c03-graveyard-soil",
+      "title": "Kakariko Graveyard",
+      "subtitle": "Child · Cleanup",
+      "steps": [
+        {
+          "id": "oot-0337",
+          "text": "Go back up to the Graveyard, lift the lone rock in the patch of bushes by the entrance and immediately swipe the Empty Bottle at one of the bugs underneath.",
+          "kind": "side",
+          "detail": "The bugs burrow away within a couple of seconds, so put the bottle on a C button before you lift the rock."
+        },
+        {
+          "id": "oot-0338",
+          "text": "Carry the bugs to the patch of soft soil on the left of the Graveyard, by the five graves standing on their own, and empty the bottle onto it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0339",
+          "text": "Kill the Gold Skulltula that bursts out of the soil and take its token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 6
+          },
+          "detail": "Hit its soft back, or just slash it as it turns. If the token floats out of reach, jump-attack while Z-targeted to grab it."
+        }
+      ]
+    },
+    {
+      "id": "c03-kakariko-night",
+      "title": "Kakariko Village",
+      "subtitle": "Child · Night",
+      "steps": [
+        {
+          "id": "oot-0340",
+          "text": "Walk back down into Kakariko Village and play the Sun's Song to bring on night, when the Gold Skulltulas come out.",
+          "kind": "side",
+          "detail": "Five of them are in the village, all outdoors. They rattle loudly, so turn the sound up if you lose one."
+        },
+        {
+          "id": "oot-0341",
+          "text": "Kill the Gold Skulltula on one of the bare wall frames of the unfinished building in the construction area and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 7
+          }
+        },
+        {
+          "id": "oot-0342",
+          "text": "Kill the Gold Skulltula clinging to the outside wall of the House of Skulltula and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 8
+          }
+        },
+        {
+          "id": "oot-0343",
+          "text": "Roll into the big tree in the middle of the village to shake a Gold Skulltula loose, kill it and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 9
+          },
+          "detail": "Back off right after the roll so it does not drop on your head."
+        },
+        {
+          "id": "oot-0344",
+          "text": "Shoot the Gold Skulltula on the ladder of the lookout tower with the Slingshot, then climb the ladder to reach the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 10
+          }
+        },
+        {
+          "id": "oot-0345",
+          "text": "Kill the Gold Skulltula on the side of the house nearest the Death Mountain gate and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 11
+          }
+        },
+        {
+          "id": "oot-0346",
+          "text": "Go into the House of Skulltula, the building across from the construction area.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0347",
+          "text": "Talk to the cursed spider man in the middle of the room.",
+          "kind": "side",
+          "detail": "His family is under the Curse of the Spider. One member is freed at 10, 20, 30, 40, 50 and 100 tokens, and each one hands over a reward. Everything past 50 is only for a full clear."
+        },
+        {
+          "id": "oot-0348",
+          "text": "Talk to the freed family member doing jumping jacks on the right for the Adult's Wallet.",
+          "kind": "side",
+          "collect": {
+            "counter": "upgrade",
+            "n": 11
+          },
+          "detail": "You are on 11 tokens, past the 10 needed. The Adult's Wallet holds 200 Rupees instead of 99."
+        }
+      ]
+    },
+    {
+      "id": "c03-lon-lon-ranch",
+      "title": "Lon Lon Ranch",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0349",
+          "text": "Leave Kakariko Village for Hyrule Field and head for Lon Lon Ranch, the walled ranch in the middle of the map.",
+          "kind": "main",
+          "detail": "You cannot miss it on the minimap. The way in is a ramp through the wall."
+        },
+        {
+          "id": "oot-0350",
+          "text": "Play the Sun's Song if it is night so that it is daytime inside the ranch.",
+          "kind": "side",
+          "detail": "Talon only runs his game by day, and Malon only stands out in the corral by day."
+        },
+        {
+          "id": "oot-0351",
+          "text": "Just inside the ranch, go through the door on your left into the house where Talon is standing.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0352",
+          "text": "Before talking to him, pick up every ordinary Cucco in the room and throw it into the corner at the foot of the stairs.",
+          "kind": "side",
+          "detail": "Clearing the decoys out first turns the mini-game into a walkover: only the three Super Cuccos are left loose in the room."
+        },
+        {
+          "id": "oot-0353",
+          "text": "Talk to Talon and pay 10 Rupees to play Super Cuccos.",
+          "kind": "side",
+          "detail": "He shoos three special Cuccos into the corners of the room and puts you on a short timer."
+        },
+        {
+          "id": "oot-0354",
+          "text": "Pick up all three Super Cuccos before the time runs out, working one corner at a time.",
+          "kind": "side",
+          "detail": "Throw any wrong bird well away so you do not grab it twice. If you lose, just pay and play again."
+        },
+        {
+          "id": "oot-0355",
+          "text": "Talk to Talon after winning to receive a bottle of Lon Lon Milk.",
+          "kind": "side",
+          "collect": {
+            "counter": "bottle",
+            "n": 3
+          },
+          "detail": "The bottle is the prize; the milk inside is two drinks worth five hearts each. He also starts hinting about marrying his daughter. Put it on a C button."
+        },
+        {
+          "id": "oot-0356",
+          "text": "Leave the house and round the corner on the left to a tree standing on its own.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0357",
+          "text": "Roll into the lone tree, kill the Gold Skulltula that drops out and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 12
+          }
+        },
+        {
+          "id": "oot-0358",
+          "text": "Walk into the middle of the corral and talk to Malon.",
+          "kind": "main",
+          "detail": "She chats about the castle and her father, then introduces Epona, who immediately bolts away from you."
+        },
+        {
+          "id": "oot-0359",
+          "text": "Keep talking to Malon until she brings up the song her mother wrote, then take out the Ocarina standing in front of her to learn Epona's Song.",
+          "kind": "main",
+          "collect": {
+            "counter": "song",
+            "n": 2
+          },
+          "detail": "Notes: C-Up, C-Left, C-Right, C-Up, C-Left, C-Right. Later chapters need it to call Epona as an adult, and it draws free milk out of any cow."
+        },
+        {
+          "id": "oot-0360",
+          "text": "Play the Sun's Song to bring on night.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0361",
+          "text": "Follow the outside of the corral clockwise to the wooden feeding trough in its south-east corner and kill the Gold Skulltula on the boards, then take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 13
+          },
+          "detail": "Guays, the black crows, dive at you out here. This spider is only on the trough at night."
+        },
+        {
+          "id": "oot-0362",
+          "text": "Go into the tall feed silo in the south-west corner of the ranch.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0363",
+          "text": "Pull the front crates out of the way with A and climb up onto the stack.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0364",
+          "text": "Work across and down to the far corner behind the crates, where a small crawl hole sits at floor level.",
+          "kind": "side",
+          "detail": "Push, pull and climb until the corner opens up; there is no trick to it beyond shuffling the boxes."
+        },
+        {
+          "id": "oot-0365",
+          "text": "Crawl through the hole and take the Piece of Heart inside.",
+          "kind": "side",
+          "collect": {
+            "counter": "heart",
+            "n": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "c03-gerudo-valley",
+      "title": "Gerudo Valley",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0366",
+          "text": "Leave Lon Lon Ranch and head due west across Hyrule Field to the path into Gerudo Valley.",
+          "kind": "side",
+          "detail": "The valley entrance is straight west of the ranch, at the far edge of the field."
+        },
+        {
+          "id": "oot-0367",
+          "text": "Just inside the valley, lift the three rocks on your right and catch the bugs under one of them in the empty bottle.",
+          "kind": "side",
+          "detail": "Put the bottle on a C button before you lift, or the bugs burrow away first."
+        },
+        {
+          "id": "oot-0368",
+          "text": "Walk forward and pick up the Cucco near the bridge.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0369",
+          "text": "Carrying the Cucco, jump off the right-hand side of the bridge and glide down to the ledge on the left at the bottom of the valley.",
+          "kind": "side",
+          "detail": "Hold the stick to steer as you fall and look down to line up the landing. Falling in the river is not a disaster: the current is slow here and you can swim back and climb out."
+        },
+        {
+          "id": "oot-0370",
+          "text": "Find the patch of soft soil near the Gerudo woman and her cow on the valley floor and empty the bugs onto it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0371",
+          "text": "Kill the Gold Skulltula that pops out of the soil and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 14
+          }
+        },
+        {
+          "id": "oot-0372",
+          "text": "Walk to the waterfall at the end of the valley floor and drop into the water behind it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0373",
+          "text": "Climb the ladder in the alcove behind the waterfall.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0374",
+          "text": "Take the Piece of Heart at the top of the ladder.",
+          "kind": "side",
+          "collect": {
+            "counter": "heart",
+            "n": 4
+          }
+        },
+        {
+          "id": "oot-0375",
+          "text": "Jump into the river, let the current carry you down into Lake Hylia, then swim ashore and leave by the north exit into Hyrule Field.",
+          "kind": "side",
+          "detail": "There is no climb back up the valley from the bottom; the river is the only way out, and it always ends in Lake Hylia."
+        },
+        {
+          "id": "oot-0376",
+          "text": "Cross Hyrule Field back to the Gerudo Valley path and walk up to the bridge again.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0377",
+          "text": "Pick up the Cucco by the bridge and this time glide off the LEFT side, aiming for the small platform with a single crate on it.",
+          "kind": "side",
+          "detail": "The platform is across the gap, clearly visible from the bridge. Steer the whole way down; the Cucco gives you plenty of float."
+        },
+        {
+          "id": "oot-0378",
+          "text": "Roll into the crate on the platform for a Piece of Heart.",
+          "kind": "side",
+          "collect": {
+            "counter": "heart",
+            "n": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "c03-lake-hylia",
+      "title": "Lake Hylia",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0379",
+          "text": "Jump into the river again and ride the current down to Lake Hylia.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0380",
+          "text": "Go to the little fenced plot on the north-east side of the lake and talk to Bonooru, the lower of the two scarecrows.",
+          "kind": "side",
+          "detail": "The upper one is Pierre. Bonooru boasts that he never forgets a tune."
+        },
+        {
+          "id": "oot-0381",
+          "text": "Take out the Ocarina in front of Bonooru and play eight notes of your own invention; he memorises them as the Scarecrow's Song.",
+          "kind": "side",
+          "detail": "WRITE THE EIGHT NOTES DOWN. As an adult you must play the exact same eight to summon Pierre at Hookshot spots, and a couple of Heart Pieces depend on him. Avoid anything that matches a real song."
+        },
+        {
+          "id": "oot-0382",
+          "text": "Slash the lone bush on the ledge above, beside Pierre, and bottle the bugs it hides.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0383",
+          "text": "Cross to the Lakeside Laboratory, the big house with the chimney on the far side of the lake, and empty the bugs onto the soft soil beside it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0384",
+          "text": "Kill the Gold Skulltula that comes out of the soil and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 15
+          }
+        },
+        {
+          "id": "oot-0385",
+          "text": "Swim out to the smaller island with two stone pillars, in the south-east corner of the lake.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0386",
+          "text": "Play the Sun's Song to bring on night.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0387",
+          "text": "Kill the Gold Skulltula that appears on the island and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 16
+          },
+          "detail": "It only shows up at night; by day the island is empty."
+        },
+        {
+          "id": "oot-0388",
+          "text": "Swim over to the Fishing Pond on the east shore and go inside.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0389",
+          "text": "Pay the owner 20 Rupees to rent a rod.",
+          "kind": "side",
+          "detail": "A casts and reels, B wiggles the lure, the stick steers the line. Above all, do not scare the fish: once spooked they all run for deep water."
+        },
+        {
+          "id": "oot-0390",
+          "text": "Stand on the arched log near the three sticks poking out of the water and cast at the biggest fish.",
+          "kind": "side",
+          "detail": "The largest fish always starts by the arched log. Fishing from on top of the log means far less line to reel in. Let the lure drift close, then wiggle with B to attract it."
+        },
+        {
+          "id": "oot-0391",
+          "text": "Once it bites, hold the stick back and hold A to haul it in without letting go.",
+          "kind": "side",
+          "detail": "Hold both, do not tap. If it still gets away, walk out of the pond and come back in: every fish resets to its starting spot."
+        },
+        {
+          "id": "oot-0392",
+          "text": "Show the owner a fish weighing 10 pounds or more to beat the pond record and get a Piece of Heart.",
+          "kind": "side",
+          "collect": {
+            "counter": "heart",
+            "n": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "c03-kokiri-forest",
+      "title": "Kokiri Forest",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0393",
+          "text": "Cross Hyrule Field to the forest entrance on the east side and follow the tunnel into Kokiri Forest.",
+          "kind": "main",
+          "detail": "Leave Lake Hylia by its north exit first. A Peahat may lift off near the road on the way; you are never required to fight one, so just run past."
+        },
+        {
+          "id": "oot-0394",
+          "text": "Play the Sun's Song to bring on night.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0395",
+          "text": "Go up to the fenced training area in the south-west of the village, walk around the back of the Know-It-All Brothers' House and kill the Gold Skulltula on the rear wall, then take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 17
+          },
+          "detail": "Only there at night. Jump-attack while Z-targeted if the token hangs too high to touch."
+        },
+        {
+          "id": "oot-0396",
+          "text": "From the village entrance, head left and climb the small ledge behind Mido's House.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-0397",
+          "text": "Climb the vines on the wall above that ledge.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-0398",
+          "text": "Follow the path along the top round to the hollow log and go through it into the Lost Woods.",
+          "kind": "main"
+        }
+      ]
+    },
+    {
+      "id": "c03-lost-woods",
+      "title": "Lost Woods",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0399",
+          "text": "Take the right-hand passage out of the entrance room into a wide clearing with a single tree ahead.",
+          "kind": "main",
+          "detail": "This is also the first turn of the route to the Sacred Forest Meadow. A wrong exit anywhere in the Lost Woods spits you back out, so follow the exits exactly as written."
+        },
+        {
+          "id": "oot-0400",
+          "text": "Shoot the target hanging from the lone branch with the Slingshot and hit the middle three times in a row.",
+          "kind": "side",
+          "detail": "A dead-centre hit is worth 100 points; anything less resets the run. Just keep shooting, there is no cost."
+        },
+        {
+          "id": "oot-0401",
+          "text": "Shoot the hanging target on the lone tree branch and hit the centre three times in a row; a Deku Scrub appears and upgrades your Bullet Bag again.",
+          "kind": "side",
+          "collect": {
+            "counter": "upgrade",
+            "n": 10
+          },
+          "detail": "Each bullseye scores 100. This is the second Bullet Bag upgrade of the run, after the one from the Market Shooting Gallery. Sources disagree on which gallery gives 40 and which gives 50, so flag this step if the capacity you get is not the higher one."
+        },
+        {
+          "id": "oot-0402",
+          "text": "Drop down into the lower part of the clearing and stand on the tree stump on the right; two Skull Kids appear on the stumps nearby.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0403",
+          "text": "Take out the Ocarina to join in, then copy each tune back note for note as they add one note per round.",
+          "kind": "side",
+          "detail": "It is Simon with an Ocarina. Writing the notes down on paper as they play makes it much easier."
+        },
+        {
+          "id": "oot-0404",
+          "text": "Finish three tunes in a row without a mistake for a Piece of Heart.",
+          "kind": "side",
+          "collect": {
+            "counter": "heart",
+            "n": 7
+          }
+        },
+        {
+          "id": "oot-0405",
+          "text": "Take the left exit.",
+          "kind": "main",
+          "detail": "If you lose the thread, follow the music: the correct exit is the one Saria's melody gets louder toward. Kaepora Gaebora drops in around here to tell you the same thing."
+        },
+        {
+          "id": "oot-0406",
+          "text": "Take the right exit.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-0407",
+          "text": "Take the left exit.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-0408",
+          "text": "Go straight ahead.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-0409",
+          "text": "Take the left exit.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-0410",
+          "text": "Take the right exit into the Sacred Forest Meadow.",
+          "kind": "main",
+          "detail": "The whole route from the Lost Woods entrance, for reference: right, left, right, left, forward, left, right."
+        }
+      ]
+    },
+    {
+      "id": "c03-sacred-forest-meadow",
+      "title": "Sacred Forest Meadow",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0411",
+          "text": "Walk forward into the hedge maze; a Wolfos claws its way out of the ground and bars seal the way on.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-0412",
+          "text": "Kill the Wolfos to make the bars ahead vanish.",
+          "kind": "main",
+          "detail": "Z-target and keep the shield up while you close in, then strike right after it swings or when it turns its back. Two or three sword hits finish it."
+        },
+        {
+          "id": "oot-0413",
+          "text": "Round the next corner and deal with the Mad Scrub.",
+          "kind": "main",
+          "detail": "Mad Scrubs spit three seeds at a time. Z-target, walk in behind a raised shield and slash, or stun it with a Deku Nut, or pick it off from range with the Slingshot."
+        },
+        {
+          "id": "oot-0414",
+          "text": "Work north through the hedge maze using the minimap, killing or running past the Mad Scrubs in the side passages.",
+          "kind": "main",
+          "detail": "Several branches are dead ends; the minimap shows which corridors actually connect. Nothing here is required, so running is fine."
+        },
+        {
+          "id": "oot-0415",
+          "text": "At the far side, take the stone steps rather than the ladder beside them.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-0416",
+          "text": "Kill the two Mad Scrubs guarding the huge archway at the top of the steps.",
+          "kind": "main",
+          "detail": "Deal with them one at a time so you are not caught in crossfire from both."
+        },
+        {
+          "id": "oot-0417",
+          "text": "Walk up the last ramp to the altar at the top of the meadow.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-0418",
+          "text": "Watch the scene with Saria and learn Saria's Song.",
+          "kind": "main",
+          "collect": {
+            "counter": "song",
+            "n": 3
+          },
+          "detail": "Notes: C-Down, C-Right, C-Left, C-Down, C-Right, C-Left. This one is not optional: you must play it for Darunia in Goron City to get the Goron's Bracelet."
+        },
+        {
+          "id": "oot-0419",
+          "text": "Climb the ladder at the foot of the temple ramp onto the tops of the hedge walls, then take the ladder in the middle down into the Fairy Fountain to heal up.",
+          "kind": "side",
+          "detail": "Walking the hedge tops skips every Mad Scrub on the way out. Leave a bottle empty rather than catching a fairy: the Lost Woods steps below need one free for bugs."
+        },
+        {
+          "id": "oot-0420",
+          "text": "Hop along the hedge tops back to the meadow entrance and leave into the Lost Woods.",
+          "kind": "main"
+        }
+      ]
+    },
+    {
+      "id": "c03-lost-woods-cleanup",
+      "title": "Lost Woods",
+      "subtitle": "Child · Cleanup",
+      "steps": [
+        {
+          "id": "oot-0421",
+          "text": "Sit through Kaepora Gaebora's speech when he drops in.",
+          "kind": "side",
+          "detail": "His one useful line: wherever a musical staff appears over your head with the Ocarina out, a song is meant to be played there."
+        },
+        {
+          "id": "oot-0422",
+          "text": "Take a wrong exit on purpose so the Lost Woods throw you back out into Kokiri Forest.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0423",
+          "text": "Go back through the log into the Lost Woods and take the LEFT passage this time, to the clearing with a single Skull Kid playing a flute.",
+          "kind": "side",
+          "detail": "Walk straight at him and he runs off. Head for the tree stump instead and he stands watching you."
+        },
+        {
+          "id": "oot-0424",
+          "text": "Stand on the tree stump, take out the Ocarina and play Saria's Song for the Skull Kid to get a Piece of Heart.",
+          "kind": "side",
+          "collect": {
+            "counter": "heart",
+            "n": 8
+          },
+          "detail": "Notes: C-Down, C-Right, C-Left, C-Down, C-Right, C-Left. Any other song just makes him happy; only Saria's Song pays out."
+        },
+        {
+          "id": "oot-0425",
+          "text": "Take the left exit again and drop all the way down into the lowest part of the area below the bridge.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0426",
+          "text": "Z-target the Business Scrub on the far side and reflect its nut back with your shield to knock it over.",
+          "kind": "side",
+          "detail": "Hold the shield up facing it; the nut bounces off and floors it. Then talk to it instead of finishing it off."
+        },
+        {
+          "id": "oot-0427",
+          "text": "Pay the Business Scrub 40 Rupees to carry 20 Deku Sticks instead of 10.",
+          "kind": "side",
+          "collect": {
+            "counter": "upgrade",
+            "n": 1
+          },
+          "detail": "One of the two Deku Stick capacity upgrades in the game; the order you collect them in does not matter."
+        },
+        {
+          "id": "oot-0428",
+          "text": "Find bugs down here, under a rock or in the grass, and catch them in the empty bottle.",
+          "kind": "side",
+          "detail": "Bugs are all over the Lost Woods, so topping the bottle back up is never a problem."
+        },
+        {
+          "id": "oot-0429",
+          "text": "Empty the bugs onto the patch of soft soil in this same area below the bridge.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0430",
+          "text": "Kill the Gold Skulltula that pops out and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 18
+          }
+        },
+        {
+          "id": "oot-0431",
+          "text": "Catch another bottle of bugs here before moving on.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0432",
+          "text": "Go back to the Lost Woods entrance room and take the right passage.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0433",
+          "text": "Take the left exit, then the right exit.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0434",
+          "text": "Take the left exit, then the left exit again, into a meadow clearing.",
+          "kind": "side",
+          "detail": "The full route from the entrance is right, left, right, left, left. Only that last turn differs from the Sacred Forest Meadow route, where you go forward instead."
+        },
+        {
+          "id": "oot-0435",
+          "text": "Walk forward to the patch of soft soil in the meadow and empty the bugs onto it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0436",
+          "text": "Kill the Gold Skulltula that comes out and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 19
+          }
+        },
+        {
+          "id": "oot-0437",
+          "text": "Catch one last bottle of bugs in this clearing.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0438",
+          "text": "Take a wrong exit on purpose to get dumped back in Kokiri Forest.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0439",
+          "text": "Go to the Kokiri Shop where you bought the Deku Shield and empty the bugs onto the patch of soft soil directly behind it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0440",
+          "text": "Kill the Gold Skulltula that pops out and take the token.",
+          "kind": "side",
+          "collect": {
+            "counter": "skulltula",
+            "n": 20
+          },
+          "detail": "That makes 20 tokens, which frees another member of the family in the House of Skulltula."
+        }
+      ]
+    },
+    {
+      "id": "c03-wrap-up",
+      "title": "Castle Town and Kakariko",
+      "subtitle": "Child · Cleanup",
+      "steps": [
+        {
+          "id": "oot-0441",
+          "text": "Leave Kokiri Forest for Hyrule Field and go north to Hyrule Castle Town, crossing the drawbridge while it is still daylight.",
+          "kind": "side",
+          "detail": "The drawbridge is raised at night, so you have to be inside before dark and change the time from in there."
+        },
+        {
+          "id": "oot-0442",
+          "text": "Play the Sun's Song inside the Market to turn it to night.",
+          "kind": "side",
+          "detail": "Time does not pass by itself in the Market, so the song is the only way to flip it. Dogs now run loose in the square; touching the wrong one makes it trail you until you leave the area."
+        },
+        {
+          "id": "oot-0443",
+          "text": "Go to the blue vendor stand near the Bazaar and touch the white puppy, Richard, so he follows you.",
+          "kind": "side",
+          "detail": "The stand is under the window with the man leaning out of it. Richard is the small white dog; the others are no use."
+        },
+        {
+          "id": "oot-0444",
+          "text": "Lead Richard to the right-hand side of the square and out through either exit into the Back Alley.",
+          "kind": "side",
+          "detail": "Glance back now and then to check he is still with you. If he wandered off, walk back and touch him again."
+        },
+        {
+          "id": "oot-0445",
+          "text": "In the Back Alley, go to the left side and take Richard through the one door that is only open at night.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0446",
+          "text": "Talk to the woman in the blue dress inside; she recognises Richard and hands over a Piece of Heart.",
+          "kind": "side",
+          "collect": {
+            "counter": "heart",
+            "n": 9
+          }
+        },
+        {
+          "id": "oot-0447",
+          "text": "Leave Castle Town and cross Hyrule Field back to Kakariko Village.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0448",
+          "text": "Go into the House of Skulltula.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-0449",
+          "text": "Talk to the newly freed family member for the Stone of Agony.",
+          "kind": "side",
+          "detail": "The 20-token reward. It chimes whenever you are near a hidden secret, and rumbles the controller on N64 if a Rumble Pak is in. It only really earns its keep once you have Bombs."
+        }
+      ]
+    }
+  ]
+}

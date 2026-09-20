@@ -2,152 +2,773 @@
   "id": "oot",
   "title": "Ocarina of Time",
   "counters": [
-    { "id": "heart", "label": "Heart pieces", "unit": "Heart piece", "total": 36 },
-    { "id": "skulltula", "label": "Skulltulas", "unit": "Skulltula", "total": 100 },
-    { "id": "song", "label": "Songs", "unit": "Song", "total": 12 },
-    { "id": "bottle", "label": "Bottles", "unit": "Bottle", "total": 4 },
-    { "id": "upgrade", "label": "Upgrades", "unit": "Upgrade", "total": 23 }
+    {
+      "id": "heart",
+      "label": "Heart pieces",
+      "unit": "Heart piece",
+      "total": 36
+    },
+    {
+      "id": "skulltula",
+      "label": "Skulltulas",
+      "unit": "Skulltula",
+      "total": 100
+    },
+    {
+      "id": "song",
+      "label": "Songs",
+      "unit": "Song",
+      "total": 12
+    },
+    {
+      "id": "bottle",
+      "label": "Bottles",
+      "unit": "Bottle",
+      "total": 4
+    },
+    {
+      "id": "upgrade",
+      "label": "Upgrades",
+      "unit": "Upgrade",
+      "total": 23
+    }
   ],
   "sections": [
-    { "id": "c15-temple-of-time", "title": "Temple of Time", "subtitle": "Adult", "steps": [
-      { "id": "oot-2101", "text": "Play the Prelude of Light to warp into the Temple of Time and watch Sheik's final scene.", "detail": "After the sixth Sage awakens, Rauru's vision sends you here. Sheik explains how the Triforce split: Power stayed with Ganondorf, Courage went to you and Wisdom to Sheik, who is revealed to be Princess Zelda." },
-      { "id": "oot-2102", "text": "Receive the Light Arrows from Zelda and set them on a C button.", "detail": "They cost magic per shot. They are the only way to break the six barriers in Ganon's Castle and to stun Ganondorf. Right after, Ganondorf traps Zelda in a crystal and dares you to come to his castle. Do the cleanup below before going." }
-    ] },
-    { "id": "c15-zoras-fountain", "title": "Zora's Fountain", "subtitle": "Adult · Cleanup", "steps": [
-      { "id": "oot-2103", "text": "Go to Zora's Fountain at night and find the lone silver boulder in the southeast corner, by the Great Fairy Fountain entrance.", "detail": "Reach it through Zora's Domain, along the passage beside King Zora. Play the Sun's Song if it is daytime: the reference says this Gold Skulltula only appears at night." },
-      { "id": "oot-2104", "text": "Lift the silver boulder with the Silver Gauntlets and drop into the hole underneath.", "detail": "If a normal boulder still covers the hole after lifting, bomb it first." },
-      { "id": "oot-2105", "text": "Turn on the Lens of Truth and walk the grotto passage past the invisible Skulltulas hanging from the ceiling.", "detail": "Kill them with the Longshot or sword as they show up, or slip under them; without the Lens they hit you unseen." },
-      { "id": "oot-2106", "text": "Climb up at the end of the passage and kill the Skulltula waiting at the top." },
-      { "id": "oot-2107", "text": "Kill the Gold Skulltula on the left wall and grab its token: number 100.", "detail": "Check the Quest Status screen: the token count should read 100.", "collect": { "counter": "skulltula", "n": 100 } }
-    ] },
-    { "id": "c15-kakariko-house-of-skulltula", "title": "Kakariko Village", "subtitle": "Adult · Cleanup", "steps": [
-      { "id": "oot-2108", "text": "Enter the House of Skulltula in Kakariko Village and talk to the man in the middle of the room for the Huge Rupee (200 Rupees).", "detail": "He pays 200 Rupees again every time you leave and re-enter: handy for the Blue Potions before the castle." }
-    ] },
-    { "id": "c15-gerudo-training-ground", "title": "Gerudo Training Ground", "subtitle": "Adult · Dungeon", "steps": [
-      { "id": "oot-2109", "text": "Ride Epona to Gerudo's Fortress and pay the guard in white in front of the barred gate 10 Rupees to enter the Gerudo Training Ground.", "detail": "Requires the Gerudo Membership Card. Bring everything: Fairy Bow, Megaton Hammer, Longshot, Lens of Truth, Hover Boots, Iron Boots, Zora Tunic, Silver Gauntlets, Bombs, plus the Scarecrow's Song, Song of Time and Song of Storms. Nine Small Keys are inside; the prize is the Ice Arrows." },
-      { "id": "oot-2110", "text": "In the entrance room, turn around and shoot the gold eye switch above the door you came in, then open the two chests that appear for a Blue Rupee and Arrows." },
-      { "id": "oot-2111", "text": "Take the door on the left.", "detail": "The left and right doors form one loop; the middle door leads to the locked maze and the prize, so save it for last." },
-      { "id": "oot-2112", "text": "Kill both Stalfos within the one-minute limit and open the chest for Small Key 1, then go through the next door.", "detail": "Keep moving so the sand does not slow you. Walk up with the shield raised so they drop their guard, then stab. Biggoron's Sword ends it fast." },
-      { "id": "oot-2113", "text": "Silver Rupee maze: run forward, turn left, wait for the boulder to roll past, then grab the Silver Rupee on the left (1 of 5).", "detail": "A 90-second timer covers all five. A Wallmaster hunts you the whole time: keep moving and ignore it. Some corridors have invisible flame walls." },
-      { "id": "oot-2114", "text": "Head right, ducking into the side alcoves when the boulder comes, and grab the Silver Rupee at the top (2 of 5)." },
-      { "id": "oot-2115", "text": "Enter the raised middle corridor (the one without flames), turn right and drop off the ledge onto the Silver Rupee (3 of 5)." },
-      { "id": "oot-2116", "text": "Go back through the middle corridor on the right side, wait for the boulder, then go clockwise around the corner for the Silver Rupee (4 of 5)." },
-      { "id": "oot-2117", "text": "Longshot the target on the ceiling straight ahead and drop onto the last Silver Rupee (5 of 5) to stop the timer and open the door." },
-      { "id": "oot-2118", "text": "Go up toward the open door, Longshot the target on the ceiling to get past the flame wall, and go through." },
-      { "id": "oot-2119", "text": "Kill the two Wolfos and two White Wolfos in the next room.", "detail": "Block their leap with the shield and hit them when they turn their back. A jump attack lands two hits." },
-      { "id": "oot-2120", "text": "Turn on the Lens of Truth to find the hidden alcove above the fake door, Longshot the target up there and step on the switch to open the two sealed doors below." },
-      { "id": "oot-2121", "text": "Jump back down and push the giant silver block all the way into the hole with the Silver Gauntlets, then enter the lower door that just opened." },
-      { "id": "oot-2122", "text": "Kill the three Like Likes so two chests appear, and open the two chests in front for Rupees.", "detail": "Do not open the chest on the raised platform: it is an ice trap. Like Likes swallow your shield and tunic; hit them from range with arrows or the Longshot, then finish with the sword." },
-      { "id": "oot-2123", "text": "Turn on the Lens of Truth over the last sandy pit to reveal a hidden chest and open it for Small Key 2." },
-      { "id": "oot-2124", "text": "Return to the Wolfos room, Longshot back up to the hidden alcove and go through its door." },
-      { "id": "oot-2125", "text": "Eye statue room: stand next to the barred door on this upper level, face Navi when she turns green and play the Scarecrow's Song so Pierre appears, then jump down.", "detail": "Pierre is your Longshot anchor to climb back up later. Falling in the lava only puts you back on the ring." },
-      { "id": "oot-2126", "text": "From the spinning outer ring, shoot each of the four eyes of the central statue once with an arrow, then Longshot the small chest that appears next to it for Small Key 3.", "detail": "Let the ring carry you level with each eye and fire without Z-targeting. Each hit makes an eye glow; all four make the chest appear." },
-      { "id": "oot-2127", "text": "Longshot the target near this area's entrance to get back up, then Longshot Pierre and go through the door that is no longer barred." },
-      { "id": "oot-2128", "text": "Open the small chest in this side room for Small Key 4.", "detail": "Use the Lens of Truth if you do not see the chest." },
-      { "id": "oot-2129", "text": "Go back, jump down again and take the lower door. Kill the two Fire Keese and the Torch Slugs there so the door opens and a small chest appears with minor items." },
-      { "id": "oot-2130", "text": "Smash the statues with the Megaton Hammer for items, then step on the switch hidden under the statue in the northeast corner (top right on the map)." },
-      { "id": "oot-2131", "text": "Quickly open the chest in the middle of the room for Small Key 5 before the flames come back, then go through the next door.", "detail": "If the flames return first, step on the switch again." },
-      { "id": "oot-2132", "text": "Lava room: walk forward a little, turn around and Longshot the target directly above you to drop onto the Silver Rupee (1 of 5)." },
-      { "id": "oot-2133", "text": "Jump down to the platform right in front of you for the Silver Rupee (2 of 5)." },
-      { "id": "oot-2134", "text": "Put on the Hover Boots, glide to the middle platform, face Navi when she turns green and play the Song of Time to make two Time Blocks appear." },
-      { "id": "oot-2135", "text": "Glide to the Time Blocks, climb to the top and open the chest for Small Key 6. Do not use the door up here.", "detail": "That door enters the locked maze from the far side and would cost extra keys." },
-      { "id": "oot-2136", "text": "Drop to the side of the platform with the lone floor switch and step on it to put out the fire on the platform across the room." },
-      { "id": "oot-2137", "text": "Glide along the row of platforms for the Silver Rupee (3 of 5), then run to the far side of the room for the next one (4 of 5)." },
-      { "id": "oot-2138", "text": "Hurry back to the middle of the room for the last Silver Rupee (5 of 5) and go through the east door.", "detail": "Take the middle one last: the door-opening scene plays where you stand, and on the far platform the lava can return during it." },
-      { "id": "oot-2139", "text": "Play the Song of Time to remove the Time Blocks, then equip the Iron Boots and Zora Tunic and sink to the floor." },
-      { "id": "oot-2140", "text": "Kill the four Shell Blades with the Longshot, staying clear of the Blade Trap in the middle of the floor." },
-      { "id": "oot-2141", "text": "Grab the Silver Rupee in the middle of the room, beside the Blade Trap (1 of 5)." },
-      { "id": "oot-2142", "text": "Face the Longshot target on the west wall with a Silver Rupee between you and it, then fire: you pass through it (2 of 5) and land on the next one (3 of 5)." },
-      { "id": "oot-2143", "text": "Do the same with the target on the east wall for the Silver Rupee there (4 of 5)." },
-      { "id": "oot-2144", "text": "Take off the Iron Boots and float up to the ceiling for the last Silver Rupee (5 of 5), then open the chest that appears for Small Key 7.", "detail": "The reference skips this key; it is the seventh of nine." },
-      { "id": "oot-2145", "text": "Return to the lava room, glide to the door on the left and go south. Bomb the Beamos right away, then kill both Dinalfos and open the chest that appears for Small Key 8.", "detail": "Dinalfos attack together no matter which one you target: run in, slash, back off, repeat." },
-      { "id": "oot-2146", "text": "Back in the entrance room, stand in the exact center, face Navi when she turns green and play the Song of Storms, then bottle the fairy." },
-      { "id": "oot-2147", "text": "Enter the middle door of the entrance room, take the door on the left, then turn on the Lens of Truth and look at the ceiling immediately to your left: climb the grating up through the hole and open the chest for Small Key 9." },
-      { "id": "oot-2148", "text": "Climb back down and open the locked doors along the left side one after another until you reach the center room.", "detail": "Seven keys are enough on this side, so you have spares. The small chests along the way hold only minor items." },
-      { "id": "oot-2149", "text": "Open the big chest in the center for the Ice Arrows, then leave the Gerudo Training Ground." }
-    ] },
-    { "id": "c15-ganons-castle-1", "title": "Ganon's Castle", "subtitle": "Adult · Dungeon", "steps": [
-      { "id": "oot-2150", "text": "Stock up: fill two bottles with fairies and two with Blue Potion from Granny's Potion Shop in Kakariko Village (100 Rupees each).", "detail": "Money: the House of Skulltula pays 200 Rupees per visit. Fairies: Great Fairy Fountains, or Song of Storms spots such as the center of the Gerudo Training Ground entrance." },
-      { "id": "oot-2151", "text": "Warp to the Temple of Time, climb to the castle grounds and walk toward the broken path in front of Ganon's Castle. Rauru speaks and the six Sages form a rainbow bridge." },
-      { "id": "oot-2152", "text": "Cross the bridge, enter Ganon's Castle, run down the stairs past the Beamos and go through the door ahead." },
-      { "id": "oot-2153", "text": "Main room: turn on the Lens of Truth and look at the wall directly under the bridge that leads to the tower to find the hidden shop with Business Scrubs and fairies.", "detail": "Six colored beams feed the barrier around the tower; each doorway around the room is one trial and all six must be cleared. The Scrubs sell arrows, bombs, Deku Nuts and a shield; the fairies here are free for your bottles." },
-      { "id": "oot-2154", "text": "Enter the purple doorway first: the Shadow trial.", "detail": "Its prize, the Golden Gauntlets, is needed in the Fire and Light trials." },
-      { "id": "oot-2155", "text": "Shoot a Fire Arrow at the unlit torch on the lone platform to your right so a row of blocks appears for a few seconds, then run across them to the far platform, avoiding the Green Bubble.", "detail": "The chest next to the torch holds nothing important. Falling into the pit restarts the room." },
-      { "id": "oot-2156", "text": "Kill the Like Like on the far platform from a distance.", "detail": "Arrows or the Longshot from range; up close it can swallow you and spit you into the pit." },
-      { "id": "oot-2157", "text": "Shoot the unlit torch on either side of the room to bring the blocks back and jump to the next platform." },
-      { "id": "oot-2158", "text": "Relight the torch on this side if the blocks vanished, follow the blocks on the right down to the floor switch and step on it to make a big chest appear on the large platform." },
-      { "id": "oot-2159", "text": "Longshot back up to the large platform and open the big chest for the Golden Gauntlets.", "detail": "They let you lift the giant silver pillars and obelisks.", "collect": { "counter": "upgrade", "n": 18 } },
-      { "id": "oot-2160", "text": "Turn on the Lens of Truth, follow the invisible path to the rusted switch and hit it with the Megaton Hammer to open the door." },
-      { "id": "oot-2161", "text": "Longshot the unlit torch near the door to reach it, or walk the invisible middle path with the Lens of Truth, and go through." },
-      { "id": "oot-2162", "text": "Break the jars for arrows and magic, then shoot a Light Arrow at the golden orb to free Impa's power. She sends you back to the main room." }
-    ] },
-    { "id": "c15-ganons-castle-grounds", "title": "Ganon's Castle Grounds", "subtitle": "Adult", "steps": [
-      { "id": "oot-2163", "text": "Leave Ganon's Castle, go all the way to the left of the outdoor area and press A on the huge silver pillar against the wall to toss it with the Golden Gauntlets." },
-      { "id": "oot-2164", "text": "Enter the Great Fairy Fountain behind it and play Zelda's Lullaby on the Triforce emblem for Double Defense from the Great Fairy of Courage.", "detail": "All damage is halved from now on; your hearts get a white outline. This is the last Great Fairy.", "collect": { "counter": "upgrade", "n": 15 } }
-    ] },
-    { "id": "c15-ganons-castle-2", "title": "Ganon's Castle", "subtitle": "Adult · Dungeon", "steps": [
-      { "id": "oot-2165", "text": "Back in the main room, enter the green doorway: the Forest trial. Kill the Wolfos in the first room." },
-      { "id": "oot-2166", "text": "Light all five torches, four in the middle and one above the door, with Din's Fire or Fire Arrows to open the door.", "detail": "One Din's Fire from the center lights the four; use a Fire Arrow for the one above the door." },
-      { "id": "oot-2167", "text": "Fan room: put on the Hover Boots, face the Silver Rupee right on your left and play the Song of Time.", "detail": "Falling into a pit restarts the room; keep the Hover Boots on for all of it." },
-      { "id": "oot-2168", "text": "Wait until the fan is blowing, then step into the gust to be carried through the Silver Rupee (1 of 5) onto the platform on the left side." },
-      { "id": "oot-2169", "text": "Throw a Bomb at the Beamos on the center pillar to destroy it." },
-      { "id": "oot-2170", "text": "Jump to the small platform with the floor switch and step on it, then turn around and Longshot the target on the platform you just left to pass through the Silver Rupee in mid-air (2 of 5)." },
-      { "id": "oot-2171", "text": "Cross over the center pillar to the other side of the room for the Silver Rupee there (3 of 5)." },
-      { "id": "oot-2172", "text": "Head toward the barred door for the Silver Rupee in front of it (4 of 5)." },
-      { "id": "oot-2173", "text": "Climb up, wait until the fan on your right stops blowing, grab the last Silver Rupee (5 of 5) and go through the door." },
-      { "id": "oot-2174", "text": "Break the jars, shoot a Light Arrow at the golden orb to free Saria's power, and return to the main room." },
-      { "id": "oot-2175", "text": "Put on the Goron Tunic and Hover Boots and enter the red doorway: the Fire trial.", "detail": "Most platforms sink into the lava while you stand on them. Hovering over the central zigzag platform keeps it from sinking. Falling in restarts the room." },
-      { "id": "oot-2176", "text": "Jump to the middle platform, then onto the square block on the right for the Silver Rupee (1 of 5), and jump straight back." },
-      { "id": "oot-2177", "text": "Go around to the solid platform across from it, jump up between the sweeps of fire, climb and circle around its back for the Silver Rupee (2 of 5)." },
-      { "id": "oot-2178", "text": "Back on the middle platform, ignore the Red Bubbles and go to the far end of the left side, where a sinking block holds a Recovery Heart. Jump to it, then onto the narrow platform, and climb up." },
-      { "id": "oot-2179", "text": "Toss the giant pillar up here with the Golden Gauntlets and grab the Silver Rupee it was hiding (3 of 5)." },
-      { "id": "oot-2180", "text": "Return to the middle platform, cross to the solid platform on the other side and kill the Torch Slug, but leave the Silver Rupee beside it for now." },
-      { "id": "oot-2181", "text": "Jump to where the pillar stood, take off the Hover Boots, hop onto the sinking block for the Silver Rupee (4 of 5) and hop straight back." },
-      { "id": "oot-2182", "text": "Now collect the Silver Rupee next to the Torch Slug spot (5 of 5) to open the gate.", "detail": "Taking the sinking-block one last plays the gate scene while you sink into the lava." },
-      { "id": "oot-2183", "text": "Put the Hover Boots back on, cross the zigzag platform, Longshot the target by the door and go through." },
-      { "id": "oot-2184", "text": "Break the jars, shoot a Light Arrow at the golden orb to free Darunia's power, and return to the main room." },
-      { "id": "oot-2185", "text": "Enter the blue doorway on the lower level: the Water trial. Run forward so the two Freezards appear and kill them while they slide across the room.", "detail": "Watch the stalactites dropping from the ceiling. These Freezards slide toward you before breathing ice; slash them as they slide and they never get to breathe." },
-      { "id": "oot-2186", "text": "Break the ice stalagmites, scoop Blue Fire into a bottle and pour it on the Red Ice blocking the door." },
-      { "id": "oot-2187", "text": "Refill a bottle with Blue Fire before leaving, open the chest on the right for a Recovery Heart, skip the one on the left, and go through the door.", "detail": "The left chest is an ice trap. You need Blue Fire again in the next room." },
-      { "id": "oot-2188", "text": "Ice block room: push the block farthest from the door toward the giant snowball, then into the hole." },
-      { "id": "oot-2189", "text": "Push the block nearest the door you came from toward the snowball, then up against the first block, then toward the ledge with the Red Ice." },
-      { "id": "oot-2190", "text": "Climb the blocks, melt the Red Ice with the Blue Fire, hit the rusted switch with the Megaton Hammer and run through the door before it closes." },
-      { "id": "oot-2191", "text": "Break the jars, shoot a Light Arrow at the golden orb to free Ruto's power, and return to the main room." },
-      { "id": "oot-2192", "text": "Enter the orange doorway: the Spirit trial. Bomb the Beamos, then Longshot the target above to snatch the Silver Rupee in mid-air (1 of 5)." },
-      { "id": "oot-2193", "text": "Pull the Armos statues back one at a time to reach the Silver Rupees against the walls behind them (5 of 5), then go through the door.", "detail": "Grab a statue from the front and pull; do not bump it or it wakes up and hops at you." },
-      { "id": "oot-2194", "text": "Kill the two Torch Slugs, then hit the crystal switch on the other side of the fence with a spin attack and open the chest that drops for Bombchus.", "detail": "On the N64 the switch sits just past the fence; a charged spin attack reaches it through the bars." },
-      { "id": "oot-2195", "text": "Stand in line with the opening above the barred fence, facing the crystal switch far across the room, and release a Bombchu so it crawls over and explodes on the switch.", "detail": "It opens the next door. Try again with another Bombchu if it goes wide." },
-      { "id": "oot-2196", "text": "Run left into the room ringed with Sun Faces and burn the cobweb over the skylight with a Fire Arrow.", "detail": "Without Fire Arrows, line up an ordinary arrow so it passes through the flame of a torch in the previous room and ignites." },
-      { "id": "oot-2197", "text": "Reflect the sunlight with the Mirror Shield onto the Sun Face just around the corner to the left of where you entered to open the door.", "detail": "Leave the other Sun Faces alone: each one drops a Wallmaster." },
-      { "id": "oot-2198", "text": "Break the jars, shoot a Light Arrow at the golden orb to free Nabooru's power, and return to the main room." },
-      { "id": "oot-2199", "text": "Toss the giant silver obelisk in front of the last doorway with the Golden Gauntlets and enter the Light trial." },
-      { "id": "oot-2200", "text": "Turn on the Lens of Truth, kill the Skulltula in the center with the Longshot or an arrow, then, without moving, shoot the three invisible Keese around the room." },
-      { "id": "oot-2201", "text": "Open the small chest that appears for a Small Key and leave the other chests alone.", "detail": "Half of them are ice traps; only the chests the Keese were sitting on hold items." },
-      { "id": "oot-2202", "text": "Unlock the door, stand on the Triforce emblem in the next room and play Zelda's Lullaby, then open the chest for another Small Key." },
-      { "id": "oot-2203", "text": "Boulder room: grab the Silver Rupees in the alcoves on the left and right sides (2 of 5) while avoiding the two rolling boulders.", "detail": "They both roll clockwise. If one hits you they bounce off each other and start crossing, which makes the room much harder." },
-      { "id": "oot-2204", "text": "Collect the two Silver Rupees in the cubbies of the center platform (4 of 5)." },
-      { "id": "oot-2205", "text": "Stand in the middle of the center platform and Longshot straight up for the last Silver Rupee (5 of 5), then go through the door." },
-      { "id": "oot-2206", "text": "In the seemingly empty room, turn on the Lens of Truth: the far wall is fake. Walk through it, break the jars and shoot a Light Arrow at the golden orb to free Rauru's power." }
-    ] },
-    { "id": "c15-ganons-tower", "title": "Ganon's Tower", "subtitle": "Adult · Dungeon", "steps": [
-      { "id": "oot-2207", "text": "With all six barriers gone and the shield around the tower down, refill your bottles with fairies at the hidden shop, then cross the bridge into the tower.", "missable": "Finish every other collectible before this: after the ending the N64 game returns to the title screen, with no post-credits save." },
-      { "id": "oot-2208", "text": "Run through the first hallway past the Fire Keese, kill the two Dinalfos to open the door and climb the stairs.", "detail": "Both Dinalfos attack at once regardless of targeting; run in, slash and back off." },
-      { "id": "oot-2209", "text": "Kill the two Stalfos and open the chest that appears for the Boss Key, then go through the door and up the next stairs.", "detail": "Kill the second one quickly or the first gets back up. Approach with the shield raised so they drop their guard, then stab." },
-      { "id": "oot-2210", "text": "Wake the two Iron Knuckles (one black, one white) one at a time by hitting them, defeat each, and climb the stairs to the Boss Door.", "detail": "They stay dormant until struck. Sidestep the axe swings and hit them from behind; Biggoron's Sword shortens it a lot." },
-      { "id": "oot-2211", "text": "Open the Boss Door, leave most of the jars in this room for the fight, take the next door and climb the stairs to the final door.", "detail": "This jar room is the lower level of the boss arena: you can drop down to it mid-fight for arrows and magic." },
-      { "id": "oot-2212", "text": "Defeat Ganondorf: bat his energy orbs back with the sword until he is stunned, shoot him with a Light Arrow, then slash him on the floor. Repeat until he falls.", "detail": "Navi cannot approach, so there is no Z-targeting. Stay on the raised ring, ideally a corner tile: corners never fall, while his slams and punches destroy tiles near the center, so do not linger on the middle platform. Swing as the orb arrives (like Phantom Ganon); a bottle also deflects it. When he raises his arms and gathers dark energy, shoot him with a Light Arrow while he charges, or release a charged spin attack as the lightning balls arrive, or sidestep at the last second (the shield does not block it). Hover Boots make the jump to the center safe; with normal boots a jump attack adds damage. Out of arrows or magic: drop to the lower level, where he does not attack, and break the jars. Biggoron's Sword speeds it up." }
-    ] },
-    { "id": "c15-escape", "title": "Escaping Ganon's Tower", "subtitle": "Adult", "steps": [
-      { "id": "oot-2213", "text": "After Zelda is freed, follow her down the ramp and through each door she opens, dodging the falling flaming rocks.", "detail": "You have three minutes. Stay close behind her; the doors only open when she reaches them." },
-      { "id": "oot-2214", "text": "Stalfos room: when flames trap Zelda, kill the two Stalfos quickly, pick up the Recovery Hearts she leaves and keep following her.", "detail": "Same rule as before: if the second one takes too long, the first revives." },
-      { "id": "oot-2215", "text": "Outside, drop off the ledge close to the wall and go through the door Zelda opens." },
-      { "id": "oot-2216", "text": "In the main room, run past the ReDead on the bridge, down the last stairs and out through the exit. Watch the tower collapse.", "detail": "If the ReDead freezes you, mash to break free, or play the Sun's Song from a distance to freeze it first." }
-    ] },
-    { "id": "c15-ganon", "title": "Ganon", "subtitle": "Adult", "steps": [
-      { "id": "oot-2217", "text": "After the tower falls, walk toward the pile of rubble to trigger the scene: Ganondorf transforms into Ganon." },
-      { "id": "oot-2218", "text": "Phase 1: roll between Ganon's legs, strike his tail with the Megaton Hammer or Biggoron's Sword, and back away before he turns. Repeat until he collapses.", "detail": "He knocks the Master Sword outside the ring of fire at the start. His only attack is a sword swipe: roll or sidestep it. Alternative: stun him (Deku Nut, Longshot, Din's Fire or Light Arrow, from shortest to longest stun), side-hop behind him and hit the tail with an arrow, the Longshot or a melee hit. Z-targeting picks his face from the front and his tail from behind. If he smashes the ruins around the arena they drop fairies, magic, bombs and arrows. Nayru's Love helps if you struggle. About ten hits." },
-      { "id": "oot-2219", "text": "When the fire barrier drops, run out and grab the Master Sword, then hit his tail the same way until he collapses again.", "detail": "He is faster now. The finishing blow only counts with the Master Sword: Biggoron's Sword and the hammer still weaken him but never trigger the end. About ten more hits." },
-      { "id": "oot-2220", "text": "When Zelda holds Ganon with her light, run up and slash his head with the Master Sword for the final blow, then watch the ending and credits.", "detail": "Ganon rises briefly and the Sages seal him in the Sacred Realm. Zelda takes the Ocarina of Time back and sends you home; after the credits, Link returns the Master Sword to its pedestal and meets Zelda in the castle garden. The N64 version returns to the title screen: your last save stays before the tower." }
-    ] }
+    {
+      "id": "c15-temple-of-time",
+      "title": "Temple of Time",
+      "subtitle": "Adult",
+      "steps": [
+        {
+          "id": "oot-2101",
+          "text": "Play the Prelude of Light to warp into the Temple of Time and watch Sheik's final scene.",
+          "detail": "After the sixth Sage awakens, Rauru's vision sends you here. Sheik explains how the Triforce split: Power stayed with Ganondorf, Courage went to you and Wisdom to Sheik, who is revealed to be Princess Zelda.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2102",
+          "text": "Receive the Light Arrows from Zelda and set them on a C button.",
+          "detail": "They cost magic per shot. They are the only way to break the six barriers in Ganon's Castle and to stun Ganondorf. Right after, Ganondorf traps Zelda in a crystal and dares you to come to his castle. Do the cleanup below before going.",
+          "kind": "main"
+        }
+      ]
+    },
+    {
+      "id": "c15-zoras-fountain",
+      "title": "Zora's Fountain",
+      "subtitle": "Adult \u00b7 Cleanup",
+      "steps": [
+        {
+          "id": "oot-2103",
+          "text": "Go to Zora's Fountain at night and find the lone silver boulder in the southeast corner, by the Great Fairy Fountain entrance.",
+          "detail": "Reach it through Zora's Domain, along the passage beside King Zora. Play the Sun's Song if it is daytime: the reference says this Gold Skulltula only appears at night.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2104",
+          "text": "Lift the silver boulder with the Silver Gauntlets and drop into the hole underneath.",
+          "detail": "If a normal boulder still covers the hole after lifting, bomb it first.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2105",
+          "text": "Turn on the Lens of Truth and walk the grotto passage past the invisible Skulltulas hanging from the ceiling.",
+          "detail": "Kill them with the Longshot or sword as they show up, or slip under them; without the Lens they hit you unseen.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2106",
+          "text": "Climb up at the end of the passage and kill the Skulltula waiting at the top.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2107",
+          "text": "Kill the Gold Skulltula on the left wall and grab its token: number 100.",
+          "detail": "Check the Quest Status screen: the token count should read 100.",
+          "collect": {
+            "counter": "skulltula",
+            "n": 100
+          },
+          "kind": "side"
+        }
+      ]
+    },
+    {
+      "id": "c15-kakariko-house-of-skulltula",
+      "title": "Kakariko Village",
+      "subtitle": "Adult \u00b7 Cleanup",
+      "steps": [
+        {
+          "id": "oot-2108",
+          "text": "Enter the House of Skulltula in Kakariko Village and talk to the man in the middle of the room for the Huge Rupee (200 Rupees).",
+          "detail": "He pays 200 Rupees again every time you leave and re-enter: handy for the Blue Potions before the castle.",
+          "kind": "side"
+        }
+      ]
+    },
+    {
+      "id": "c15-gerudo-training-ground",
+      "title": "Gerudo Training Ground",
+      "subtitle": "Adult \u00b7 Dungeon",
+      "steps": [
+        {
+          "id": "oot-2109",
+          "text": "Ride Epona to Gerudo's Fortress and pay the guard in white in front of the barred gate 10 Rupees to enter the Gerudo Training Ground.",
+          "detail": "Requires the Gerudo Membership Card. Bring everything: Fairy Bow, Megaton Hammer, Longshot, Lens of Truth, Hover Boots, Iron Boots, Zora Tunic, Silver Gauntlets, Bombs, plus the Scarecrow's Song, Song of Time and Song of Storms. Nine Small Keys are inside; the prize is the Ice Arrows.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2110",
+          "text": "In the entrance room, turn around and shoot the gold eye switch above the door you came in, then open the two chests that appear for a Blue Rupee and Arrows.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2111",
+          "text": "Take the door on the left.",
+          "detail": "The left and right doors form one loop; the middle door leads to the locked maze and the prize, so save it for last.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2112",
+          "text": "Kill both Stalfos within the one-minute limit and open the chest for Small Key 1, then go through the next door.",
+          "detail": "Keep moving so the sand does not slow you. Walk up with the shield raised so they drop their guard, then stab. Biggoron's Sword ends it fast.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2113",
+          "text": "Silver Rupee maze: run forward, turn left, wait for the boulder to roll past, then grab the Silver Rupee on the left (1 of 5).",
+          "detail": "A 90-second timer covers all five. A Wallmaster hunts you the whole time: keep moving and ignore it. Some corridors have invisible flame walls.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2114",
+          "text": "Head right, ducking into the side alcoves when the boulder comes, and grab the Silver Rupee at the top (2 of 5).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2115",
+          "text": "Enter the raised middle corridor (the one without flames), turn right and drop off the ledge onto the Silver Rupee (3 of 5).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2116",
+          "text": "Go back through the middle corridor on the right side, wait for the boulder, then go clockwise around the corner for the Silver Rupee (4 of 5).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2117",
+          "text": "Longshot the target on the ceiling straight ahead and drop onto the last Silver Rupee (5 of 5) to stop the timer and open the door.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2118",
+          "text": "Go up toward the open door, Longshot the target on the ceiling to get past the flame wall, and go through.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2119",
+          "text": "Kill the two Wolfos and two White Wolfos in the next room.",
+          "detail": "Block their leap with the shield and hit them when they turn their back. A jump attack lands two hits.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2120",
+          "text": "Turn on the Lens of Truth to find the hidden alcove above the fake door, Longshot the target up there and step on the switch to open the two sealed doors below.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2121",
+          "text": "Jump back down and push the giant silver block all the way into the hole with the Silver Gauntlets, then enter the lower door that just opened.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2122",
+          "text": "Kill the three Like Likes so two chests appear, and open the two chests in front for Rupees.",
+          "detail": "Do not open the chest on the raised platform: it is an ice trap. Like Likes swallow your shield and tunic; hit them from range with arrows or the Longshot, then finish with the sword.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2123",
+          "text": "Turn on the Lens of Truth over the last sandy pit to reveal a hidden chest and open it for Small Key 2.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2124",
+          "text": "Return to the Wolfos room, Longshot back up to the hidden alcove and go through its door.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2125",
+          "text": "Eye statue room: stand next to the barred door on this upper level, face Navi when she turns green and play the Scarecrow's Song so Pierre appears, then jump down.",
+          "detail": "Pierre is your Longshot anchor to climb back up later. Falling in the lava only puts you back on the ring.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2126",
+          "text": "From the spinning outer ring, shoot each of the four eyes of the central statue once with an arrow, then Longshot the small chest that appears next to it for Small Key 3.",
+          "detail": "Let the ring carry you level with each eye and fire without Z-targeting. Each hit makes an eye glow; all four make the chest appear.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2127",
+          "text": "Longshot the target near this area's entrance to get back up, then Longshot Pierre and go through the door that is no longer barred.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2128",
+          "text": "Open the small chest in this side room for Small Key 4.",
+          "detail": "Use the Lens of Truth if you do not see the chest.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2129",
+          "text": "Go back, jump down again and take the lower door. Kill the two Fire Keese and the Torch Slugs there so the door opens and a small chest appears with minor items.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2130",
+          "text": "Smash the statues with the Megaton Hammer for items, then step on the switch hidden under the statue in the northeast corner (top right on the map).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2131",
+          "text": "Quickly open the chest in the middle of the room for Small Key 5 before the flames come back, then go through the next door.",
+          "detail": "If the flames return first, step on the switch again.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2132",
+          "text": "Lava room: walk forward a little, turn around and Longshot the target directly above you to drop onto the Silver Rupee (1 of 5).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2133",
+          "text": "Jump down to the platform right in front of you for the Silver Rupee (2 of 5).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2134",
+          "text": "Put on the Hover Boots, glide to the middle platform, face Navi when she turns green and play the Song of Time to make two Time Blocks appear.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2135",
+          "text": "Glide to the Time Blocks, climb to the top and open the chest for Small Key 6. Do not use the door up here.",
+          "detail": "That door enters the locked maze from the far side and would cost extra keys.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2136",
+          "text": "Drop to the side of the platform with the lone floor switch and step on it to put out the fire on the platform across the room.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2137",
+          "text": "Glide along the row of platforms for the Silver Rupee (3 of 5), then run to the far side of the room for the next one (4 of 5).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2138",
+          "text": "Hurry back to the middle of the room for the last Silver Rupee (5 of 5) and go through the east door.",
+          "detail": "Take the middle one last: the door-opening scene plays where you stand, and on the far platform the lava can return during it.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2139",
+          "text": "Play the Song of Time to remove the Time Blocks, then equip the Iron Boots and Zora Tunic and sink to the floor.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2140",
+          "text": "Kill the four Shell Blades with the Longshot, staying clear of the Blade Trap in the middle of the floor.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2141",
+          "text": "Grab the Silver Rupee in the middle of the room, beside the Blade Trap (1 of 5).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2142",
+          "text": "Face the Longshot target on the west wall with a Silver Rupee between you and it, then fire: you pass through it (2 of 5) and land on the next one (3 of 5).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2143",
+          "text": "Do the same with the target on the east wall for the Silver Rupee there (4 of 5).",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2144",
+          "text": "Take off the Iron Boots and float up to the ceiling for the last Silver Rupee (5 of 5), then open the chest that appears for Small Key 7.",
+          "detail": "The reference skips this key; it is the seventh of nine.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2145",
+          "text": "Return to the lava room, glide to the door on the left and go south. Bomb the Beamos right away, then kill both Dinalfos and open the chest that appears for Small Key 8.",
+          "detail": "Dinalfos attack together no matter which one you target: run in, slash, back off, repeat.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2146",
+          "text": "Back in the entrance room, stand in the exact center, face Navi when she turns green and play the Song of Storms, then bottle the fairy.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2147",
+          "text": "Enter the middle door of the entrance room, take the door on the left, then turn on the Lens of Truth and look at the ceiling immediately to your left: climb the grating up through the hole and open the chest for Small Key 9.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2148",
+          "text": "Climb back down and open the locked doors along the left side one after another until you reach the center room.",
+          "detail": "Seven keys are enough on this side, so you have spares. The small chests along the way hold only minor items.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2149",
+          "text": "Open the big chest in the center for the Ice Arrows, then leave the Gerudo Training Ground.",
+          "kind": "side"
+        }
+      ]
+    },
+    {
+      "id": "c15-ganons-castle-1",
+      "title": "Ganon's Castle",
+      "subtitle": "Adult \u00b7 Dungeon",
+      "steps": [
+        {
+          "id": "oot-2150",
+          "text": "Stock up: fill two bottles with fairies and two with Blue Potion from Granny's Potion Shop in Kakariko Village (100 Rupees each).",
+          "detail": "Money: the House of Skulltula pays 200 Rupees per visit. Fairies: Great Fairy Fountains, or Song of Storms spots such as the center of the Gerudo Training Ground entrance.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2151",
+          "text": "Warp to the Temple of Time, climb to the castle grounds and walk toward the broken path in front of Ganon's Castle. Rauru speaks and the six Sages form a rainbow bridge.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2152",
+          "text": "Cross the bridge, enter Ganon's Castle, run down the stairs past the Beamos and go through the door ahead.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2153",
+          "text": "Main room: turn on the Lens of Truth and look at the wall directly under the bridge that leads to the tower to find the hidden shop with Business Scrubs and fairies.",
+          "detail": "Six colored beams feed the barrier around the tower; each doorway around the room is one trial and all six must be cleared. The Scrubs sell arrows, bombs, Deku Nuts and a shield; the fairies here are free for your bottles.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2154",
+          "text": "Enter the purple doorway first: the Shadow trial.",
+          "detail": "Its prize, the Golden Gauntlets, is needed in the Fire and Light trials.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2155",
+          "text": "Shoot a Fire Arrow at the unlit torch on the lone platform to your right so a row of blocks appears for a few seconds, then run across them to the far platform, avoiding the Green Bubble.",
+          "detail": "The chest next to the torch holds nothing important. Falling into the pit restarts the room.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2156",
+          "text": "Kill the Like Like on the far platform from a distance.",
+          "detail": "Arrows or the Longshot from range; up close it can swallow you and spit you into the pit.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2157",
+          "text": "Shoot the unlit torch on either side of the room to bring the blocks back and jump to the next platform.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2158",
+          "text": "Relight the torch on this side if the blocks vanished, follow the blocks on the right down to the floor switch and step on it to make a big chest appear on the large platform.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2159",
+          "text": "Longshot back up to the large platform and open the big chest for the Golden Gauntlets.",
+          "detail": "They let you lift the giant silver pillars and obelisks.",
+          "collect": {
+            "counter": "upgrade",
+            "n": 18
+          },
+          "kind": "main"
+        },
+        {
+          "id": "oot-2160",
+          "text": "Turn on the Lens of Truth, follow the invisible path to the rusted switch and hit it with the Megaton Hammer to open the door.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2161",
+          "text": "Longshot the unlit torch near the door to reach it, or walk the invisible middle path with the Lens of Truth, and go through.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2162",
+          "text": "Break the jars for arrows and magic, then shoot a Light Arrow at the golden orb to free Impa's power. She sends you back to the main room.",
+          "kind": "main"
+        }
+      ]
+    },
+    {
+      "id": "c15-ganons-castle-grounds",
+      "title": "Ganon's Castle Grounds",
+      "subtitle": "Adult",
+      "steps": [
+        {
+          "id": "oot-2163",
+          "text": "Leave Ganon's Castle, go all the way to the left of the outdoor area and press A on the huge silver pillar against the wall to toss it with the Golden Gauntlets.",
+          "kind": "side"
+        },
+        {
+          "id": "oot-2164",
+          "text": "Enter the Great Fairy Fountain behind it and play Zelda's Lullaby on the Triforce emblem for Double Defense from the Great Fairy of Courage.",
+          "detail": "All damage is halved from now on; your hearts get a white outline. This is the last Great Fairy.",
+          "collect": {
+            "counter": "upgrade",
+            "n": 15
+          },
+          "kind": "side"
+        }
+      ]
+    },
+    {
+      "id": "c15-ganons-castle-2",
+      "title": "Ganon's Castle",
+      "subtitle": "Adult \u00b7 Dungeon",
+      "steps": [
+        {
+          "id": "oot-2165",
+          "text": "Back in the main room, enter the green doorway: the Forest trial. Kill the Wolfos in the first room.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2166",
+          "text": "Light all five torches, four in the middle and one above the door, with Din's Fire or Fire Arrows to open the door.",
+          "detail": "One Din's Fire from the center lights the four; use a Fire Arrow for the one above the door.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2167",
+          "text": "Fan room: put on the Hover Boots, face the Silver Rupee right on your left and play the Song of Time.",
+          "detail": "Falling into a pit restarts the room; keep the Hover Boots on for all of it.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2168",
+          "text": "Wait until the fan is blowing, then step into the gust to be carried through the Silver Rupee (1 of 5) onto the platform on the left side.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2169",
+          "text": "Throw a Bomb at the Beamos on the center pillar to destroy it.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2170",
+          "text": "Jump to the small platform with the floor switch and step on it, then turn around and Longshot the target on the platform you just left to pass through the Silver Rupee in mid-air (2 of 5).",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2171",
+          "text": "Cross over the center pillar to the other side of the room for the Silver Rupee there (3 of 5).",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2172",
+          "text": "Head toward the barred door for the Silver Rupee in front of it (4 of 5).",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2173",
+          "text": "Climb up, wait until the fan on your right stops blowing, grab the last Silver Rupee (5 of 5) and go through the door.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2174",
+          "text": "Break the jars, shoot a Light Arrow at the golden orb to free Saria's power, and return to the main room.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2175",
+          "text": "Put on the Goron Tunic and Hover Boots and enter the red doorway: the Fire trial.",
+          "detail": "Most platforms sink into the lava while you stand on them. Hovering over the central zigzag platform keeps it from sinking. Falling in restarts the room.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2176",
+          "text": "Jump to the middle platform, then onto the square block on the right for the Silver Rupee (1 of 5), and jump straight back.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2177",
+          "text": "Go around to the solid platform across from it, jump up between the sweeps of fire, climb and circle around its back for the Silver Rupee (2 of 5).",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2178",
+          "text": "Back on the middle platform, ignore the Red Bubbles and go to the far end of the left side, where a sinking block holds a Recovery Heart. Jump to it, then onto the narrow platform, and climb up.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2179",
+          "text": "Toss the giant pillar up here with the Golden Gauntlets and grab the Silver Rupee it was hiding (3 of 5).",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2180",
+          "text": "Return to the middle platform, cross to the solid platform on the other side and kill the Torch Slug, but leave the Silver Rupee beside it for now.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2181",
+          "text": "Jump to where the pillar stood, take off the Hover Boots, hop onto the sinking block for the Silver Rupee (4 of 5) and hop straight back.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2182",
+          "text": "Now collect the Silver Rupee next to the Torch Slug spot (5 of 5) to open the gate.",
+          "detail": "Taking the sinking-block one last plays the gate scene while you sink into the lava.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2183",
+          "text": "Put the Hover Boots back on, cross the zigzag platform, Longshot the target by the door and go through.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2184",
+          "text": "Break the jars, shoot a Light Arrow at the golden orb to free Darunia's power, and return to the main room.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2185",
+          "text": "Enter the blue doorway on the lower level: the Water trial. Run forward so the two Freezards appear and kill them while they slide across the room.",
+          "detail": "Watch the stalactites dropping from the ceiling. These Freezards slide toward you before breathing ice; slash them as they slide and they never get to breathe.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2186",
+          "text": "Break the ice stalagmites, scoop Blue Fire into a bottle and pour it on the Red Ice blocking the door.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2187",
+          "text": "Refill a bottle with Blue Fire before leaving, open the chest on the right for a Recovery Heart, skip the one on the left, and go through the door.",
+          "detail": "The left chest is an ice trap. You need Blue Fire again in the next room.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2188",
+          "text": "Ice block room: push the block farthest from the door toward the giant snowball, then into the hole.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2189",
+          "text": "Push the block nearest the door you came from toward the snowball, then up against the first block, then toward the ledge with the Red Ice.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2190",
+          "text": "Climb the blocks, melt the Red Ice with the Blue Fire, hit the rusted switch with the Megaton Hammer and run through the door before it closes.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2191",
+          "text": "Break the jars, shoot a Light Arrow at the golden orb to free Ruto's power, and return to the main room.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2192",
+          "text": "Enter the orange doorway: the Spirit trial. Bomb the Beamos, then Longshot the target above to snatch the Silver Rupee in mid-air (1 of 5).",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2193",
+          "text": "Pull the Armos statues back one at a time to reach the Silver Rupees against the walls behind them (5 of 5), then go through the door.",
+          "detail": "Grab a statue from the front and pull; do not bump it or it wakes up and hops at you.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2194",
+          "text": "Kill the two Torch Slugs, then hit the crystal switch on the other side of the fence with a spin attack and open the chest that drops for Bombchus.",
+          "detail": "On the N64 the switch sits just past the fence; a charged spin attack reaches it through the bars.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2195",
+          "text": "Stand in line with the opening above the barred fence, facing the crystal switch far across the room, and release a Bombchu so it crawls over and explodes on the switch.",
+          "detail": "It opens the next door. Try again with another Bombchu if it goes wide.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2196",
+          "text": "Run left into the room ringed with Sun Faces and burn the cobweb over the skylight with a Fire Arrow.",
+          "detail": "Without Fire Arrows, line up an ordinary arrow so it passes through the flame of a torch in the previous room and ignites.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2197",
+          "text": "Reflect the sunlight with the Mirror Shield onto the Sun Face just around the corner to the left of where you entered to open the door.",
+          "detail": "Leave the other Sun Faces alone: each one drops a Wallmaster.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2198",
+          "text": "Break the jars, shoot a Light Arrow at the golden orb to free Nabooru's power, and return to the main room.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2199",
+          "text": "Toss the giant silver obelisk in front of the last doorway with the Golden Gauntlets and enter the Light trial.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2200",
+          "text": "Turn on the Lens of Truth, kill the Skulltula in the center with the Longshot or an arrow, then, without moving, shoot the three invisible Keese around the room.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2201",
+          "text": "Open the small chest that appears for a Small Key and leave the other chests alone.",
+          "detail": "Half of them are ice traps; only the chests the Keese were sitting on hold items.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2202",
+          "text": "Unlock the door, stand on the Triforce emblem in the next room and play Zelda's Lullaby, then open the chest for another Small Key.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2203",
+          "text": "Boulder room: grab the Silver Rupees in the alcoves on the left and right sides (2 of 5) while avoiding the two rolling boulders.",
+          "detail": "They both roll clockwise. If one hits you they bounce off each other and start crossing, which makes the room much harder.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2204",
+          "text": "Collect the two Silver Rupees in the cubbies of the center platform (4 of 5).",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2205",
+          "text": "Stand in the middle of the center platform and Longshot straight up for the last Silver Rupee (5 of 5), then go through the door.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2206",
+          "text": "In the seemingly empty room, turn on the Lens of Truth: the far wall is fake. Walk through it, break the jars and shoot a Light Arrow at the golden orb to free Rauru's power.",
+          "kind": "main"
+        }
+      ]
+    },
+    {
+      "id": "c15-ganons-tower",
+      "title": "Ganon's Tower",
+      "subtitle": "Adult \u00b7 Dungeon",
+      "steps": [
+        {
+          "id": "oot-2207",
+          "text": "With all six barriers gone and the shield around the tower down, refill your bottles with fairies at the hidden shop, then cross the bridge into the tower.",
+          "missable": "Finish every other collectible before this: after the ending the N64 game returns to the title screen, with no post-credits save.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2208",
+          "text": "Run through the first hallway past the Fire Keese, kill the two Dinalfos to open the door and climb the stairs.",
+          "detail": "Both Dinalfos attack at once regardless of targeting; run in, slash and back off.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2209",
+          "text": "Kill the two Stalfos and open the chest that appears for the Boss Key, then go through the door and up the next stairs.",
+          "detail": "Kill the second one quickly or the first gets back up. Approach with the shield raised so they drop their guard, then stab.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2210",
+          "text": "Wake the two Iron Knuckles (one black, one white) one at a time by hitting them, defeat each, and climb the stairs to the Boss Door.",
+          "detail": "They stay dormant until struck. Sidestep the axe swings and hit them from behind; Biggoron's Sword shortens it a lot.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2211",
+          "text": "Open the Boss Door, leave most of the jars in this room for the fight, take the next door and climb the stairs to the final door.",
+          "detail": "This jar room is the lower level of the boss arena: you can drop down to it mid-fight for arrows and magic.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2212",
+          "text": "Defeat Ganondorf: bat his energy orbs back with the sword until he is stunned, shoot him with a Light Arrow, then slash him on the floor. Repeat until he falls.",
+          "detail": "Navi cannot approach, so there is no Z-targeting. Stay on the raised ring, ideally a corner tile: corners never fall, while his slams and punches destroy tiles near the center, so do not linger on the middle platform. Swing as the orb arrives (like Phantom Ganon); a bottle also deflects it. When he raises his arms and gathers dark energy, shoot him with a Light Arrow while he charges, or release a charged spin attack as the lightning balls arrive, or sidestep at the last second (the shield does not block it). Hover Boots make the jump to the center safe; with normal boots a jump attack adds damage. Out of arrows or magic: drop to the lower level, where he does not attack, and break the jars. Biggoron's Sword speeds it up.",
+          "kind": "main"
+        }
+      ]
+    },
+    {
+      "id": "c15-escape",
+      "title": "Escaping Ganon's Tower",
+      "subtitle": "Adult",
+      "steps": [
+        {
+          "id": "oot-2213",
+          "text": "After Zelda is freed, follow her down the ramp and through each door she opens, dodging the falling flaming rocks.",
+          "detail": "You have three minutes. Stay close behind her; the doors only open when she reaches them.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2214",
+          "text": "Stalfos room: when flames trap Zelda, kill the two Stalfos quickly, pick up the Recovery Hearts she leaves and keep following her.",
+          "detail": "Same rule as before: if the second one takes too long, the first revives.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2215",
+          "text": "Outside, drop off the ledge close to the wall and go through the door Zelda opens.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2216",
+          "text": "In the main room, run past the ReDead on the bridge, down the last stairs and out through the exit. Watch the tower collapse.",
+          "detail": "If the ReDead freezes you, mash to break free, or play the Sun's Song from a distance to freeze it first.",
+          "kind": "main"
+        }
+      ]
+    },
+    {
+      "id": "c15-ganon",
+      "title": "Ganon",
+      "subtitle": "Adult",
+      "steps": [
+        {
+          "id": "oot-2217",
+          "text": "After the tower falls, walk toward the pile of rubble to trigger the scene: Ganondorf transforms into Ganon.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2218",
+          "text": "Phase 1: roll between Ganon's legs, strike his tail with the Megaton Hammer or Biggoron's Sword, and back away before he turns. Repeat until he collapses.",
+          "detail": "He knocks the Master Sword outside the ring of fire at the start. His only attack is a sword swipe: roll or sidestep it. Alternative: stun him (Deku Nut, Longshot, Din's Fire or Light Arrow, from shortest to longest stun), side-hop behind him and hit the tail with an arrow, the Longshot or a melee hit. Z-targeting picks his face from the front and his tail from behind. If he smashes the ruins around the arena they drop fairies, magic, bombs and arrows. Nayru's Love helps if you struggle. About ten hits.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2219",
+          "text": "When the fire barrier drops, run out and grab the Master Sword, then hit his tail the same way until he collapses again.",
+          "detail": "He is faster now. The finishing blow only counts with the Master Sword: Biggoron's Sword and the hammer still weaken him but never trigger the end. About ten more hits.",
+          "kind": "main"
+        },
+        {
+          "id": "oot-2220",
+          "text": "When Zelda holds Ganon with her light, run up and slash his head with the Master Sword for the final blow, then watch the ending and credits.",
+          "detail": "Ganon rises briefly and the Sages seal him in the Sacred Realm. Zelda takes the Ocarina of Time back and sends you home; after the credits, Link returns the Master Sword to its pedestal and meets Zelda in the castle garden. The N64 version returns to the title screen: your last save stays before the tower.",
+          "kind": "main"
+        }
+      ]
+    }
   ]
 }
