@@ -35,6 +35,9 @@ let view = 'all'; // 'all' | 'skipped' | 'flagged'
 
 // ---------- boot ----------
 async function boot() {
+  // The browser restores the previous scroll position after load, which would undo
+  // our jump to the current step. We place the view ourselves.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
   try { navigator.storage?.persist?.(); } catch { /* ignore */ }
   measureHeader();
@@ -77,7 +80,7 @@ async function loadGame() {
   recompute();
   renderAll();
   measureHeader();
-  requestAnimationFrame(() => scrollToCurrent(false));
+  placeViewOnCurrent();
   for (const w of warnings) notice(`Content incomplete: ${w}`, { id: `warn-${w.slice(0, 24)}` });
 }
 
@@ -263,18 +266,40 @@ function refreshRow(id) {
   old.replaceWith(renderRow(state.flat[i].step));
 }
 
+// Opening the app must land on the current step. An animation frame is not
+// enough on its own: a backgrounded tab never runs one, so try again on load
+// and when the page becomes visible, and stop as soon as it worked.
+let viewPlaced = false;
+function placeViewOnCurrent() {
+  if (viewPlaced) return;
+  viewPlaced = scrollToCurrent(false);
+  if (viewPlaced) return;
+  requestAnimationFrame(() => placeViewOnCurrent());
+  setTimeout(placeViewOnCurrent, 0);
+  window.addEventListener('load', placeViewOnCurrent, { once: true });
+  document.addEventListener('visibilitychange', function onVis() {
+    if (document.visibilityState !== 'visible') return;
+    document.removeEventListener('visibilitychange', onVis);
+    placeViewOnCurrent();
+  });
+}
+
 function scrollToCurrent(smooth = true) {
   if (view !== 'all') { view = 'all'; renderAll(); }
   // Past the last step, "next" is whatever was skipped along the way.
   const cur = state.flat[state.currentIndex] ?? state.flat[state.skipped[0]];
-  if (!cur) return;
+  if (!cur) return false;
   const det = els.main.querySelector(`details.section[data-id="${cur.section.id}"]`);
   if (det) {
     if (!det.open) { det.dataset.state = 'open'; det.open = true; }
     fillSection(det, game.sections.find((s) => s.id === cur.section.id));
   }
   const row = els.main.querySelector(`.row[data-id="${cur.step.id}"]`);
-  row?.scrollIntoView({ block: 'center', behavior: smooth ? 'smooth' : 'auto' });
+  if (!row) return false;
+  // Smooth scrolling across thousands of steps is a long slow ride; jump instead.
+  const far = Math.abs(row.getBoundingClientRect().top) > window.innerHeight * 2;
+  row.scrollIntoView({ block: 'center', behavior: smooth && !far ? 'smooth' : 'auto' });
+  return true;
 }
 
 function wireBottomBar() {
