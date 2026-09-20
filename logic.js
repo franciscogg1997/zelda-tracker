@@ -72,3 +72,96 @@ export function computeState(game, progress) {
   }));
   return { flat, index, furthest, currentIndex, complete, skipped, flagged, counters };
 }
+
+const STEP_KEYS = new Set(['id', 'text', 'detail', 'collect', 'missable']);
+const SECTION_KEYS = new Set(['id', 'title', 'subtitle', 'steps']);
+export const MAX_TEXT = 280;
+
+export function validateGame(game, { partial = false } = {}) {
+  const errors = [];
+  const warnings = [];
+  const summary = { steps: 0, sections: [], counters: [], missables: [] };
+  if (!isObj(game)) return { errors: ['game file is not a JSON object'], warnings, summary };
+  for (const k of ['id', 'title', 'counters', 'sections']) if (game[k] === undefined) errors.push(`missing top-level field "${k}"`);
+  if (errors.length) return { errors, warnings, summary };
+  if (typeof game.id !== 'string' || !/^[a-z0-9-]+$/.test(game.id)) errors.push('id must be a lowercase slug');
+  if (typeof game.title !== 'string' || !game.title.trim()) errors.push('title must be a non-empty string');
+  if (!Array.isArray(game.counters)) errors.push('counters must be an array');
+  if (!Array.isArray(game.sections)) errors.push('sections must be an array');
+  if (errors.length) return { errors, warnings, summary };
+
+  const counterIds = new Set();
+  for (const c of game.counters) {
+    if (!isObj(c) || typeof c.id !== 'string') { errors.push('counter without id'); continue; }
+    if (counterIds.has(c.id)) errors.push(`duplicate counter id "${c.id}"`);
+    counterIds.add(c.id);
+    if (typeof c.label !== 'string' || !c.label.trim()) errors.push(`counter ${c.id}: label required`);
+    if (c.unit !== undefined && (typeof c.unit !== 'string' || !c.unit.trim())) errors.push(`counter ${c.id}: unit must be a non-empty string`);
+    if (!Number.isInteger(c.total) || c.total <= 0) errors.push(`counter ${c.id}: total must be a positive integer`);
+  }
+
+  const idRe = new RegExp(`^${game.id}-\\d{4}$`);
+  const stepIds = new Set();
+  const sectionIds = new Set();
+  const seen = new Map(); // counterId -> Map(n -> stepId)
+  for (const s of game.sections) {
+    if (!isObj(s) || typeof s.id !== 'string') { errors.push('section without id'); continue; }
+    if (sectionIds.has(s.id)) errors.push(`duplicate section id "${s.id}"`);
+    sectionIds.add(s.id);
+    for (const k of Object.keys(s)) if (!SECTION_KEYS.has(k)) errors.push(`section ${s.id}: unknown field "${k}"`);
+    if (typeof s.title !== 'string' || !s.title.trim()) errors.push(`section ${s.id}: title required`);
+    if (!Array.isArray(s.steps) || s.steps.length === 0) { errors.push(`section ${s.id}: needs at least one step`); continue; }
+    summary.sections.push({ id: s.id, title: s.title, steps: s.steps.length });
+    for (const st of s.steps) {
+      if (!isObj(st) || typeof st.id !== 'string') { errors.push(`section ${s.id}: step without id`); continue; }
+      if (!idRe.test(st.id)) errors.push(`${st.id}: id must match ${game.id}-NNNN`);
+      if (stepIds.has(st.id)) errors.push(`${st.id}: duplicate step id`);
+      stepIds.add(st.id);
+      for (const k of Object.keys(st)) if (!STEP_KEYS.has(k)) errors.push(`${st.id}: unknown field "${k}"`);
+      if (typeof st.text !== 'string' || !st.text.trim()) errors.push(`${st.id}: text required`);
+      else if (st.text.length > MAX_TEXT) errors.push(`${st.id}: text longer than ${MAX_TEXT} chars (${st.text.length})`);
+      for (const k of ['detail', 'missable']) {
+        if (st[k] !== undefined && (typeof st[k] !== 'string' || !st[k].trim())) errors.push(`${st.id}: ${k} must be a non-empty string`);
+      }
+      if (st.missable) summary.missables.push({ id: st.id, text: st.missable });
+      if (st.collect !== undefined) {
+        const c = st.collect;
+        if (!isObj(c) || !counterIds.has(c.counter)) errors.push(`${st.id}: collect.counter must be a known counter id`);
+        else if (!Number.isInteger(c.n) || c.n < 1) errors.push(`${st.id}: collect.n must be a positive integer`);
+        else {
+          if (!seen.has(c.counter)) seen.set(c.counter, new Map());
+          const m = seen.get(c.counter);
+          if (m.has(c.n)) errors.push(`${st.id}: ${c.counter} ${c.n} already collected by ${m.get(c.n)}`);
+          else m.set(c.n, st.id);
+        }
+      }
+    }
+  }
+  summary.steps = stepIds.size;
+
+  const completeness = partial ? warnings : errors;
+  for (const c of game.counters) {
+    if (!isObj(c) || typeof c.id !== 'string' || !Number.isInteger(c.total)) continue;
+    const m = seen.get(c.id) || new Map();
+    summary.counters.push({ id: c.id, seen: m.size, total: c.total });
+    const missing = [];
+    for (let n = 1; n <= c.total; n++) if (!m.has(n)) missing.push(n);
+    const extra = [...m.keys()].filter((n) => n > c.total).sort((a, b) => a - b);
+    if (missing.length) completeness.push(`counter ${c.id}: missing ${compressRanges(missing)} (${m.size}/${c.total} defined)`);
+    if (extra.length) completeness.push(`counter ${c.id}: numbers above total: ${extra.join(', ')}`);
+  }
+  return { errors, warnings, summary };
+}
+
+function compressRanges(nums) {
+  const out = [];
+  let start = nums[0];
+  let prev = nums[0];
+  for (let i = 1; i <= nums.length; i++) {
+    const n = nums[i];
+    if (n === prev + 1) { prev = n; continue; }
+    out.push(start === prev ? `${start}` : `${start}-${prev}`);
+    start = n; prev = n;
+  }
+  return out.join(', ');
+}

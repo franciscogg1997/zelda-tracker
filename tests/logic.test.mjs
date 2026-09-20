@@ -110,3 +110,56 @@ test('computeState: flagged indices', () => {
 test('sectionProgress counts done steps in a section', () => {
   assert.deepEqual(sectionProgress(G.sections[1], prog({ 'g-0003': 1 })), { done: 1, total: 2 });
 });
+
+import { validateGame } from '../logic.js';
+
+const good = () => JSON.parse(JSON.stringify(G));
+
+test('validateGame: the fixture is valid', () => {
+  const r = validateGame(good());
+  assert.deepEqual(r.errors, []);
+  assert.deepEqual(r.warnings, []);
+  assert.equal(r.summary.steps, 4);
+  assert.deepEqual(r.summary.counters, [{ id: 'heart', seen: 2, total: 2 }, { id: 'song', seen: 1, total: 1 }]);
+});
+
+test('validateGame: structural errors', () => {
+  const g = good();
+  g.sections[0].steps[0].id = 'x-0001';
+  g.sections[1].steps.push({ id: 'g-0003', text: 'dup' });
+  g.sections[1].steps.push({ id: 'g-0009', text: '' });
+  g.sections[1].steps.push({ id: 'g-0010', text: 'y'.repeat(281) });
+  g.sections[1].steps.push({ id: 'g-0011', text: 'bad collect', collect: { counter: 'nope', n: 1 } });
+  g.sections[1].steps.push({ id: 'g-0012', text: 'extra key', foo: 1 });
+  const { errors } = validateGame(g);
+  assert.ok(errors.some((e) => e.includes('x-0001')));
+  assert.ok(errors.some((e) => e.includes('duplicate step id')));
+  assert.ok(errors.some((e) => e.includes('g-0009') && e.includes('text')));
+  assert.ok(errors.some((e) => e.includes('g-0010') && e.includes('280')));
+  assert.ok(errors.some((e) => e.includes('g-0011') && e.includes('collect.counter')));
+  assert.ok(errors.some((e) => e.includes('g-0012') && e.includes('unknown field')));
+});
+
+test('validateGame: duplicate n, gap and wrong total are caught', () => {
+  const dup = good(); dup.sections[1].steps[1].collect.n = 1;
+  assert.ok(validateGame(dup).errors.some((e) => e.includes('heart 1 already collected')));
+  const gap = good(); gap.sections[1].steps[1].collect.n = 3;
+  const ge = validateGame(gap).errors;
+  assert.ok(ge.some((e) => e.includes('counter heart') && e.includes('missing 2')));
+  assert.ok(ge.some((e) => e.includes('counter heart') && e.includes('above total')));
+  const total = good(); total.counters[0].total = 3;
+  assert.ok(validateGame(total).errors.some((e) => e.includes('missing 3')));
+});
+
+test('validateGame: partial mode turns completeness into warnings', () => {
+  const g = good(); g.sections.pop();
+  const r = validateGame(g, { partial: true });
+  assert.deepEqual(r.errors, []);
+  assert.ok(r.warnings.some((w) => w.includes('counter heart')));
+  assert.ok(r.warnings.some((w) => w.includes('counter song')));
+});
+
+test('validateGame: missables are summarised', () => {
+  const g = good(); g.sections[0].steps[0].missable = 'Do it now.';
+  assert.deepEqual(validateGame(g).summary.missables, [{ id: 'g-0001', text: 'Do it now.' }]);
+});
