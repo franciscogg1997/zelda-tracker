@@ -1,0 +1,33 @@
+{
+  "id": "oot",
+  "title": "Ocarina of Time",
+  "platform": "N64 · Nintendo Switch Online",
+  "contentVersion": 0,
+  "counters": [
+    { "id": "heart", "label": "Heart pieces", "unit": "Heart piece", "total": 36 },
+    { "id": "skulltula", "label": "Skulltulas", "unit": "Skulltula", "total": 100 },
+    { "id": "song", "label": "Songs", "unit": "Song", "total": 12 },
+    { "id": "bottle", "label": "Bottles", "unit": "Bottle", "total": 4 },
+    { "id": "upgrade", "label": "Upgrades", "unit": "Upgrade", "total": 23 }
+  ],
+  "sections": [
+    { "id": "kokiri-forest", "title": "Kokiri Forest", "subtitle": "Child", "steps": [
+      { "id": "oot-0001", "text": "Wake up, leave your house and talk to Saria outside." },
+      { "id": "oot-0002", "text": "Collect rupees around the village until you have 40, then buy the Deku Shield at the shop.", "detail": "Rupees respawn in the grass and under the rocks near the shop." },
+      { "id": "oot-0003", "text": "Crawl through the hole behind the Know-It-All Brothers' house and open the chest for the Kokiri Sword.", "missable": "Sample warning: nothing here is actually missable." },
+      { "id": "oot-0004", "text": "Equip sword and shield, then talk to Mido to be let through to the Great Deku Tree." }
+    ] },
+    { "id": "deku-tree", "title": "Inside the Deku Tree", "subtitle": "Child · Dungeon", "steps": [
+      { "id": "oot-0005", "text": "Climb the vines to 2F and open the chest for the Dungeon Map." },
+      { "id": "oot-0006", "text": "Kill the Gold Skulltula on the vines of the 3F wall and grab its token.", "collect": { "counter": "skulltula", "n": 1 } },
+      { "id": "oot-0007", "text": "Open the chest on 3F for the Fairy Slingshot." },
+      { "id": "oot-0008", "text": "Defeat Queen Gohma: shoot her eye when it turns red, then slash it.", "detail": "She drops from the ceiling; stand back so her claw swipe misses." },
+      { "id": "oot-0009", "text": "Take the Heart Container and step into the light to leave." }
+    ] },
+    { "id": "hyrule-field-1", "title": "Hyrule Field", "subtitle": "Child", "steps": [
+      { "id": "oot-0010", "text": "Cross the bridge out of the forest and talk to Kaepora Gaebora." },
+      { "id": "oot-0011", "text": "Learn Zelda's Lullaby from Impa in the castle courtyard.", "collect": { "counter": "song", "n": 1 } },
+      { "id": "oot-0012", "text": "Win the Cucco game at Kakariko for a bottle.", "collect": { "counter": "bottle", "n": 1 } }
+    ] }
+  ]
+}

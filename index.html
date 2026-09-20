@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3f4f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0f0e" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Zelda 100%">
+<title>Zelda 100%</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="top" id="top">
+  <div class="title-row">
+    <h1 id="game-title">Loading…</h1>
+    <select id="game-select" aria-label="Game" hidden></select>
+  </div>
+  <div id="counters" class="counters"></div>
+</header>
+<div id="notices" class="notices"></div>
+<main id="main"></main>
+<nav class="bottom-bar">
+  <button id="btn-skipped" class="bar-btn" hidden>Skipped <span id="skipped-count" class="count"></span></button>
+  <button id="btn-continue" class="bar-btn primary">Continue</button>
+  <button id="btn-menu" class="bar-btn icon" aria-label="Menu">···</button>
+</nav>
+<div id="sheet" class="sheet" hidden></div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
