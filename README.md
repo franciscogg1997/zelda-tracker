@@ -20,6 +20,7 @@ Live: https://franciscogg1997.github.io/zelda-tracker/
 - Deploy: `git push` (GitHub Pages, about a minute)
 
 ## Content
+- `data/oot.json` is the single source of truth. It was assembled once from per-chapter drafts (`data/parts/`, in git history up to the content commit) with `tools/merge.mjs`; edit the merged file directly from now on.
 - Rules: `docs/content-style.md`
 - Step ids are frozen. Progress is stored against them, so a renumber would silently move your checkmarks to other steps. Edit text freely; never reuse or reassign an id.
 - Fixing a step: edit its text in `data/oot.json`, keep its id, run `npm run validate`, push. Progress is unaffected.
