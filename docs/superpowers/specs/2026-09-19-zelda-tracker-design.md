@@ -41,7 +41,7 @@ zelda-tracker/
   sw.js                   service worker
   manifest.webmanifest
   icons/                  icon-192.png, icon-512.png, apple-touch-icon.png
-  data/index.json         ["oot"]  — list of game ids
+  data/index.json         [{ "id": "oot", "title": "Ocarina of Time" }] — list of games
   data/oot.json           the Ocarina of Time walkthrough
   tools/validate.mjs      data-file validator (node)
   tests/logic.test.mjs    unit tests for logic.js (node --test)
@@ -63,7 +63,7 @@ site is served from a sub-path.
   "platform": "N64 · Nintendo Switch Online",
   "contentVersion": 1,
   "counters": [
-    { "id": "heart",     "label": "Heart pieces", "total": 36 },
+    { "id": "heart",     "label": "Heart pieces", "unit": "Heart piece", "total": 36 },
     { "id": "skulltula", "label": "Skulltulas",   "total": 100 },
     { "id": "song",      "label": "Songs",        "total": 12 },
     { "id": "bottle",    "label": "Bottles",      "total": 4 },
@@ -143,8 +143,8 @@ any other missable found.
 
 ### Adding a game
 
-Add `data/<id>.json` and append the id to `data/index.json`. Nothing
-else changes. The app reads counters and sections from the file.
+Add `data/<id>.json` and append `{ "id", "title" }` to
+`data/index.json`. Nothing else changes. The app reads counters and sections from the file.
 
 ## 5. Progress storage
 
@@ -269,11 +269,12 @@ to add the page to the home screen so Safari keeps the progress
 - `manifest.webmanifest`: name "Zelda 100%", `display: standalone`,
   `start_url: ./`, icons. `apple-mobile-web-app-capable` meta and
   `apple-touch-icon` link in `index.html`.
-- `sw.js` with a version constant bumped on every app change:
-  - App shell files: precached on install, served cache-first.
-    `skipWaiting` and `clients.claim` so the next open uses the new
-    version.
-  - `data/*.json`: network-first with a short timeout, falling back to
+- `sw.js` with a cache version constant, bumped only to purge old caches:
+  - App shell files: precached on install, then served
+    stale-while-revalidate (cached copy immediately, refreshed in the
+    background, so the next open has the new version without bumping
+    anything). `skipWaiting` and `clients.claim`.
+  - `data/*.json`: network-first with a 4 s timeout, falling back to
     cache; successful network responses update the cache. Online
     players always get the latest content, offline players get the last
     seen content.
@@ -286,7 +287,8 @@ to add the page to the home screen so Safari keeps the progress
 |---|---|
 | Progress JSON corrupt | Preserve raw under a corrupt key, start empty, persistent notice. |
 | localStorage write fails | Persistent banner, app still usable. |
-| Data file fails validation at runtime (missing fields) | Show which file and which check failed. Do not render a partial list. |
+| Data file has structural errors at runtime | Show which file and which check failed. Do not render a partial list. |
+| Data file is structurally fine but incomplete (a counter not fully defined) | Render normally and show a dismissible "content incomplete" notice. The strict check is the CLI validator's job, so a half-edited file never locks the player out. |
 | Import JSON invalid | Inline message, nothing changes. |
 | Unknown counter id in a step's `collect` | Validator error at build time; at runtime ignored. |
 
@@ -295,7 +297,8 @@ to add the page to the home screen so Safari keeps the progress
 `node tools/validate.mjs data/oot.json` exits non-zero on any error:
 
 - JSON parses; `id`, `title`, `counters`, `sections` present.
-- Counter ids unique; `total` positive integer.
+- Counter ids unique; `label` required; `unit` (singular label for the
+  row pill) optional; `total` positive integer.
 - Section ids unique; every section has at least one step.
 - Step ids unique, match `^<gameId>-\d{4}$`.
 - `text` non-empty, ≤ 280 chars. `detail`, `missable` strings if present.
