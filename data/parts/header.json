@@ -1,0 +1,14 @@
+{
+  "id": "oot",
+  "title": "Ocarina of Time",
+  "platform": "N64 · Nintendo Switch Online",
+  "contentVersion": 1,
+  "counters": [
+    { "id": "heart", "label": "Heart pieces", "unit": "Heart piece", "total": 36 },
+    { "id": "skulltula", "label": "Skulltulas", "unit": "Skulltula", "total": 100 },
+    { "id": "song", "label": "Songs", "unit": "Song", "total": 12 },
+    { "id": "bottle", "label": "Bottles", "unit": "Bottle", "total": 4 },
+    { "id": "upgrade", "label": "Upgrades", "unit": "Upgrade", "total": 23 }
+  ],
+  "sections": []
+}
