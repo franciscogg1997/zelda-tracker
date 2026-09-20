@@ -29,7 +29,7 @@ async function networkFirst(req, cacheName) {
   const cache = await caches.open(cacheName);
   try {
     const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 4000);
+    const t = setTimeout(() => ctrl.abort(), 2500); // fall back to cache fast on a weak signal
     const res = await fetch(req, { signal: ctrl.signal });
     clearTimeout(t);
     if (res.ok) cache.put(req, res.clone());
