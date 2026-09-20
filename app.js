@@ -71,7 +71,11 @@ async function loadGame() {
   try { data = await fetchJson(`./data/${gameId}.json`); }
   catch { fatal('Walkthrough not available offline yet. Open this page once with internet.'); return; }
   const { errors, warnings } = validateGame(data, { partial: true });
-  if (errors.length) { fatal(`data/${gameId}.json failed validation:\n${errors.slice(0, 12).join('\n')}`); return; }
+  const usable = Array.isArray(data.sections) && data.sections.some((s) => Array.isArray(s.steps) && s.steps.length);
+  if (!usable) { fatal(`data/${gameId}.json has no steps to show.\n${errors.slice(0, 8).join('\n')}`); return; }
+  // Anything short of unusable is shown as a notice: a walkthrough the player can
+  // read beats a blank screen, and the strict check belongs to the CLI validator.
+  if (errors.length) notice(`This walkthrough file has ${errors.length} problem${errors.length > 1 ? 's' : ''}. First: ${errors[0]}`, { id: 'invalid', error: true });
   game = data;
   document.title = game.title;
   els.title.textContent = game.title;
