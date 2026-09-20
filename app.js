@@ -257,6 +257,9 @@ function afterProgressChange(changedIds) {
   renderCounters();
   refreshSectionCounts();
   renderBottomBar();
+  // Finishing a section leaves the next step inside a closed one, where the
+  // player would see nothing happen. Open it and go there.
+  if (newCurrent && !els.main.querySelector(`.row[data-id="${newCurrent}"]`)) scrollToCurrent(false);
 }
 
 function refreshRow(id) {
