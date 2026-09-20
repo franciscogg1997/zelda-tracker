@@ -1,6 +1,6 @@
 import {
   emptyProgress, parseProgress, mergeProgress, serializeProgress,
-  computeState, sectionProgress, validateGame,
+  computeState, sectionProgress, validateGame, stepVisible, isSide,
 } from './logic.js';
 
 export const APP_VERSION = '1.0.0';
@@ -101,7 +101,7 @@ function loadUi() {
   try { const u = JSON.parse(store.read(`zt:ui:${gameId}`)); return u && typeof u === 'object' ? u : {}; } catch { return {}; }
 }
 function saveUi() { store.write(`zt:ui:${gameId}`, JSON.stringify(ui)); }
-function recompute() { state = computeState(game, progress); }
+function recompute() { state = computeState(game, progress, { hideSide: !!ui.hideSide }); }
 
 // ---------- rendering ----------
 function renderAll() {
@@ -116,30 +116,45 @@ function renderCounters() {
     `<div class="counter${c.done >= c.total ? ' complete' : ''}"><span class="label">${esc(c.label)}</span><span class="value">${c.done}/${c.total}</span></div>`).join('');
 }
 
+// Sections render their rows only once opened: the full walkthrough is ~2000 steps,
+// and building every row up front makes scrolling stutter on a phone.
+function fillSection(det, section) {
+  const list = det.querySelector('.steps');
+  if (list.dataset.filled === '1') return;
+  const frag = document.createDocumentFragment();
+  for (const step of section.steps) {
+    if (stepVisible(step, !!ui.hideSide)) frag.append(renderRow(step));
+  }
+  list.append(frag);
+  list.dataset.filled = '1';
+}
+
 function renderSections() {
   ui.sections ??= {};
+  const currentSectionId = state.flat[state.currentIndex]?.section.id;
+  const frag = document.createDocumentFragment();
   for (const section of game.sections) {
-    const sp = sectionProgress(section, progress);
+    const sp = sectionProgress(section, progress, { hideSide: !!ui.hideSide });
+    if (sp.total === 0) continue; // every step in it is hidden
     const det = document.createElement('details');
     det.className = 'section';
     det.dataset.id = section.id;
     const pref = ui.sections[section.id];
-    det.open = pref === 'open' ? true : pref === 'closed' ? false : sp.done < sp.total;
+    det.open = pref === 'open' ? true : pref === 'closed' ? false : section.id === currentSectionId;
     det.dataset.state = det.open ? 'open' : 'closed';
-    det.innerHTML = `<summary><span><span class="s-title">${esc(section.title)}</span>${section.subtitle ? `<span class="s-sub">${esc(section.subtitle)}</span>` : ''}</span><span class="s-count">${sp.done}/${sp.total}</span><span class="s-chev"></span></summary>`;
-    const list = document.createElement('div');
-    list.className = 'steps';
-    for (const step of section.steps) list.append(renderRow(step));
-    det.append(list);
+    det.innerHTML = `<summary><span><span class="s-title">${esc(section.title)}</span>${section.subtitle ? `<span class="s-sub">${esc(section.subtitle)}</span>` : ''}</span><span class="s-count">${sp.done}/${sp.total}</span><span class="s-chev"></span></summary><div class="steps"></div>`;
+    if (det.open) fillSection(det, section);
     det.addEventListener('toggle', () => {
+      if (det.open) fillSection(det, section);
       const now = det.open ? 'open' : 'closed';
       if (now === det.dataset.state) return; // programmatic, not a user toggle
       det.dataset.state = now;
       ui.sections[section.id] = now;
       saveUi();
     });
-    els.main.append(det);
+    frag.append(det);
   }
+  els.main.append(frag);
 }
 
 function renderRow(step, { caption } = {}) {
@@ -158,6 +173,7 @@ function renderRow(step, { caption } = {}) {
       ${isCurrent ? '<div class="next-label">Next</div>' : ''}
       <div class="text">${esc(step.text)}</div>
       <div class="meta">
+        ${isSide(step) ? '<span class="pill side">Optional</span>' : ''}
         ${counter ? `<span class="pill">${esc(counter.unit || counter.label)} ${step.collect.n}</span>` : ''}
         ${flagged ? '<span class="pill flag">Flagged</span>' : ''}
         ${step.detail ? '<button class="more">more</button>' : ''}
@@ -206,14 +222,15 @@ function renderBottomBar() {
   const n = state.skipped.length;
   els.skipped.hidden = n === 0;
   els.skippedCount.textContent = `(${n})`;
-  els.cont.textContent = state.complete ? 'Complete' : 'Continue';
+  const pastEnd = state.currentIndex >= state.flat.length;
+  els.cont.textContent = state.complete ? 'Complete' : pastEnd ? 'Go to skipped' : 'Continue';
   els.cont.disabled = state.complete;
 }
 
 function refreshSectionCounts() {
   for (const det of els.main.querySelectorAll('details.section')) {
     const section = game.sections.find((s) => s.id === det.dataset.id);
-    const sp = sectionProgress(section, progress);
+    const sp = sectionProgress(section, progress, { hideSide: !!ui.hideSide });
     det.querySelector('.s-count').textContent = `${sp.done}/${sp.total}`;
   }
 }
@@ -248,10 +265,14 @@ function refreshRow(id) {
 
 function scrollToCurrent(smooth = true) {
   if (view !== 'all') { view = 'all'; renderAll(); }
-  const cur = state.flat[state.currentIndex];
+  // Past the last step, "next" is whatever was skipped along the way.
+  const cur = state.flat[state.currentIndex] ?? state.flat[state.skipped[0]];
   if (!cur) return;
   const det = els.main.querySelector(`details.section[data-id="${cur.section.id}"]`);
-  if (det && !det.open) { det.dataset.state = 'open'; det.open = true; }
+  if (det) {
+    if (!det.open) { det.dataset.state = 'open'; det.open = true; }
+    fillSection(det, game.sections.find((s) => s.id === cur.section.id));
+  }
   const row = els.main.querySelector(`.row[data-id="${cur.step.id}"]`);
   row?.scrollIntoView({ block: 'center', behavior: smooth ? 'smooth' : 'auto' });
 }
@@ -327,11 +348,21 @@ function openStepSheet(step) {
 
 function openMenu() {
   const panel = openSheet(`
+    <label class="check-line"><input type="checkbox" id="m-hide-side" ${ui.hideSide ? 'checked' : ''}> Main route only</label>
+    <p class="sheet-detail">Hides the ${state.sideTotal} optional steps: collectibles, side quests and upgrades. Their progress is kept.</p>
     <button class="menu-item" id="m-flagged"><span>Flagged</span><span class="count">${state.flagged.length}</span></button>
     <button class="menu-item" id="m-backup"><span>Backup progress</span><span class="count">›</span></button>
     <button class="menu-item" id="m-import"><span>Import progress</span><span class="count">›</span></button>
     <div class="about">Zelda 100% v${APP_VERSION} · content v${game.contentVersion ?? '?'} · ${state.flat.length} steps</div>`);
   els.sheet.querySelector('.backdrop').onclick = closeSheet;
+  panel.querySelector('#m-hide-side').onchange = (e) => {
+    ui.hideSide = e.target.checked;
+    saveUi();
+    closeSheet();
+    recompute();
+    renderAll();
+    scrollToCurrent(false);
+  };
   panel.querySelector('#m-flagged').onclick = () => { closeSheet(); view = 'flagged'; renderAll(); window.scrollTo(0, 0); };
   panel.querySelector('#m-backup').onclick = openBackup;
   panel.querySelector('#m-import').onclick = openImport;

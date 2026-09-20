@@ -1,0 +1,259 @@
+{
+  "id": "oot",
+  "title": "Ocarina of Time",
+  "counters": [
+    { "id": "heart", "label": "Heart pieces", "unit": "Heart piece", "total": 36 },
+    { "id": "skulltula", "label": "Skulltulas", "unit": "Skulltula", "total": 100 },
+    { "id": "song", "label": "Songs", "unit": "Song", "total": 12 },
+    { "id": "bottle", "label": "Bottles", "unit": "Bottle", "total": 4 },
+    { "id": "upgrade", "label": "Upgrades", "unit": "Upgrade", "total": 23 }
+  ],
+  "sections": [
+    {
+      "id": "c01-kokiri-forest",
+      "title": "Kokiri Forest",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0001",
+          "text": "Climb down the ladder from your house and talk to Saria waiting below.",
+          "detail": "Navi wakes Link after the opening scenes. Saria only cheers your new fairy and sends you to the Great Deku Tree, but Mido blocks that path until you carry a sword and a shield."
+        },
+        {
+          "id": "oot-0002",
+          "text": "Go to the Forest Training Center, the fenced area in the southwest corner of the village (bottom-left on the map), and crawl through the small hole in the wall next to the sign.",
+          "detail": "Stand facing the hole and press A to crawl, then hold forward until you pop out the other side. The Kokiri outside the hole teaches the backflip: Z-target the rock, hold back and press A."
+        },
+        {
+          "id": "oot-0003",
+          "text": "Round the corner and take the Blue Rupee, then wait for the rolling boulder to pass, follow behind it and take the first right for a second Blue Rupee.",
+          "detail": "The boulder loops around the maze and hurts on contact; stay behind it."
+        },
+        {
+          "id": "oot-0004",
+          "text": "Continue behind the boulder to the next alcove and open the large chest for the Kokiri Sword."
+        },
+        {
+          "id": "oot-0005",
+          "text": "Pause, open the Equipment screen and equip the Kokiri Sword, then crawl back out through the hole.",
+          "detail": "The sword goes on B. Both Blue Rupees in the maze come back if you leave the area and re-enter."
+        },
+        {
+          "id": "oot-0006",
+          "text": "Enter Mido's House, the building straight across from the crawl hole, and open all the chests inside for rupees."
+        },
+        {
+          "id": "oot-0007",
+          "text": "Walk around the back of Mido's House and pick up the Blue Rupee there."
+        },
+        {
+          "id": "oot-0008",
+          "text": "Climb the ramp beside Saria's House (next door to your own) and follow it toward the middle of the village to pick up the rupee at the top."
+        },
+        {
+          "id": "oot-0009",
+          "text": "Run across the two platforms in the water between Mido's House and the Kokiri Shop; Link hops across on his own and picks up rupees on the way.",
+          "detail": "Rupees lying around the village reappear whenever you go into a house and come back out, so repeat any spot until you reach 40."
+        },
+        {
+          "id": "oot-0010",
+          "text": "Enter the Kokiri Shop (the building in the northeast) and grab the Blue Rupee tucked away at the side of the room.",
+          "detail": "The Kokiri girl sitting above the shop door shows you Z-targeting: press Z to lock on to her, then A to talk."
+        },
+        {
+          "id": "oot-0011",
+          "text": "Buy the Deku Shield from the Kokiri Shop for 40 Rupees."
+        },
+        {
+          "id": "oot-0012",
+          "text": "Pause and equip the Deku Shield, make sure the Kokiri Sword is equipped too, then talk to Mido at the path to the Great Deku Tree so he lets you through."
+        },
+        {
+          "id": "oot-0013",
+          "text": "Follow the path toward the Great Deku Tree; slash the three Withered Deku Babas that pop up near the end and pick up the Deku Sticks they drop.",
+          "detail": "They never move or attack. Deku Sticks appear on the item screen; assign them to a C button when you get a chance."
+        },
+        {
+          "id": "oot-0014",
+          "text": "Talk to the Great Deku Tree, answer Yes when he asks for your help, and walk into his open mouth."
+        }
+      ]
+    },
+    {
+      "id": "c01-deku-tree",
+      "title": "Inside the Deku Tree",
+      "subtitle": "Child · Dungeon",
+      "steps": [
+        {
+          "id": "oot-0015",
+          "text": "Kill the Deku Babas in the entrance room and pick up the Deku Nuts they drop, then assign Deku Sticks and Deku Nuts to your C buttons.",
+          "detail": "Z-target a Baba, hold R to block its lunge, then slash. Cut the weeds for Recovery Hearts if you got bitten; they grow back. Leave the web in the middle of the floor alone for now."
+        },
+        {
+          "id": "oot-0016",
+          "text": "Climb the ladder (or the vines) up to the ledge on the second floor and follow it clockwise to the large chest holding the Dungeon Map.",
+          "detail": "The vines next to the chest have Skullwalltulas on them; ignore them for now."
+        },
+        {
+          "id": "oot-0017",
+          "text": "Keep going right along the ledge, jump the gaps to the last platform and go through the door."
+        },
+        {
+          "id": "oot-0018",
+          "text": "Z-target the Deku Scrub, hold R so its Deku Nut bounces back at it, then run up and talk to it before it burrows; the next door opens.",
+          "detail": "Stay several paces back or it hides. Its hint: hold the stick forward as you land from a big fall to roll. It leaves Recovery Hearts."
+        },
+        {
+          "id": "oot-0019",
+          "text": "Jump onto the crumbling platform and straight on to the far ledge, then open the large chest for the Fairy Slingshot.",
+          "detail": "If you fall, climb the vines back up. Deku Seeds are its ammo; bushes drop them. The vines by the chest lead up to an alcove with a small chest holding a Recovery Heart."
+        },
+        {
+          "id": "oot-0020",
+          "text": "Face the door you came in by, Z-target the ladder hanging above it and shoot it with the Fairy Slingshot so it drops into place; climb it and return to the main room."
+        },
+        {
+          "id": "oot-0021",
+          "text": "On the second-floor ledge by the Dungeon Map chest, shoot every Skullwalltula on the vines with the Fairy Slingshot.",
+          "detail": "Left alive they knock you off the vines mid-climb."
+        },
+        {
+          "id": "oot-0022",
+          "text": "Climb those vines to the very top, shuffle sideways along them (left or right) until you are over the platform, then let go to drop onto the third floor."
+        },
+        {
+          "id": "oot-0023",
+          "text": "Follow the third-floor walkway past the Big Skulltulas and go through the door up here.",
+          "detail": "They only drop from the ceiling when you get close. Stand just close enough, wait for one to spin and show its soft belly, then slash it. You can also shoot the belly with the Fairy Slingshot from a distance."
+        },
+        {
+          "id": "oot-0024",
+          "text": "Step on the floor switch so the three platforms rise, hop across them to the far side of the room and open the large chest for the Compass.",
+          "detail": "The platforms sink back after a few seconds; step on the switch again if you fall."
+        },
+        {
+          "id": "oot-0025",
+          "text": "Drop down to the floor of this room, kill the Big Skulltula on the right and the Deku Baba in front of the vines, then climb the vines back up to the switch."
+        },
+        {
+          "id": "oot-0026",
+          "text": "Step on the switch again and cross the platforms to the alcove on the left; open the small chest for a Recovery Heart, kill the Gold Skulltula on the wall behind it and grab the Gold Skulltula token.",
+          "detail": "Slash it or shoot it with the Fairy Slingshot, then touch the token. First of 100 in the game.",
+          "collect": { "counter": "skulltula", "n": 1 }
+        },
+        {
+          "id": "oot-0027",
+          "text": "Take out a Deku Stick, hold it against the lit torch, then carry the flame to the unlit torch; the bars on the door you came in through go away.",
+          "detail": "A lit stick burns down fast. Press B to switch to the sword the moment the torch catches so the rest of the stick is saved."
+        },
+        {
+          "id": "oot-0028",
+          "text": "Back on the third floor of the main room, kill the Big Skulltula guarding the edge, then jump off aiming for the exact center of the web on the floor far below; it breaks and drops you into the basement.",
+          "detail": "Hit only the edge and the web bounces you like a trampoline; climb back up and try again."
+        },
+        {
+          "id": "oot-0029",
+          "text": "Look up at the vines on the wall that lead back to the floor above: shoot the Gold Skulltula crawling on them with the Fairy Slingshot, then climb up and grab the Gold Skulltula token.",
+          "collect": { "counter": "skulltula", "n": 2 }
+        },
+        {
+          "id": "oot-0030",
+          "text": "Shoot the Gold Skulltula on the grating at the north end of the basement with the Fairy Slingshot, then jump across from the nearby platform and grab the Gold Skulltula token.",
+          "collect": { "counter": "skulltula", "n": 3 }
+        },
+        {
+          "id": "oot-0031",
+          "text": "Climb onto the nearby platform and step on the floor switch; the torch next to it lights and burns the cobweb over it."
+        },
+        {
+          "id": "oot-0032",
+          "text": "Light a Deku Stick on that torch, run through the shallow water to the platform on the far side of the room and burn the cobwebs covering the door, then go through.",
+          "detail": "Hurry, the stick burns out. Keep to the shallow water where you can stand; swimming puts the flame out."
+        },
+        {
+          "id": "oot-0033",
+          "text": "Bounce the Deku Scrub's nut back at it with your shield, then catch it before it burrows for a hint about a later puzzle: 2, 3, 1.",
+          "detail": "Cut the bushes here for Deku Seeds if you are running low."
+        },
+        {
+          "id": "oot-0034",
+          "text": "Shoot the silver eye switch above the next door with the Fairy Slingshot and go through."
+        },
+        {
+          "id": "oot-0035",
+          "text": "Jump in the water, swim to the left side of the room, then hold A to dive and touch the switch on the bottom; the water level drops for a short time.",
+          "detail": "Navi points out that you can dive here. Steer underwater with the stick."
+        },
+        {
+          "id": "oot-0036",
+          "text": "Swim back to the first platform, climb the ramp, wait for the floating platform to drift to you, then ride it under the spinning spiked log to the far side.",
+          "detail": "If the water rises again before you make it, dive for the switch once more."
+        },
+        {
+          "id": "oot-0037",
+          "text": "Climb up on the far side, kill the Big Skulltula, then push or pull the stone block until it sits under the doorway; climb onto it and go through the door.",
+          "detail": "Stand against a side of the block and Navi explains pushing and pulling. Walk into the block and press A to climb it."
+        },
+        {
+          "id": "oot-0038",
+          "text": "Kill the Deku Baba and the Withered Deku Baba, then light a Deku Stick on the lit torch and light the two unlit torches; go through the door that opens."
+        },
+        {
+          "id": "oot-0039",
+          "text": "From the doorway, Z-target the Big Skulltula straight ahead and shoot it twice with the Fairy Slingshot before you step into the room.",
+          "detail": "From this distance it stays hanging with its soft side toward you."
+        },
+        {
+          "id": "oot-0040",
+          "text": "Walk in past the three shadows in the middle of the room; eggs fall and hatch into Gohma Larvae. Z-target each larva, get close and slash it.",
+          "detail": "They are only dangerous as a group; deal with them one at a time."
+        },
+        {
+          "id": "oot-0041",
+          "text": "Light a Deku Stick on the torch, burn the cobweb at the far end of the room and crawl through the hole behind it.",
+          "detail": "Press B to save the rest of the stick. The other cobweb leads to a blocked wall: the Gold Skulltula behind it needs Bombs, so it is collected in a later chapter."
+        },
+        {
+          "id": "oot-0042",
+          "text": "You come out on the upper ledge of the basement's main room: push the stone block near you off the edge to make a shortcut back up here.",
+          "detail": "Kill the Deku Babas on the ledge first if they bother you."
+        },
+        {
+          "id": "oot-0043",
+          "text": "Jump down, light a Deku Stick on the low torch you lit with the switch earlier, climb back up via the block and burn the cobweb in the floor of the ledge.",
+          "detail": "The two torches up on the ledge are too high to reach. Roll into the cobweb with A or swing the stick with its C button; either way it burns and opens the way down."
+        },
+        {
+          "id": "oot-0044",
+          "text": "Drop through, climb onto land and bounce the Deku Scrubs' nuts back with your shield in this order: middle, right, then left (2, 3, 1).",
+          "detail": "Hit them out of order and all three reset. Dive in the water here for Recovery Hearts if you need them."
+        },
+        {
+          "id": "oot-0045",
+          "text": "Catch the last Deku Scrub before it runs off for a hint about the boss, then go through the boss door."
+        },
+        {
+          "id": "oot-0046",
+          "text": "Defeat Queen Gohma: look up at her on the ceiling to start the fight, shoot her eye with the Fairy Slingshot when it glows red, then slash her while she is down.",
+          "detail": "Her eye turns red just before and after each attack. The best moment is while she clings to the ceiling: stunning her there drops her for much longer. Deku Nuts stun her too. She lunges and tries to land on you (block with the shield or step aside) and lays three eggs that hatch into Gohma Larvae; slash the eggs before they hatch, or kill each larva with two hits. Once she is down, slash her eye until she gets up."
+        },
+        {
+          "id": "oot-0047",
+          "text": "Take the Heart Container she leaves behind and step into the blue light to leave the dungeon."
+        }
+      ]
+    },
+    {
+      "id": "c01-kokiris-emerald",
+      "title": "Great Deku Tree",
+      "subtitle": "Child",
+      "steps": [
+        {
+          "id": "oot-0048",
+          "text": "Listen to the Great Deku Tree's story and receive the Kokiri's Emerald.",
+          "detail": "He explains the curse and the man from the desert, tells you to find the Princess of Destiny at Hyrule Castle, then withers away. Kokiri Forest's exit is the next stop."
+        }
+      ]
+    }
+  ]
+}

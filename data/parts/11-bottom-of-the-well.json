@@ -1,0 +1,90 @@
+{
+  "id": "oot",
+  "title": "Ocarina of Time",
+  "counters": [
+    { "id": "heart", "label": "Heart pieces", "unit": "Heart piece", "total": 36 },
+    { "id": "skulltula", "label": "Skulltulas", "unit": "Skulltula", "total": 100 },
+    { "id": "song", "label": "Songs", "unit": "Song", "total": 12 },
+    { "id": "bottle", "label": "Bottles", "unit": "Bottle", "total": 4 },
+    { "id": "upgrade", "label": "Upgrades", "unit": "Upgrade", "total": 23 }
+  ],
+  "sections": [
+    { "id": "c11-kakariko-adult", "title": "Kakariko Village", "subtitle": "Adult", "steps": [
+      { "id": "oot-1501", "text": "As an adult, enter Kakariko Village from Hyrule Field after the Water Temple and watch the scene: the village is on fire and Sheik is waiting at the well.", "detail": "The Shadow Temple's boss breaks out of the well and knocks Link out. There is nothing to fight; let the scene play." },
+      { "id": "oot-1502", "text": "When Link wakes up, listen to Sheik and learn the Nocturne of Shadow.", "detail": "This warp song drops you at the Shadow Temple entrance in the Graveyard. Do not go in yet: the temple needs the Lens of Truth, which is at the Bottom of the Well and only reachable as a child.", "collect": { "counter": "song", "n": 11 } },
+      { "id": "oot-1503", "text": "Enter the Windmill (up the stairs on the far side of the village, by the road to the Graveyard), talk to Guru-Guru and take out the Ocarina when he rants about the song. He teaches you the Song of Storms.", "detail": "If you already learned it from Guru-Guru right after getting the Hookshot, just check this off. Everything that follows needs this song.", "collect": { "counter": "song", "n": 6 } }
+    ] },
+    { "id": "c11-temple-of-time", "title": "Temple of Time", "subtitle": "Adult", "steps": [
+      { "id": "oot-1504", "text": "Play the Prelude of Light to warp to the Temple of Time.", "detail": "Walking in from the Market works too. Nothing else is needed as an adult before going back in time." },
+      { "id": "oot-1505", "text": "Place the Master Sword in the Pedestal of Time to return to your childhood.", "detail": "From here until you pull the sword again, every step is done as child Link. Stock up on Bombs, Deku Sticks and Deku Nuts and keep the Hylian Shield handy; the Bazaar in the Market sells all of them. If you skipped the Deku Nut upgrade from the Business Scrub in the Lost Woods, this child visit is the time to get it: it is gone forever once adult Link trades for the Poacher's Saw." }
+    ] },
+    { "id": "c11-hyrule-castle-child", "title": "Hyrule Castle", "subtitle": "Child", "steps": [
+      { "id": "oot-1506", "text": "Leave the Temple of Time, cross the Market and follow the path up to Hyrule Castle." },
+      { "id": "oot-1507", "text": "Sneak past the guards the same way as before: climb the vines beside the first gate, drop down on the other side and work your way up past the patrolling guards toward the castle.", "detail": "A guard who spots you sends you back to the start of the castle path. Wait for each patrol to turn away, then run past along the walls." },
+      { "id": "oot-1508", "text": "Go on to the closed castle gate where Talon once slept. Stand next to the small tree in the corner beside the gate (the Stone of Agony rumbles here) and play the Song of Storms to open a hole.", "detail": "The hole appears right at your feet. If nothing happens, step closer to the spot between the tree and the wall and play again." },
+      { "id": "oot-1509", "text": "Drop into the hole, bomb the wall on your left and kill the Gold Skulltula behind it, then grab the token.", "detail": "The cracked wall is directly to the left as you land. Slash the Gold Skulltula or hit it with the Slingshot, pick up the token, then climb out of the grotto.", "collect": { "counter": "skulltula", "n": 78 } }
+    ] },
+    { "id": "c11-zoras-river-child", "title": "Zora's River", "subtitle": "Child", "steps": [
+      { "id": "oot-1510", "text": "Go to Zora's River from Hyrule Field and follow the river upstream to the middle stretch where logs stick out of the water.", "detail": "Bomb any boulders blocking the entrance path. The logs are roughly halfway between the entrance and the waterfall to Zora's Domain." },
+      { "id": "oot-1511", "text": "Step onto the log closest to the bank, stand on the square mark and take out the Ocarina; five Frogs pop up out of the water." },
+      { "id": "oot-1512", "text": "Play the Song of Storms for the Frogs and take the Piece of Heart they give you.", "collect": { "counter": "heart", "n": 31 } },
+      { "id": "oot-1513", "text": "Still on the mark, play Zelda's Lullaby, Epona's Song, Saria's Song, Sun's Song and the Song of Time one after another; each song grows one Frog and earns 50 Rupees.", "detail": "Warp songs do nothing here. If you step off the mark, get back on and take out the Ocarina again." },
+      { "id": "oot-1514", "text": "With all five Frogs grown, take out the Ocarina again to start the fly game: press the button of the Frog that has the fly over its head, fourteen times in a row, for a Piece of Heart.", "detail": "Pattern on N64 buttons: A, C-Left, C-Right, C-Down, C-Left, C-Right, C-Down, A, C-Down, A, C-Down, C-Right, C-Left, A. On Switch Online the C buttons are the right stick. A wrong or slow press ends the game; take out the Ocarina and try again.", "collect": { "counter": "heart", "n": 32 } }
+    ] },
+    { "id": "c11-kakariko-child", "title": "Kakariko Village", "subtitle": "Child", "steps": [
+      { "id": "oot-1515", "text": "Go to Kakariko Village as a child and enter the Windmill (up the stairs on the far side of the village)." },
+      { "id": "oot-1516", "text": "Stand in front of Guru-Guru and play the Song of Storms: the Windmill spins wildly and the well in the village drains.", "detail": "This is the event the adult Guru-Guru complains about. It only has to be done once." },
+      { "id": "oot-1517", "text": "Leave the Windmill, walk to the well in the middle of the village and climb down the ladder inside it to enter the Bottom of the Well.", "detail": "The well is the stone ring near the center of the village. With the water gone, the ladder reaches the bottom of the shaft." }
+    ] },
+    { "id": "c11-bottom-of-the-well", "title": "Bottom of the Well", "subtitle": "Child · Dungeon", "steps": [
+      { "id": "oot-1518", "text": "Crawl through the small hole ahead of you and climb down the ladder." },
+      { "id": "oot-1519", "text": "Kill the big Skulltula hanging in the corridor: wait for it to spin around and strike its soft underside.", "detail": "Its armored back blocks your sword. Z-target it and slash, or stun it with a Deku Nut first. The skeleton in the corner is only decoration." },
+      { "id": "oot-1520", "text": "Walk straight through the wall at the end of the corridor; it is fake and opens into the Main Room.", "detail": "The whole dungeon is built of fake walls and invisible pits. Until you have the Lens of Truth, only walk where these steps say." },
+      { "id": "oot-1521", "text": "In the Main Room, turn right and follow the shallow stream along the outer edge of the room all the way around to the far side.", "detail": "Walking in the water keeps you off the hidden pits; the dry floor can drop you into the Basement. A big green Bubble circles the room: stun it with the Boomerang and slash it, or just keep moving. If you fall into the Basement, jump ahead to the Silver Rupee steps to climb out, then come back here." },
+      { "id": "oot-1522", "text": "On the far side of the room, stand on the Triforce symbol on the floor and play Zelda's Lullaby to drain the water from the dungeon." },
+      { "id": "oot-1523", "text": "Walk back along the same outer path to where you entered the Main Room and drop into the small pit there, empty now that the water is gone." },
+      { "id": "oot-1524", "text": "Open the small chest in the pit for Bombs." },
+      { "id": "oot-1525", "text": "Crawl through the small hole in the pit wall into the passage beyond." },
+      { "id": "oot-1526", "text": "Kill the Skulltula hanging from the ceiling of the passage, then climb the vines at the end and go through the door.", "detail": "Wait for the Skulltula to turn its belly toward you before slashing. The door leads to the mini-boss." },
+      { "id": "oot-1527", "text": "Defeat Dead Hand: bait it out with one of its hands, then slash its head every time it leans down to bite, until it stays down.", "detail": "Dead Hand rises out of the ground when you get close to one of the white hands sticking up. If a hand grabs you, mash A and B to break free, then back away out of its reach. Dead Hand shuffles toward you and lowers its head to bite: hit the head then, two or three slashes, and step back. It burrows and comes back; repeat. A Deku Stick does double the sword's damage. Stay clear of the hands between rounds." },
+      { "id": "oot-1528", "text": "Open the big chest that appears for the Lens of Truth." },
+      { "id": "oot-1529", "text": "Switch on the Lens of Truth in the same room: an invisible chest appears. Open it for a Huge Rupee (200).", "detail": "The Lens uses magic while it is on; switch it off between uses. From here on, turn it on whenever a step mentions hidden walls, pits or paths." },
+      { "id": "oot-1530", "text": "Go back through the door, down the vines, back through the crawl hole and climb out of the pit into the Main Room." },
+      { "id": "oot-1531", "text": "With the Lens on, head into the room hidden in the center of the Main Room (look for the X-shaped poles) and drop through the hole there into the Basement.", "detail": "Any of the hidden pits leads to the Basement, but the central one is quickest. The Lens shows the pits as dark holes; avoid them until you mean to drop." },
+      { "id": "oot-1532", "text": "In the Basement, take the far-right passage marked by two burning torches and bomb the two boulders blocking it.", "detail": "The Basement is a cave with green poison water in the middle and four dead-end branches. Two hold nothing. In one, Navi turns green: play the Sun's Song there for a healing fairy if you need one." },
+      { "id": "oot-1533", "text": "Freeze the ReDead in the torch passage with the Sun's Song, get past it and open the chest at the end for the Dungeon Map." },
+      { "id": "oot-1534", "text": "Return to the central cave and kill the lone ReDead there (freeze it with the Sun's Song first) so it cannot grab you while you collect Rupees.", "detail": "A ReDead's scream freezes you in place; the Sun's Song stuns it so you can slash freely. Keep out of the poison water." },
+      { "id": "oot-1535", "text": "Collect the three Silver Rupees near the wooden planks, then climb the ladder." },
+      { "id": "oot-1536", "text": "Collect the Silver Rupee on the ledge, climb the second ladder and collect the fifth Silver Rupee; the door opens." },
+      { "id": "oot-1537", "text": "Go through the door back into the Main Room; it closes behind you.", "detail": "If you ever fall into the Basement again, the five Silver Rupees must be collected again to reopen this door." },
+      { "id": "oot-1538", "text": "In the central room, find the big chest inside a fenced alcove. The Lens shows a pit in front of it: walk around the outside of the alcove and through its fake side wall, then open the chest for the Compass.", "detail": "Do not try to jump the pit. Leave through the same fake wall." },
+      { "id": "oot-1539", "text": "On the west side of the Main Room, drop into the pit covered with metal grating (it was full of water before) and open the small chest at the bottom." },
+      { "id": "oot-1540", "text": "Climb the wall at the far end of the pit and go through the door into the Coffin Room." },
+      { "id": "oot-1541", "text": "Kill the Gibdo in the Coffin Room first: play the Sun's Song to freeze it, then slash it.", "detail": "Spiked traps slide around the floor; let them pass before you cross. A frozen Gibdo takes several hits." },
+      { "id": "oot-1542", "text": "Light a Deku Stick on a burning torch, light the torch beside the coffin in the southwest corner so it opens, and take the Small Key inside.", "detail": "There is a torch beside each coffin; only the southwest coffin holds the key. The others release Keese or a Gibdo and nothing worth having. Din's Fire lights the torch too." },
+      { "id": "oot-1543", "text": "Go back through the door and the grated pit into the Main Room." },
+      { "id": "oot-1544", "text": "In the southwest corner of the Main Room, use the Lens to find an alcove hidden in the wall and open its chest for a Small Key." },
+      { "id": "oot-1545", "text": "In the southeast corner of the Main Room, find the second hidden alcove with the Lens and open its chest for another Small Key." },
+      { "id": "oot-1546", "text": "Unlock the left door of the central room. Inside, hold up your shield as you walk in so the flying pots break on it, then kill the Deku Baba." },
+      { "id": "oot-1547", "text": "Kill the Gold Skulltula on the back wall of the left room and grab its token.", "collect": { "counter": "skulltula", "n": 79 } },
+      { "id": "oot-1548", "text": "Unlock the right door of the central room. Stay in the doorway and kill the swarm of Keese from a distance with the Slingshot or Boomerang." },
+      { "id": "oot-1549", "text": "Turn on the Lens to reveal the invisible walkway across the right room, cross it and kill the Gold Skulltula on the far side, then grab its token.", "collect": { "counter": "skulltula", "n": 80 } },
+      { "id": "oot-1550", "text": "In the northeast corner of the Main Room, crawl through the small hole to a locked door and open it with your last Small Key." },
+      { "id": "oot-1551", "text": "In the pit room, equip the Hylian Shield, switch on the Lens to see the invisible pits, and kill the Fire Keese as they dive at your shield.", "detail": "Fire Keese burn up the Deku Shield; the Hylian Shield is safe. If you still lose the Deku Shield, the small chest in the corner of this room holds a new one." },
+      { "id": "oot-1552", "text": "Throw a Bomb at the Beamos (line it up with the Lens on), then pick your way around the pits to the door on the far side and go through." },
+      { "id": "oot-1553", "text": "Kill the Like Like in the small caged room: circle it, Z-target and stab, then back off before it can grab you.", "detail": "If it swallows your shield, kill it fast and the shield drops back out. The chest in this room holds a spare Hylian Shield." },
+      { "id": "oot-1554", "text": "Kill the Gold Skulltula on the wall of the Like Like room and grab its token.", "collect": { "counter": "skulltula", "n": 81 } },
+      { "id": "oot-1555", "text": "Go back through the pit room (Lens on) and the crawl hole into the Main Room." },
+      { "id": "oot-1556", "text": "In the northwest corner of the Main Room, bomb the rubble on the floor to uncover a chest and open it for Deku Nuts." },
+      { "id": "oot-1557", "text": "In the central room, kill the Skulltula guarding the cage on the right side and open the chest inside for Deku Nuts." },
+      { "id": "oot-1558", "text": "Near the Main Room entrance, on the left side, bomb the rubble on the floor, drop into the hole underneath and open the chest for Bombchus.", "detail": "If the drop lands you in the Basement, climb back out with the Silver Rupees as before." },
+      { "id": "oot-1559", "text": "Leave the Bottom of the Well: back through the fake wall by the entrance, up the ladder and out through the crawl hole.", "detail": "Dungeon done: Lens of Truth, Dungeon Map, Compass and three Gold Skulltulas." }
+    ] },
+    { "id": "c11-market-child", "title": "Market", "subtitle": "Child · Cleanup", "steps": [
+      { "id": "oot-1560", "text": "Go to the Market as a child and play the Sun's Song until it is night.", "detail": "Walk in from Hyrule Field, or warp with the Prelude of Light and step out of the Temple of Time. The Treasure Chest Shop only opens at night." },
+      { "id": "oot-1561", "text": "Enter the Treasure Chest Shop, the building beside the Market's exit toward Hyrule Field, and pay the man 10 Rupees to play." },
+      { "id": "oot-1562", "text": "In each of the five rooms, switch on the Lens of Truth to see which of the two chests holds the Small Key, open only that chest and unlock the door to the next room.", "detail": "Without the Lens every room is a coin flip. If you open a wrong chest the game ends and you pay 10 Rupees to start over." },
+      { "id": "oot-1563", "text": "Open the chest in the final room for a Piece of Heart.", "collect": { "counter": "heart", "n": 33 } }
+    ] }
+  ]
+}

@@ -92,6 +92,7 @@ details.section[open] > summary .s-chev { transform: rotate(45deg); margin-top: 
 .meta:empty { display: none; }
 .pill { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--pill-bg); color: var(--pill-ink); font-variant-numeric: tabular-nums; }
 .pill.flag { background: var(--flag-bg); color: var(--flag-ink); }
+.pill.side { background: transparent; color: var(--muted); border: 1px solid var(--hair); }
 .more { font-size: 13px; color: var(--accent); padding: 4px 6px; margin: -4px 0; }
 .detail { margin-top: 6px; font-size: 14.5px; color: var(--muted); }
 .note { margin-top: 6px; font-size: 14px; color: var(--note-ink); }

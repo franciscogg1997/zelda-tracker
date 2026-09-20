@@ -1,0 +1,51 @@
+{
+  "id": "oot",
+  "title": "Ocarina of Time",
+  "counters": [
+    { "id": "heart", "label": "Heart pieces", "unit": "Heart piece", "total": 36 },
+    { "id": "skulltula", "label": "Skulltulas", "unit": "Skulltula", "total": 100 },
+    { "id": "song", "label": "Songs", "unit": "Song", "total": 12 },
+    { "id": "bottle", "label": "Bottles", "unit": "Bottle", "total": 4 },
+    { "id": "upgrade", "label": "Upgrades", "unit": "Upgrade", "total": 23 }
+  ],
+  "sections": [
+    { "id": "c02-kokiri-forest", "title": "Kokiri Forest", "subtitle": "Child", "steps": [
+      { "id": "oot-0151", "text": "Back in the village, walk to the log tunnel on the west side of Kokiri Forest, opposite the Deku Tree's meadow, and go through it.", "detail": "Mido stops you on the way and blames you for the Great Deku Tree; the scene plays by itself. Nothing else to do in the village right now." },
+      { "id": "oot-0152", "text": "Cross the bridge toward Hyrule Field; Saria stops you and gives you the Fairy Ocarina.", "detail": "The cutscene plays on its own. The Fairy Ocarina goes on a C button, but you have no songs yet." }
+    ] },
+    { "id": "c02-hyrule-field", "title": "Hyrule Field", "subtitle": "Child", "steps": [
+      { "id": "oot-0153", "text": "Step out into Hyrule Field and follow the path around the corner; Kaepora Gaebora, the owl in the tree, stops you. Sit through his speech.", "detail": "He points you to Hyrule Castle and explains the map. Read his closing question carefully and pick the answer that does NOT make him repeat everything; the wording and the order of the options change from one encounter to the next." },
+      { "id": "oot-0154", "text": "Run straight north along the road to the drawbridge of Hyrule Castle Town, using the minimap; go there directly to arrive before nightfall.", "detail": "Lon Lon Ranch, Kakariko Village, Lake Hylia, Gerudo Valley and the Lost Woods are already open, but their story objectives are still blocked; this guide collects their items in later chapters, so skip them for now." },
+      { "id": "oot-0155", "text": "Cross the drawbridge into Castle Town. If night fell and the bridge is raised, wait on the road until sunrise.", "detail": "At night Stalchildren rise out of the ground if you step off the road, but they do not spawn while you stay on it. The drawbridge lowers again at dawn." }
+    ] },
+    { "id": "c02-castle-town", "title": "Hyrule Castle Town", "subtitle": "Child", "steps": [
+      { "id": "oot-0156", "text": "Just inside the town entrance, go through the first door on the right into the guardhouse and smash every crate and pot for Rupees.", "detail": "The soldier on duty lets you break everything. Leave and re-enter to respawn the crates and pots; this is the best early Rupee farm." },
+      { "id": "oot-0157", "text": "Break the crate at the back of the guardhouse right beside the soldier, kill the Gold Skulltula hiding inside and grab its token.", "collect": { "counter": "skulltula", "n": 4 }, "detail": "It is one of the crates in the back corner next to the guard. One sword slash kills it; pick up the token it leaves behind." },
+      { "id": "oot-0158", "text": "Go back out to the drawbridge, climb one of its chains to the very top and jump toward the middle of the bridge for a hidden Red Rupee; do the same on the other chain.", "detail": "Each Red Rupee is worth 20, so both chains give the 20 Rupees the Shooting Gallery costs and more. A third Red Rupee sits in the center of the bridge: stand a little back from the wall, roll and jump off the chains. It is fiddly; skip it if it does not work." },
+      { "id": "oot-0159", "text": "Enter the Shooting Gallery in the Market (bullseye sign above the door) and pay 20 Rupees to play.", "detail": "You shoot with the Fairy Slingshot. The targets are Rupees that pop up in the same pattern every game." },
+      { "id": "oot-0160", "text": "Hit all ten Rupee targets in one round to win a bigger Bullet Bag that holds 40 Deku Seeds.", "collect": { "counter": "upgrade", "n": 9 }, "detail": "Lead the moving targets: Deku Seeds take a moment to fly. Missing just one or two earns a free retry, so keep going until you get a perfect round. Only the first perfect gives the bag; later perfects pay 50 Rupees." },
+      { "id": "oot-0161", "text": "Leave the Market by the road on the north side toward Hyrule Castle." }
+    ] },
+    { "id": "c02-hyrule-castle", "title": "Hyrule Castle", "subtitle": "Child", "steps": [
+      { "id": "oot-0162", "text": "Just inside the castle grounds, Kaepora Gaebora stops you again; go through his speech.", "detail": "Useful fact from him: time stands still in town and indoors, but it flows here and in Hyrule Field. When you need day or night to change, wait out here, not in the Market." },
+      { "id": "oot-0163", "text": "Roll into the lone tree on the left near the entrance, kill the Gold Skulltula that drops out and grab its token.", "collect": { "counter": "skulltula", "n": 5 }, "detail": "Press A while running to roll straight into the trunk. The spider lands at the base of the tree; slash it and take the token." },
+      { "id": "oot-0164", "text": "Go back down the road into the Market.", "detail": "The red-haired girl who was standing in the Market earlier is gone; she has moved up to the castle grounds. If she was already standing by the vines on your first visit, skip this trip." },
+      { "id": "oot-0165", "text": "Return to the castle grounds and find Malon, the red-haired girl, waiting beside the vines next to the guarded gate." },
+      { "id": "oot-0166", "text": "Talk to Malon to receive the Weird Egg.", "detail": "She is from Lon Lon Ranch. Her father Talon went to the castle with a delivery of Lon Lon Milk and never came back, so she assumes he fell asleep. Put the Weird Egg on a C button." },
+      { "id": "oot-0167", "text": "Climb the vines beside Malon, walk along the top of the cliff to its end and drop down on the far side of the gate, away from the guard.", "detail": "Do not go toward the guard at the gate. If any guard catches you on the grounds you are thrown back to the entrance and have to start the sneak again." },
+      { "id": "oot-0168", "text": "Face the castle: two guards patrol the road on the right, so instead climb the slope in the gap between those two and the single guard higher up on the left.", "detail": "Guards only notice what is in front of them. Keep moving through the gap and you pass without being seen." },
+      { "id": "oot-0169", "text": "Stay to the left, off the bright road, until you reach a second gate with two guards; climb the stones sticking out of the cliff to the left of the gate, go over the top and drop down on the other side.", "detail": "On the N64 version the handholds are stones jutting from the cliff face; other versions show vines. Walk up to them and Link grabs on." },
+      { "id": "oot-0170", "text": "Avoid the last guarded gate: jump into the moat and swim along it, picking up the Rupees in the water, until you reach the far corner.", "detail": "Link swims on his own once in the water; just steer along the wall." },
+      { "id": "oot-0171", "text": "Climb out of the moat at the far corner and walk to Talon, asleep next to the milk crates by the castle wall." },
+      { "id": "oot-0172", "text": "When the Weird Egg has hatched into a Cucco, put the Cucco on a C button and use it right next to Talon; talk through his dialogue until he runs off.", "detail": "The egg hatches at dawn. If it is still an egg, wait here on the castle grounds where time passes (it does not in town). Talon confirms Malon's story and bolts home when he hears she sent you." },
+      { "id": "oot-0173", "text": "Push the first milk crate into the moat water beside the castle wall.", "detail": "Grab it with A and push or pull it to the edge; it drops into the water and stays there." },
+      { "id": "oot-0174", "text": "Push the second crate into the water so it lands on top of the first, climb onto the stack and jump across to the opening where water pours out of the castle wall.", "detail": "The stacked crates give you the height to reach the drain. Line up the jump from the top crate." },
+      { "id": "oot-0175", "text": "Crawl through the small hole in the drain opening into the castle courtyard. Do this in daytime only.", "detail": "If you crawl in at night, two guards are waiting on the other side and throw you straight out. If it is night, wait on the grounds for sunrise first." },
+      { "id": "oot-0176", "text": "Sneak through the courtyard past every patrolling guard to the far end without being spotted.", "detail": "Guards see only what is ahead of them: you can stand behind one, never beside it. Wait until a guard is on the far side of a hedge, fountain or statue, or walking away from you, then move. If spotted, you are dumped outside the castle grounds and must sneak in again from the start." },
+      { "id": "oot-0177", "text": "After the last guard, turn left into the quiet garden where Princess Zelda stands at the window.", "detail": "No guards in here. The window on the right shows Mario, Luigi, Yoshi, Peach and Bowser; shoot it with the Slingshot for a Red Rupee. Shoot the window on the left and a guard throws a Bomb at you." },
+      { "id": "oot-0178", "text": "Talk to Princess Zelda and sit through the long conversation; look through the window at Ganondorf when she asks, and take Zelda's Letter at the end.", "detail": "She explains the Triforce and asks you to collect the remaining Spiritual Stones before Ganondorf gets them. The letter proves you act with her authority; you will show it in Kakariko Village." },
+      { "id": "oot-0179", "text": "Walk toward the garden exit; Impa, Zelda's attendant, stops you and teaches Zelda's Lullaby.", "collect": { "counter": "song", "n": 1 }, "detail": "Notes: C-Left, C-Up, C-Right, C-Left, C-Up, C-Right. Play it back when the game asks." },
+      { "id": "oot-0180", "text": "Follow Impa's cutscene out of the castle; she leaves you in Hyrule Field outside Castle Town and points out Kakariko Village at the foot of Death Mountain.", "detail": "Chapter ends here. Before climbing Death Mountain there are side areas to clear first; the next chapter covers them." }
+    ] }
+  ]
+}

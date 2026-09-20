@@ -49,31 +49,45 @@ export function flattenSteps(game) {
   return out;
 }
 
-export function sectionProgress(section, progress) {
+export const isSide = (step) => step.kind === 'side';
+export const stepVisible = (step, hideSide) => !hideSide || !isSide(step);
+
+export function sectionProgress(section, progress, { hideSide = false } = {}) {
   let done = 0;
-  for (const step of section.steps) if (progress.done[step.id]) done++;
-  return { done, total: section.steps.length };
+  let total = 0;
+  for (const step of section.steps) {
+    if (!stepVisible(step, hideSide)) continue;
+    total++;
+    if (progress.done[step.id]) done++;
+  }
+  return { done, total };
 }
 
-export function computeState(game, progress) {
+export function computeState(game, progress, { hideSide = false } = {}) {
   const flat = flattenSteps(game);
   const index = new Map(flat.map((f, i) => [f.step.id, i]));
+  const shown = (i) => stepVisible(flat[i].step, hideSide);
   let furthest = -1;
-  flat.forEach((f, i) => { if (progress.done[f.step.id]) furthest = i; });
-  const currentIndex = furthest + 1;
-  const complete = flat.length > 0 && currentIndex >= flat.length;
+  flat.forEach((f, i) => { if (progress.done[f.step.id] && shown(i)) furthest = i; });
+  let currentIndex = furthest + 1;
+  while (currentIndex < flat.length && (!shown(currentIndex) || progress.done[flat[currentIndex].step.id])) currentIndex++;
+  const visibleCount = flat.reduce((n, f, i) => n + (shown(i) ? 1 : 0), 0);
   const skipped = [];
-  for (let i = 0; i < furthest; i++) if (!progress.done[flat[i].step.id]) skipped.push(i);
+  for (let i = 0; i < furthest; i++) if (!progress.done[flat[i].step.id] && shown(i)) skipped.push(i);
+  // Complete means nothing is outstanding: past the last step AND nothing skipped along the way.
+  const complete = visibleCount > 0 && currentIndex >= flat.length && skipped.length === 0;
   const flagged = [];
   flat.forEach((f, i) => { if (progress.flags[f.step.id] !== undefined) flagged.push(i); });
+  const sideTotal = flat.reduce((n, f) => n + (isSide(f.step) ? 1 : 0), 0);
   const counters = game.counters.map((c) => ({
     ...c,
     done: flat.filter((f) => progress.done[f.step.id] && f.step.collect && f.step.collect.counter === c.id).length,
   }));
-  return { flat, index, furthest, currentIndex, complete, skipped, flagged, counters };
+  return { flat, index, furthest, currentIndex, complete, skipped, flagged, counters, visibleCount, sideTotal, hideSide };
 }
 
-const STEP_KEYS = new Set(['id', 'text', 'detail', 'collect', 'missable']);
+const STEP_KEYS = new Set(['id', 'text', 'detail', 'collect', 'missable', 'kind']);
+export const STEP_KINDS = new Set(['main', 'side']);
 const SECTION_KEYS = new Set(['id', 'title', 'subtitle', 'steps']);
 export const MAX_TEXT = 280;
 
@@ -123,6 +137,7 @@ export function validateGame(game, { partial = false } = {}) {
       for (const k of ['detail', 'missable']) {
         if (st[k] !== undefined && (typeof st[k] !== 'string' || !st[k].trim())) errors.push(`${st.id}: ${k} must be a non-empty string`);
       }
+      if (st.kind !== undefined && !STEP_KINDS.has(st.kind)) errors.push(`${st.id}: kind must be "main" or "side"`);
       if (st.missable) summary.missables.push({ id: st.id, text: st.missable });
       if (st.collect !== undefined) {
         const c = st.collect;

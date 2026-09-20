@@ -1,0 +1,66 @@
+{
+  "id": "oot",
+  "title": "Ocarina of Time",
+  "counters": [
+    { "id": "heart", "label": "Heart pieces", "unit": "Heart piece", "total": 36 },
+    { "id": "skulltula", "label": "Skulltulas", "unit": "Skulltula", "total": 100 },
+    { "id": "song", "label": "Songs", "unit": "Song", "total": 12 },
+    { "id": "bottle", "label": "Bottles", "unit": "Bottle", "total": 4 },
+    { "id": "upgrade", "label": "Upgrades", "unit": "Upgrade", "total": 23 }
+  ],
+  "sections": [
+    { "id": "c06-zoras-river", "title": "Zora's River", "subtitle": "Child", "steps": [
+      { "id": "oot-0751", "text": "Leave Zora's Domain and swim down Zora's River all the way to Hyrule Field.", "detail": "Mash B while swimming to move faster and scoop up the Rupees drifting in the river. If you skipped the two Pieces of Heart here earlier (the ledge by the waterfall and the tall pillar mid-river), the Boomerang now reaches both from the nearby platforms." }
+    ] },
+    { "id": "c06-hyrule-field", "title": "Hyrule Field", "subtitle": "Child", "steps": [
+      { "id": "oot-0752", "text": "Walk toward the Hyrule Castle Town drawbridge until the cutscene starts.", "detail": "The bridge stays raised even by day and storm clouds gather; that is expected. Impa rides out carrying Zelda, who throws the Ocarina of Time into the moat, and then Ganondorf confronts you. There is nothing to press, just watch." },
+      { "id": "oot-0753", "text": "Jump into the moat and dive to pick up the Ocarina of Time.", "detail": "It sank right beside the drawbridge. Swim over the sparkle in the water and press A to dive onto it. The current drags you along, so it may take a few tries; climb out and jump back in if you drift past." },
+      { "id": "oot-0754", "text": "Watch the vision of Princess Zelda and play back the Song of Time to learn it.", "detail": "Notes: C-Right, A, C-Down, C-Right, A, C-Down. You reappear on the bank next to the lowered drawbridge and Castle Town is open again. Navi points you to the Temple of Time, but finish the Happy Mask errands first.", "collect": { "counter": "song", "n": 5 } }
+    ] },
+    { "id": "c06-castle-town-keaton", "title": "Hyrule Castle Town", "subtitle": "Child", "steps": [
+      { "id": "oot-0755", "text": "Enter the Market, go into the Happy Mask Shop and borrow the Keaton Mask.", "detail": "The shop is on the right side of the square, beside the walkway to the Temple of Time. Borrowing costs nothing up front: you pay the salesman the mask's price (10 Rupees) after you have sold it. Only the Keaton Mask is on offer for now." }
+    ] },
+    { "id": "c06-kakariko-keaton", "title": "Kakariko Village", "subtitle": "Child", "steps": [
+      { "id": "oot-0756", "text": "In Kakariko Village, climb the stairs to the Death Mountain Trail gate, put on the Keaton Mask and talk to the guard to sell it for 15 Rupees.", "detail": "He is the guard you handed Zelda's Letter to. Equip the mask on a C-button from the item screen; he only bites while you are wearing it. You come out 5 Rupees ahead on this one." }
+    ] },
+    { "id": "c06-castle-town-skull", "title": "Hyrule Castle Town", "subtitle": "Child", "steps": [
+      { "id": "oot-0757", "text": "Return to the Happy Mask Shop, pay the 10 Rupees you owe for the Keaton Mask and borrow the Skull Mask.", "detail": "The salesman takes the money as you talk to him, then offers the Skull Mask (worth 20 Rupees)." }
+    ] },
+    { "id": "c06-lost-woods-skull", "title": "Lost Woods", "subtitle": "Child", "steps": [
+      { "id": "oot-0758", "text": "Enter the Lost Woods from Kokiri Forest and take the tunnels right, left, right, left, left to reach the last clearing before the Sacred Forest Meadow.", "detail": "Saria's Song grows louder along the correct route. A wrong tunnel sends you back to the start of the woods; just count again from there." },
+      { "id": "oot-0759", "text": "Walk around under the cloud of butterflies at the back of that clearing until you drop into a hidden hole: the Forest Stage.", "detail": "The hole has no marker; keep pacing beneath the butterflies and you will fall in. Ignore the tunnel that leads on to the Sacred Forest Meadow." },
+      { "id": "oot-0760", "text": "Put on the Skull Mask, walk to the middle of the stage and stand still while the Deku Scrubs judge you; their leader gives you the Deku Stick upgrade (30 sticks).", "detail": "The scrubs pop up, admire the mask and scurry around before fetching their leader. Leave through the glowing spot where you landed.", "collect": { "counter": "upgrade", "n": 2 } },
+      { "id": "oot-0761", "text": "Back at the Lost Woods entrance, turn left, stand on the tree stump and talk to the Skull Kid while wearing the Skull Mask to sell it for 10 Rupees.", "detail": "Same Skull Kid who rewarded Saria's Song. He pays only 10 for a 20-Rupee mask, so you eat a 10-Rupee loss, but the sale is what unlocks the next mask. Taking any wrong tunnel is the quickest way back to the entrance." }
+    ] },
+    { "id": "c06-castle-town-spooky", "title": "Hyrule Castle Town", "subtitle": "Child", "steps": [
+      { "id": "oot-0762", "text": "Return to the Happy Mask Shop, pay the 20 Rupees you owe for the Skull Mask and borrow the Spooky Mask.", "detail": "Bring at least 20 Rupees. The Spooky Mask is worth 30." }
+    ] },
+    { "id": "c06-graveyard", "title": "Kakariko Graveyard", "subtitle": "Child", "steps": [
+      { "id": "oot-0763", "text": "Go to the Kakariko Graveyard during the day, put on the Spooky Mask and talk to the boy pacing around with a stick to sell it for 30 Rupees.", "detail": "He is only out in daytime; play the Sun's Song if it is dark. He wants to be as scary as Dampé and pays the full 30 at once." },
+      { "id": "oot-0764", "text": "Walk up the left side of the graveyard to the patch of soft soil and plant a Magic Bean in it.", "detail": "The soft soil is a small round dirt patch along the left wall. Stand on it and use a Magic Bean from a C-button. Out of beans? The Bean Seller sits at the start of Zora's River; each bean costs 10 Rupees more than the last. The plant that grows here will carry adult Link up to a Piece of Heart on the graveyard's high ledge." }
+    ] },
+    { "id": "c06-castle-town-bunny", "title": "Hyrule Castle Town", "subtitle": "Child", "steps": [
+      { "id": "oot-0765", "text": "Return to the Happy Mask Shop, pay the 30 Rupees you owe for the Spooky Mask and borrow the Bunny Hood.", "detail": "The Bunny Hood is worth 50 Rupees; it is the last loan before the Mask of Truth." }
+    ] },
+    { "id": "c06-hyrule-field-running-man", "title": "Hyrule Field", "subtitle": "Child", "steps": [
+      { "id": "oot-0766", "text": "Find the Running Man jogging on the road around Lon Lon Ranch, put on the Bunny Hood and talk to him to sell it.", "detail": "Leave the Market, follow the road to the right and you will meet him near the ranch; he laps it counter-clockwise starting from the north-east corner of the field. Talk to him when he stops to rest (play the Sun's Song to pass time if he will not stop). He pays more than your wallet can hold, so you walk away with a full wallet and no hood." }
+    ] },
+    { "id": "c06-castle-town-truth", "title": "Hyrule Castle Town", "subtitle": "Child", "steps": [
+      { "id": "oot-0767", "text": "Return to the Happy Mask Shop, pay the 50 Rupees you owe for the Bunny Hood and borrow the Mask of Truth.", "detail": "Four masks unlock: Mask of Truth, Goron Mask, Zora Mask and Gerudo Mask. They are free to borrow and never need paying back. Only the Mask of Truth matters: with it on you can read the Gossip Stones scattered across Hyrule." }
+    ] },
+    { "id": "c06-lost-woods-truth", "title": "Lost Woods", "subtitle": "Child", "steps": [
+      { "id": "oot-0768", "text": "Go back to the Forest Stage in the Lost Woods: right, left, right, left, left, then drop through the hidden hole under the butterflies.", "detail": "Same hole as before, at the back of the last clearing before the Sacred Forest Meadow." },
+      { "id": "oot-0769", "text": "Put on the Mask of Truth and walk to the middle of the stage; the terrified Deku Scrubs hand over the Deku Nut upgrade (40 nuts).", "detail": "They panic at the mask but still leave the reward. Leave through the glowing spot where you landed.", "collect": { "counter": "upgrade", "n": 4 } }
+    ] },
+    { "id": "c06-temple-of-time-child", "title": "Temple of Time", "subtitle": "Child", "steps": [
+      { "id": "oot-0770", "text": "In the Market, take the walkway between the Happy Mask Shop and the Potion Shop to the Temple of Time and go inside.", "detail": "The Gossip Stones in the garden out front can be read with the Mask of Truth on if you are curious. Nothing here is required." },
+      { "id": "oot-0771", "text": "Stand at the altar in front of the Door of Time and play the Song of Time.", "detail": "C-Right, A, C-Down, C-Right, A, C-Down. The three Spiritual Stones settle onto the altar and the Door of Time slides open." },
+      { "id": "oot-0772", "text": "Walk through the Door of Time, step up onto the Pedestal of Time and pull out the Master Sword.", "detail": "Press A at the sword. Ganondorf follows you into the Sacred Realm and seven years pass. Nothing is lost by doing this: once you are an adult you can come back here and set the sword in the pedestal to become a child again." }
+    ] },
+    { "id": "c06-temple-of-time-adult", "title": "Temple of Time", "subtitle": "Adult", "steps": [
+      { "id": "oot-0773", "text": "Listen to Rauru in the Chamber of Sages and receive the Light Medallion.", "detail": "Automatic. Rauru explains the seven-year sleep and the six Sages, then sends you back to the Temple of Time." },
+      { "id": "oot-0774", "text": "Watch the scene with Sheik in the Temple of Time; your next stop is Kakariko Village, then the Forest Temple.", "detail": "Sheik walks up on her own as you turn to leave. No song is taught yet." },
+      { "id": "oot-0775", "text": "Open the equipment screen and make sure the Master Sword and the Hylian Shield are equipped.", "detail": "Adult Link cannot use the Kokiri Sword, Deku Shield, Fairy Slingshot, Boomerang or Deku Sticks; Deku Nuts, Bombs and Bombchus still work. If you never got a Hylian Shield, the Kakariko Bazaar sells one for 80 Rupees." }
+    ] }
+  ]
+}

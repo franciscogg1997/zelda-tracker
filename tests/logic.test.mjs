@@ -94,7 +94,7 @@ test('computeState: current is after the furthest done, skipped are earlier undo
 test('computeState: far-ahead done moves current forward; all done is complete', () => {
   const s = computeState(G, prog({ 'g-0004': 1 }));
   assert.equal(s.currentIndex, 4);
-  assert.equal(s.complete, true);
+  assert.equal(s.complete, false, 'past the end but 3 steps skipped is not complete');
   assert.deepEqual(s.skipped, [0, 1, 2]);
   const all = computeState(G, prog({ 'g-0001': 1, 'g-0002': 1, 'g-0003': 1, 'g-0004': 1 }));
   assert.equal(all.complete, true);
@@ -162,4 +162,61 @@ test('validateGame: partial mode turns completeness into warnings', () => {
 test('validateGame: missables are summarised', () => {
   const g = good(); g.sections[0].steps[0].missable = 'Do it now.';
   assert.deepEqual(validateGame(g).summary.missables, [{ id: 'g-0001', text: 'Do it now.' }]);
+});
+
+import { stepVisible, isSide } from '../logic.js';
+
+const S = {
+  id: 'g', title: 'G',
+  counters: [{ id: 'heart', label: 'Heart pieces', total: 1 }],
+  sections: [
+    { id: 'a', title: 'A', steps: [
+      { id: 'g-0001', text: 'main one' },
+      { id: 'g-0002', text: 'side one', kind: 'side', collect: { counter: 'heart', n: 1 } },
+      { id: 'g-0003', text: 'main two', kind: 'main' },
+    ] },
+  ],
+};
+const sprog = (done) => ({ ...emptyProgress('g'), done });
+
+test('isSide and stepVisible', () => {
+  assert.equal(isSide(S.sections[0].steps[1]), true);
+  assert.equal(isSide(S.sections[0].steps[0]), false);
+  assert.equal(stepVisible(S.sections[0].steps[1], true), false);
+  assert.equal(stepVisible(S.sections[0].steps[1], false), true);
+});
+
+test('hideSide: current step skips side steps', () => {
+  const shown = computeState(S, sprog({ 'g-0001': 1 }));
+  assert.equal(shown.flat[shown.currentIndex].step.id, 'g-0002');
+  const hidden = computeState(S, sprog({ 'g-0001': 1 }), { hideSide: true });
+  assert.equal(hidden.flat[hidden.currentIndex].step.id, 'g-0003');
+  assert.equal(hidden.visibleCount, 2);
+  assert.equal(hidden.sideTotal, 1);
+});
+
+test('hideSide: side steps never appear as skipped, and completion ignores them', () => {
+  const p = sprog({ 'g-0003': 1 });
+  assert.deepEqual(computeState(S, p).skipped, [0, 1]);
+  assert.deepEqual(computeState(S, p, { hideSide: true }).skipped, [0]);
+  const done = sprog({ 'g-0001': 1, 'g-0003': 1 });
+  assert.equal(computeState(S, done, { hideSide: true }).complete, true);
+  assert.equal(computeState(S, done).complete, false, 'the side step is still skipped');
+});
+
+test('hideSide: counters still count done side steps', () => {
+  const st = computeState(S, sprog({ 'g-0002': 1 }), { hideSide: true });
+  assert.equal(st.counters[0].done, 1);
+});
+
+test('sectionProgress respects hideSide', () => {
+  assert.deepEqual(sectionProgress(S.sections[0], sprog({}), { hideSide: true }), { done: 0, total: 2 });
+  assert.deepEqual(sectionProgress(S.sections[0], sprog({})), { done: 0, total: 3 });
+});
+
+test('validateGame: kind must be main or side', () => {
+  const bad = JSON.parse(JSON.stringify(S));
+  bad.sections[0].steps[0].kind = 'optional';
+  assert.ok(validateGame(bad).errors.some((e) => e.includes('kind must be')));
+  assert.deepEqual(validateGame(S).errors, []);
 });
