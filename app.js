@@ -1,9 +1,9 @@
 import {
   emptyProgress, parseProgress, mergeProgress, serializeProgress,
   computeState, validateGame, filterCounts,
-} from './logic.js?v=1.1.0';
+} from './logic.js?v=1.1.1';
 
-export const APP_VERSION = '1.1.0';
+export const APP_VERSION = '1.1.1';
 
 // The filter strip, in the order it is shown. Counter filters are added from the
 // game file between "Story" and "Side quests".

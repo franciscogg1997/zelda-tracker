@@ -1,7 +1,7 @@
 // Everything same-origin is network-first: the app code and the walkthrough must
 // agree on the data format, and serving a cached app against fresh data (or the
 // reverse) breaks the page. The cache is the offline fallback, not the fast path.
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const SHELL_CACHE = `shell-${CACHE_VERSION}`;
 const DATA_CACHE = 'data';
 const SHELL = ['./', './index.html', './style.css', './app.js', './logic.js', './manifest.webmanifest',
