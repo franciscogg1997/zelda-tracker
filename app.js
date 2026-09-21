@@ -1,15 +1,26 @@
 import {
   emptyProgress, parseProgress, mergeProgress, serializeProgress,
-  computeState, sectionProgress, validateGame, stepVisible, isSide,
-} from './logic.js';
+  computeState, validateGame, filterCounts,
+} from './logic.js?v=1.1.0';
 
-export const APP_VERSION = '1.0.0';
+export const APP_VERSION = '1.1.0';
+
+// The filter strip, in the order it is shown. Counter filters are added from the
+// game file between "Story" and "Side quests".
+const FIXED_FILTERS = [
+  { id: 'all', label: 'All' },
+  { id: 'story', label: 'Story' },
+];
+const TAIL_FILTERS = [
+  { id: 'quest', label: 'Side quests' },
+  { id: 'extra', label: 'Extras' },
+];
 
 const els = {
   top: document.getElementById('top'),
   title: document.getElementById('game-title'),
   select: document.getElementById('game-select'),
-  counters: document.getElementById('counters'),
+  filters: document.getElementById('filters'),
   notices: document.getElementById('notices'),
   main: document.getElementById('main'),
   skipped: document.getElementById('btn-skipped'),
@@ -32,6 +43,7 @@ let progress = null;
 let ui = null;
 let state = null;
 let view = 'all'; // 'all' | 'skipped' | 'flagged'
+let filter = 'all';
 
 // ---------- boot ----------
 async function boot() {
@@ -81,6 +93,8 @@ async function loadGame() {
   els.title.textContent = game.title;
   progress = loadProgress();
   ui = loadUi();
+  // an older version stored a plain "main route only" switch
+  filter = ui.filter ?? (ui.hideSide ? 'story' : 'all');
   recompute();
   renderAll();
   measureHeader();
@@ -89,9 +103,20 @@ async function loadGame() {
 }
 
 // ---------- persistence ----------
+// Keep a restore point every time the app changes version. Progress is the one
+// thing here that cannot be regenerated.
+function snapshotOnUpgrade(raw) {
+  const key = `zt:appVersion:${gameId}`;
+  const seen = store.read(key);
+  if (seen === APP_VERSION) return;
+  if (raw) store.write(`zt:progress:${gameId}:v${seen || 'first'}:${Date.now()}`, raw);
+  store.write(key, APP_VERSION);
+}
+
 function loadProgress() {
   const key = `zt:progress:${gameId}`;
   const raw = store.read(key);
+  snapshotOnUpgrade(raw);
   const res = parseProgress(raw, gameId);
   if (res.ok) return res.progress;
   store.write(`${key}:corrupt:${Date.now()}`, raw);
@@ -108,30 +133,62 @@ function loadUi() {
   try { const u = JSON.parse(store.read(`zt:ui:${gameId}`)); return u && typeof u === 'object' ? u : {}; } catch { return {}; }
 }
 function saveUi() { store.write(`zt:ui:${gameId}`, JSON.stringify(ui)); }
-function recompute() { state = computeState(game, progress, { hideSide: !!ui.hideSide }); }
+function recompute() { state = computeState(game, progress, { filter }); }
 
 // ---------- rendering ----------
 function renderAll() {
-  renderCounters();
+  renderFilters();
   els.main.innerHTML = '';
   if (view === 'all') renderSections(); else renderFiltered();
   renderBottomBar();
 }
 
-function renderCounters() {
-  els.counters.innerHTML = state.counters.map((c) =>
-    `<div class="counter${c.done >= c.total ? ' complete' : ''}"><span class="label">${esc(c.label)}</span><span class="value">${c.done}/${c.total}</span></div>`).join('');
+function filterList() {
+  return [...FIXED_FILTERS, ...game.counters.map((c) => ({ id: c.id, label: c.label, dot: true })), ...TAIL_FILTERS];
+}
+
+function renderFilters() {
+  const counts = filterCounts(game, progress);
+  els.filters.innerHTML = filterList().map((f) => {
+    const c = counts[f.id] ?? { done: 0, total: 0 };
+    const complete = c.total > 0 && c.done >= c.total;
+    const value = f.id === 'all' ? `${c.done}` : `${c.done}/${c.total}`;
+    return `<button class="f${filter === f.id ? ' on' : ''}${complete ? ' done' : ''}" data-f="${f.id}">`
+      + `${f.dot ? '<span class="dot"></span>' : ''}${esc(f.label)} <b>${value}</b></button>`;
+  }).join('');
+}
+
+function setFilter(next) {
+  filter = filter === next ? 'all' : next;
+  ui.filter = filter;
+  saveUi();
+  view = 'all';
+  recompute();
+  renderAll();
+  window.scrollTo(0, 0);
+  scrollToCurrent(false);
 }
 
 // Sections render their rows only once opened: the full walkthrough is ~2000 steps,
 // and building every row up front makes scrolling stutter on a phone.
+const inFilter = (step) => filter === 'all' || !!state.groups.get(step.id)?.has(filter);
+
+function sectionCount(section) {
+  let done = 0;
+  let total = 0;
+  for (const step of section.steps) {
+    if (!inFilter(step)) continue;
+    total++;
+    if (progress.done[step.id]) done++;
+  }
+  return { done, total };
+}
+
 function fillSection(det, section) {
   const list = det.querySelector('.steps');
   if (list.dataset.filled === '1') return;
   const frag = document.createDocumentFragment();
-  for (const step of section.steps) {
-    if (stepVisible(step, !!ui.hideSide)) frag.append(renderRow(step));
-  }
+  for (const step of section.steps) if (inFilter(step)) frag.append(renderRow(step));
   list.append(frag);
   list.dataset.filled = '1';
 }
@@ -141,8 +198,8 @@ function renderSections() {
   const currentSectionId = state.flat[state.currentIndex]?.section.id;
   const frag = document.createDocumentFragment();
   for (const section of game.sections) {
-    const sp = sectionProgress(section, progress, { hideSide: !!ui.hideSide });
-    if (sp.total === 0) continue; // every step in it is hidden
+    const sp = sectionCount(section);
+    if (sp.total === 0) continue; // nothing in it matches the filter
     const det = document.createElement('details');
     det.className = 'section';
     det.dataset.id = section.id;
@@ -158,6 +215,11 @@ function renderSections() {
       det.dataset.state = now;
       ui.sections[section.id] = now;
       saveUi();
+      // Folding a finished section collapses the list under your thumb and leaves
+      // you nowhere in particular, so go to the step you are on. If that step is
+      // inside the section you just folded, you meant to hide it: stay put.
+      const curSection = state.flat[state.currentIndex]?.section.id;
+      if (!det.open && curSection !== section.id) scrollToCurrent(false);
     });
     frag.append(det);
   }
@@ -170,8 +232,10 @@ function renderRow(step, { caption } = {}) {
   const note = progress.notes[step.id];
   const isCurrent = state.flat[state.currentIndex]?.step.id === step.id;
   const counter = step.collect ? game.counters.find((c) => c.id === step.collect.counter) : null;
+  const isExtra = !!state.groups.get(step.id)?.has('extra');
   const row = document.createElement('div');
-  row.className = `row${done ? ' done' : ''}${isCurrent ? ' current' : ''}${flagged ? ' flagged' : ''}`;
+  row.className = `row${done ? ' done' : ''}${isCurrent ? ' current' : ''}${flagged ? ' flagged' : ''}`
+    + (counter ? ` r-${counter.id}` : '');
   row.dataset.id = step.id;
   row.innerHTML = `
     <button class="check" aria-label="${done ? 'Mark not done' : 'Mark done'}"></button>
@@ -180,8 +244,8 @@ function renderRow(step, { caption } = {}) {
       ${isCurrent ? '<div class="next-label">Next</div>' : ''}
       <div class="text">${esc(step.text)}</div>
       <div class="meta">
-        ${isSide(step) ? '<span class="pill side">Optional</span>' : ''}
-        ${counter ? `<span class="pill">${esc(counter.unit || counter.label)} ${step.collect.n}</span>` : ''}
+        ${counter ? `<span class="pill reward">${esc(counter.unit || counter.label)}</span>` : ''}
+        ${isExtra ? '<span class="pill side">Extra</span>' : ''}
         ${flagged ? '<span class="pill flag">Flagged</span>' : ''}
         ${step.detail ? '<button class="more">more</button>' : ''}
       </div>
@@ -237,7 +301,7 @@ function renderBottomBar() {
 function refreshSectionCounts() {
   for (const det of els.main.querySelectorAll('details.section')) {
     const section = game.sections.find((s) => s.id === det.dataset.id);
-    const sp = sectionProgress(section, progress, { hideSide: !!ui.hideSide });
+    const sp = sectionCount(section);
     det.querySelector('.s-count').textContent = `${sp.done}/${sp.total}`;
   }
 }
@@ -258,7 +322,7 @@ function afterProgressChange(changedIds) {
   if (prevCurrent) ids.add(prevCurrent);
   if (newCurrent) ids.add(newCurrent);
   for (const id of ids) refreshRow(id);
-  renderCounters();
+  renderFilters();
   refreshSectionCounts();
   renderBottomBar();
   // Finishing a section leaves the next step inside a closed one, where the
@@ -310,6 +374,10 @@ function scrollToCurrent(smooth = true) {
 }
 
 function wireBottomBar() {
+  els.filters.onclick = (e) => {
+    const b = e.target.closest('.f');
+    if (b) setFilter(b.dataset.f);
+  };
   els.cont.onclick = () => scrollToCurrent(true);
   els.skipped.onclick = () => { view = view === 'skipped' ? 'all' : 'skipped'; renderAll(); window.scrollTo(0, 0); };
   els.menu.onclick = () => openMenu();
@@ -380,21 +448,11 @@ function openStepSheet(step) {
 
 function openMenu() {
   const panel = openSheet(`
-    <label class="check-line"><input type="checkbox" id="m-hide-side" ${ui.hideSide ? 'checked' : ''}> Main route only</label>
-    <p class="sheet-detail">Hides the ${state.sideTotal} optional steps: collectibles, side quests and upgrades. Their progress is kept.</p>
     <button class="menu-item" id="m-flagged"><span>Flagged</span><span class="count">${state.flagged.length}</span></button>
     <button class="menu-item" id="m-backup"><span>Backup progress</span><span class="count">›</span></button>
     <button class="menu-item" id="m-import"><span>Import progress</span><span class="count">›</span></button>
     <div class="about">Zelda 100% v${APP_VERSION} · content v${game.contentVersion ?? '?'} · ${state.flat.length} steps</div>`);
   els.sheet.querySelector('.backdrop').onclick = closeSheet;
-  panel.querySelector('#m-hide-side').onchange = (e) => {
-    ui.hideSide = e.target.checked;
-    saveUi();
-    closeSheet();
-    recompute();
-    renderAll();
-    scrollToCurrent(false);
-  };
   panel.querySelector('#m-flagged').onclick = () => { closeSheet(); view = 'flagged'; renderAll(); window.scrollTo(0, 0); };
   panel.querySelector('#m-backup').onclick = openBackup;
   panel.querySelector('#m-import').onclick = openImport;

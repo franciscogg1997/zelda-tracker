@@ -220,3 +220,98 @@ test('validateGame: kind must be main or side', () => {
   assert.ok(validateGame(bad).errors.some((e) => e.includes('kind must be')));
   assert.deepEqual(validateGame(S).errors, []);
 });
+
+import { assignGroups, filterCounts, QUEST_MIN, FILTERS } from '../logic.js';
+
+const mk = (id, kind, collect) => ({ id, text: 't', kind, ...(collect ? { collect } : {}) });
+const GAME = {
+  id: 'g', title: 'G',
+  counters: [
+    { id: 'heart', label: 'Heart pieces', total: 2 },
+    { id: 'skulltula', label: 'Skulltulas', total: 1 },
+  ],
+  sections: [
+    { id: 's1', title: 'One', steps: [
+      mk('g-0001', 'main'),                              // story
+      mk('g-0002', 'side'),                              // the walk to the chest
+      mk('g-0003', 'side', { counter: 'heart', n: 1 }),  // the chest itself
+      mk('g-0004', 'main'),                              // story
+      mk('g-0005', 'side'),                              // a lone rupee pickup
+      mk('g-0006', 'main'),                              // story
+    ] },
+    { id: 's2', title: 'Two', steps: [
+      mk('g-0007', 'side'), mk('g-0008', 'side'),
+      mk('g-0009', 'side', { counter: 'heart', n: 2 }),  // closes the first pursuit
+      mk('g-0010', 'side'),
+      mk('g-0011', 'side', { counter: 'skulltula', n: 1 }), // closes the second
+    ] },
+    { id: 's3', title: 'Three', steps: [
+      // an optional dungeon: a long run that never yields a counted item
+      mk('g-0012', 'side'), mk('g-0013', 'side'), mk('g-0014', 'side'), mk('g-0015', 'side'), mk('g-0016', 'side'),
+    ] },
+  ],
+};
+const gp = (done = {}) => ({ ...emptyProgress('g'), done });
+const groupOf = (groups, id) => [...groups.get(id)].sort().join('+');
+
+test('assignGroups: main steps are story', () => {
+  const g = assignGroups(GAME);
+  assert.equal(groupOf(g, 'g-0001'), 'story');
+  assert.equal(groupOf(g, 'g-0006'), 'story');
+});
+
+test('assignGroups: the steps leading to a collectible belong to it', () => {
+  const g = assignGroups(GAME);
+  assert.equal(groupOf(g, 'g-0002'), 'heart', 'the walk there comes with the chest');
+  assert.equal(groupOf(g, 'g-0003'), 'heart');
+});
+
+test('assignGroups: each collectible closes its own pursuit', () => {
+  const g = assignGroups(GAME);
+  assert.deepEqual(['g-0007', 'g-0008', 'g-0009'].map((id) => groupOf(g, id)), ['heart', 'heart', 'heart']);
+  assert.deepEqual(['g-0010', 'g-0011'].map((id) => groupOf(g, id)), ['skulltula', 'skulltula']);
+});
+
+test('assignGroups: a lone optional step with no reward is an extra', () => {
+  assert.equal(groupOf(assignGroups(GAME), 'g-0005'), 'extra');
+});
+
+test('assignGroups: a long optional run with no reward is a side quest', () => {
+  const g = assignGroups(GAME);
+  assert.equal(QUEST_MIN, 5);
+  for (const id of ['g-0012', 'g-0016']) assert.equal(groupOf(g, id), 'quest', id);
+});
+
+test('computeState: a filter hides everything outside it and moves the current step', () => {
+  const heart = computeState(GAME, gp(), { filter: 'heart' });
+  assert.equal(heart.flat[heart.currentIndex].step.id, 'g-0002');
+  assert.equal(heart.visibleCount, 5, '2 steps for the first piece, 3 for the second');
+  const story = computeState(GAME, gp(), { filter: 'story' });
+  assert.equal(story.flat[story.currentIndex].step.id, 'g-0001');
+  assert.equal(story.visibleCount, 3);
+  assert.equal(computeState(GAME, gp(), { filter: 'extra' }).visibleCount, 1);
+  assert.equal(computeState(GAME, gp(), { filter: 'quest' }).visibleCount, 5);
+  assert.equal(computeState(GAME, gp(), { filter: 'all' }).visibleCount, 16);
+});
+
+test('computeState: filtering never loses progress or counter totals', () => {
+  const st = computeState(GAME, gp({ 'g-0003': 1, 'g-0005': 1 }), { filter: 'skulltula' });
+  const heart = st.counters.find((c) => c.id === 'heart');
+  assert.deepEqual([heart.done, heart.total], [1, 2], 'a heart collected outside the filter still counts');
+});
+
+test('computeState: skipped only lists steps the current filter shows', () => {
+  const st = computeState(GAME, gp({ 'g-0006': 1 }), { filter: 'story' });
+  assert.deepEqual(st.skipped.map((i) => st.flat[i].step.id), ['g-0001', 'g-0004']);
+});
+
+test('filterCounts gives a done/total for every filter', () => {
+  const c = filterCounts(GAME, gp({ 'g-0001': 1, 'g-0003': 1 }));
+  assert.deepEqual(c.all, { done: 2, total: 16 });
+  assert.deepEqual(c.story, { done: 1, total: 3 });
+  assert.deepEqual(c.heart, { done: 1, total: 2 }, 'counter filters count items, not steps');
+  assert.deepEqual(c.skulltula, { done: 0, total: 1 });
+  assert.deepEqual(c.extra, { done: 0, total: 1 });
+  assert.deepEqual(c.quest, { done: 0, total: 5 });
+  assert.ok(FILTERS.includes('all') && FILTERS.includes('quest'));
+});

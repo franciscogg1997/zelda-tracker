@@ -52,6 +52,53 @@ export function flattenSteps(game) {
 export const isSide = (step) => step.kind === 'side';
 export const stepVisible = (step, hideSide) => !hideSide || !isSide(step);
 
+// A side detour is written as a run of consecutive optional steps. The run as a
+// whole belongs to whatever it yields, so filtering to "Skulltulas" brings the
+// walk to the grotto with it, not just the step that hands over the token.
+export const QUEST_MIN = 5;
+export const FILTERS = ['all', 'story', 'quest', 'extra'];
+
+export function assignGroups(game) {
+  const groups = new Map();
+  const put = (steps, key) => { const g = new Set([key]); for (const s of steps) groups.set(s.id, g); };
+  for (const section of game.sections) {
+    let pending = [];
+    for (const step of section.steps) {
+      if (!isSide(step)) {
+        // a required step ends whatever optional detour was running
+        if (pending.length) { put(pending, pending.length >= QUEST_MIN ? 'quest' : 'extra'); pending = []; }
+        groups.set(step.id, new Set(['story']));
+        continue;
+      }
+      pending.push(step);
+      // the payoff closes the pursuit: everything that led here belongs to it
+      if (step.collect) { put(pending, step.collect.counter); pending = []; }
+    }
+    if (pending.length) put(pending, pending.length >= QUEST_MIN ? 'quest' : 'extra');
+  }
+  return groups;
+}
+
+export function filterCounts(game, progress) {
+  const groups = assignGroups(game);
+  const flat = flattenSteps(game);
+  const counts = { all: { done: 0, total: 0 }, story: { done: 0, total: 0 }, quest: { done: 0, total: 0 }, extra: { done: 0, total: 0 } };
+  const isCounter = new Set(game.counters.map((c) => c.id));
+  for (const c of game.counters) counts[c.id] = { done: 0, total: c.total };
+  for (const { step } of flat) {
+    const done = !!progress.done[step.id];
+    counts.all.total++;
+    if (done) counts.all.done++;
+    for (const g of groups.get(step.id) ?? []) {
+      if (isCounter.has(g)) continue; // a counter filter counts items collected, not steps walked
+      counts[g].total++;
+      if (done) counts[g].done++;
+    }
+    if (done && step.collect && counts[step.collect.counter]) counts[step.collect.counter].done++;
+  }
+  return counts;
+}
+
 export function sectionProgress(section, progress, { hideSide = false } = {}) {
   let done = 0;
   let total = 0;
@@ -63,10 +110,13 @@ export function sectionProgress(section, progress, { hideSide = false } = {}) {
   return { done, total };
 }
 
-export function computeState(game, progress, { hideSide = false } = {}) {
+export function computeState(game, progress, { hideSide = false, filter = 'all' } = {}) {
   const flat = flattenSteps(game);
   const index = new Map(flat.map((f, i) => [f.step.id, i]));
-  const shown = (i) => stepVisible(flat[i].step, hideSide);
+  const groups = assignGroups(game);
+  const shown = (i) => (filter === 'all'
+    ? stepVisible(flat[i].step, hideSide)
+    : !!groups.get(flat[i].step.id)?.has(filter));
   let furthest = -1;
   flat.forEach((f, i) => { if (progress.done[f.step.id] && shown(i)) furthest = i; });
   let currentIndex = furthest + 1;
@@ -83,7 +133,7 @@ export function computeState(game, progress, { hideSide = false } = {}) {
     ...c,
     done: flat.filter((f) => progress.done[f.step.id] && f.step.collect && f.step.collect.counter === c.id).length,
   }));
-  return { flat, index, furthest, currentIndex, complete, skipped, flagged, counters, visibleCount, sideTotal, hideSide };
+  return { flat, index, furthest, currentIndex, complete, skipped, flagged, counters, visibleCount, sideTotal, hideSide, filter, groups };
 }
 
 const STEP_KEYS = new Set(['id', 'text', 'detail', 'collect', 'missable', 'kind']);

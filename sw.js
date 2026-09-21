@@ -1,7 +1,7 @@
 // Everything same-origin is network-first: the app code and the walkthrough must
 // agree on the data format, and serving a cached app against fresh data (or the
 // reverse) breaks the page. The cache is the offline fallback, not the fast path.
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const SHELL_CACHE = `shell-${CACHE_VERSION}`;
 const DATA_CACHE = 'data';
 const SHELL = ['./', './index.html', './style.css', './app.js', './logic.js', './manifest.webmanifest',
@@ -30,7 +30,9 @@ async function networkFirst(req, cacheName) {
   try {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), 2500); // fall back to cache fast on a weak signal
-    const res = await fetch(req, { signal: ctrl.signal });
+    // Bypass the browser's own HTTP cache: a stale app.js against a fresh
+    // index.html is exactly the mismatch this worker exists to prevent.
+    const res = await fetch(new Request(req.url, { cache: 'no-cache', credentials: 'same-origin' }), { signal: ctrl.signal });
     clearTimeout(t);
     if (res.ok) cache.put(req, res.clone());
     return res;

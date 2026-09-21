@@ -8,6 +8,12 @@
   --note-ink: #2f5c9e;
   --backdrop: rgba(0, 0, 0, .35);
   --header-h: 96px;
+  /* what a step gives you: a soft tint on the row, a solid chip on the label */
+  --heart-tint: #fdeef3; --heart-ink: #a13560; --heart-chip: #f7d6e2;
+  --skulltula-tint: #fbf1d9; --skulltula-ink: #74500c; --skulltula-chip: #f2e0b4;
+  --song-tint: #f0eefc; --song-ink: #5b4bab; --song-chip: #ddd8f5;
+  --bottle-tint: #e8f5f2; --bottle-ink: #1f6b60; --bottle-chip: #cfe9e3;
+  --upgrade-tint: #eaf0fa; --upgrade-ink: #2f5c9e; --upgrade-chip: #d4e2f5;
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -19,6 +25,11 @@
     --flag-bg: #3b1f1b; --flag-ink: #f2a193;
     --note-ink: #96b6ea;
     --backdrop: rgba(0, 0, 0, .6);
+    --heart-tint: #3b2029; --heart-ink: #f0a6c0; --heart-chip: #4a2635;
+    --skulltula-tint: #342b15; --skulltula-ink: #e8c477; --skulltula-chip: #473a1c;
+    --song-tint: #2a2540; --song-ink: #b3a8f0; --song-chip: #342d52;
+    --bottle-tint: #193631; --bottle-ink: #83d3c4; --bottle-chip: #22423c;
+    --upgrade-tint: #1f2c42; --upgrade-ink: #9dbcea; --upgrade-chip: #26364f;
   }
 }
 * { box-sizing: border-box; }
@@ -42,10 +53,24 @@ h1, h2 { margin: 0; font-weight: 600; }
 .title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .title-row h1 { font-size: 17px; font-family: ui-rounded, -apple-system, system-ui, sans-serif; letter-spacing: -.01em; }
 #game-select { font-size: 14px; padding: 4px 8px; border-radius: 8px; border: 1px solid var(--hair); background: var(--surface); color: var(--text); }
-.counters { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px; }
-.counter { display: flex; gap: 5px; align-items: baseline; font-size: 13px; color: var(--muted); }
-.counter .value { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text); }
-.counter.complete .value { color: var(--accent); }
+.filters { display: flex; gap: 6px; margin-top: 8px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.filters::-webkit-scrollbar { display: none; }
+.f {
+  flex: 0 0 auto; display: flex; align-items: baseline; gap: 5px; white-space: nowrap;
+  font-size: 13px; padding: 7px 11px; border-radius: 999px; border: 1px solid var(--hair);
+  background: var(--surface); color: var(--muted); min-height: 36px;
+}
+.f b { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.f.on { background: var(--text); border-color: transparent; color: var(--bg); }
+.f.on b { color: var(--bg); }
+.f.done b { color: var(--accent); }
+.f.on.done b { color: var(--bg); }
+.f .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; align-self: center; }
+.f[data-f="heart"] .dot { background: var(--heart-ink); }
+.f[data-f="skulltula"] .dot { background: var(--skulltula-ink); }
+.f[data-f="song"] .dot { background: var(--song-ink); }
+.f[data-f="bottle"] .dot { background: var(--bottle-ink); }
+.f[data-f="upgrade"] .dot { background: var(--upgrade-ink); }
 
 /* notices */
 .notices { padding: 0 12px; }
@@ -92,7 +117,24 @@ details.section[open] > summary .s-chev { transform: rotate(45deg); margin-top: 
 .meta:empty { display: none; }
 .pill { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--pill-bg); color: var(--pill-ink); font-variant-numeric: tabular-nums; }
 .pill.flag { background: var(--flag-bg); color: var(--flag-ink); }
-.pill.side { background: transparent; color: var(--muted); border: 1px solid var(--hair); }
+.pill.side { background: transparent; color: var(--muted); border: 1px solid var(--hair); font-weight: 400; }
+.pill.reward { font-weight: 600; }
+
+/* A step's reward tints its row and colours its label. No stripes down the side. */
+.row.r-heart { background: var(--heart-tint); }
+.row.r-heart .pill.reward { background: var(--heart-chip); color: var(--heart-ink); }
+.row.r-skulltula { background: var(--skulltula-tint); }
+.row.r-skulltula .pill.reward { background: var(--skulltula-chip); color: var(--skulltula-ink); }
+.row.r-song { background: var(--song-tint); }
+.row.r-song .pill.reward { background: var(--song-chip); color: var(--song-ink); }
+.row.r-bottle { background: var(--bottle-tint); }
+.row.r-bottle .pill.reward { background: var(--bottle-chip); color: var(--bottle-ink); }
+.row.r-upgrade { background: var(--upgrade-tint); }
+.row.r-upgrade .pill.reward { background: var(--upgrade-chip); color: var(--upgrade-ink); }
+/* once it is checked off the colour has done its job */
+.row.done[class*="r-"] { background: var(--surface); }
+.row.done .pill.reward { opacity: .55; }
+.row.current[class*="r-"] { box-shadow: inset 3px 0 0 0 transparent; }
 .more { font-size: 13px; color: var(--accent); padding: 4px 6px; margin: -4px 0; }
 .detail { margin-top: 6px; font-size: 14.5px; color: var(--muted); }
 .note { margin-top: 6px; font-size: 14px; color: var(--note-ink); }
