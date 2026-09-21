@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3f4f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0f0e" media="(prefers-color-scheme: dark)">
+<title>Mockup · Zelda 100%</title>
+<style>
+:root {
+  --bg: #f3f4f2; --surface: #ffffff; --text: #17191b; --muted: #6a6e6b; --hair: rgba(20, 24, 22, .10);
+  --accent: #23724f; --accent-ink: #ffffff; --accent-soft: rgba(35, 114, 79, .10);
+  --pill-bg: #e7e9e5; --pill-ink: #4a4f4b;
+  --warn-bg: #f8edd1; --warn-ink: #6f4a00;
+  --note-ink: #2f5c9e;
+  /* reward colours: tint for the row, ink+chip for the label */
+  --heart-tint: #fdeef3; --heart-ink: #a13560; --heart-chip: #f7d6e2;
+  --skull-tint: #fbf1d9; --skull-ink: #74500c; --skull-chip: #f2e0b4;
+  --song-tint: #f0eefc; --song-ink: #5b4bab; --song-chip: #ddd8f5;
+  --bottle-tint: #e8f5f2; --bottle-ink: #1f6b60; --bottle-chip: #cfe9e3;
+  --upgrade-tint: #eaf0fa; --upgrade-ink: #2f5c9e; --upgrade-chip: #d4e2f5;
+  --container-tint: #fdecea; --container-ink: #a33327; --container-chip: #f7d3ce;
+  color-scheme: light dark;
+}
+:root[data-theme="dark"] {
+  --bg: #0f0f0e; --surface: #181817; --text: #e9e7e0; --muted: #8f8b83; --hair: rgba(255, 255, 255, .09);
+  --accent: #4fae86; --accent-ink: #08150f; --accent-soft: rgba(79, 174, 134, .14);
+  --pill-bg: #262623; --pill-ink: #c4c0b7;
+  --warn-bg: #3a2d0f; --warn-ink: #f1c565;
+  --note-ink: #96b6ea;
+  --heart-tint: #3b2029; --heart-ink: #f0a6c0; --heart-chip: #4a2635;
+  --skull-tint: #342b15; --skull-ink: #e8c477; --skull-chip: #473a1c;
+  --song-tint: #2a2540; --song-ink: #b3a8f0; --song-chip: #342d52;
+  --bottle-tint: #193631; --bottle-ink: #83d3c4; --bottle-chip: #22423c;
+  --upgrade-tint: #1f2c42; --upgrade-ink: #9dbcea; --upgrade-chip: #26364f;
+  --container-tint: #3e221d; --container-ink: #f0a196; --container-chip: #4a2925;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.4 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent;
+  padding-bottom: 60px;
+}
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+h1, h2, h3 { margin: 0; font-weight: 600; }
+
+/* explainer band */
+.doc { padding: 18px 16px 6px; max-width: 640px; margin: 0 auto; }
+.doc h1 { font-size: 20px; letter-spacing: -.02em; }
+.doc p { color: var(--muted); font-size: 14.5px; margin: 8px 0 0; }
+.doc .theme { margin-top: 14px; font-size: 14px; color: var(--accent); font-weight: 600; padding: 8px 0; }
+.label { max-width: 640px; margin: 26px auto 0; padding: 0 16px; }
+.label h2 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.label p { color: var(--muted); font-size: 14px; margin: 6px 0 10px; }
+
+.phone { max-width: 640px; margin: 0 auto; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+
+/* header */
+.top { background: var(--bg); padding: 12px 16px 10px; border-bottom: 1px solid var(--hair); }
+.title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.title-row h3 { font-size: 17px; letter-spacing: -.01em; }
+.progress { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* the counter strip doubles as the filter */
+.filters { display: flex; gap: 6px; margin-top: 10px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+.filters::-webkit-scrollbar { display: none; }
+.f {
+  flex: 0 0 auto; display: flex; align-items: baseline; gap: 5px; white-space: nowrap;
+  font-size: 13px; padding: 7px 11px; border-radius: 999px; border: 1px solid var(--hair);
+  background: var(--surface); color: var(--muted); min-height: 36px;
+}
+.f b { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.f.on { background: var(--text); border-color: transparent; color: var(--bg); }
+.f.on b { color: var(--bg); }
+.f .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.f-heart .dot { background: var(--heart-ink); }
+.f-skull .dot { background: var(--skull-ink); }
+.f-song .dot { background: var(--song-ink); }
+.f-bottle .dot { background: var(--bottle-ink); }
+.f-upgrade .dot { background: var(--upgrade-ink); }
+
+/* section */
+.sec-head { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 10px; padding: 12px 16px; background: var(--bg); }
+.s-title { font-weight: 600; font-size: 16px; }
+.s-sub { display: block; font-size: 12.5px; color: var(--muted); font-weight: 400; margin-top: 1px; }
+.s-count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.s-chev { width: 8px; height: 8px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg); margin: -4px 4px 0 2px; }
+.steps { background: var(--surface); }
+
+/* rows */
+.row { display: grid; grid-template-columns: 48px 1fr 40px; align-items: start; min-height: 52px; border-top: 1px solid var(--hair); }
+.row .check { width: 48px; min-height: 52px; display: flex; align-items: flex-start; justify-content: center; padding-top: 14px; }
+.row .check::before { content: ""; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--muted); display: block; box-sizing: border-box; }
+.row.done .check::before {
+  border-color: var(--accent); background: var(--accent);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-size: 20px; background-position: center; background-repeat: no-repeat;
+}
+.row .body { padding: 13px 4px 13px 0; }
+.row .text { font-size: 17px; letter-spacing: -.005em; }
+.row.done .text { color: var(--muted); }
+.row.current { background: var(--accent-soft); }
+.next-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 3px; }
+.row .dots { width: 40px; min-height: 52px; color: var(--muted); font-size: 20px; letter-spacing: -1px; padding-top: 8px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 7px; }
+.meta:empty { display: none; }
+.chip { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--pill-bg); color: var(--pill-ink); }
+.chip.extra { font-weight: 400; background: transparent; color: var(--muted); border: 1px solid var(--hair); }
+.detail { margin-top: 6px; font-size: 14.5px; color: var(--muted); }
+
+/* reward colouring: tinted row + matching chip. No side stripes. */
+.row.heart { background: var(--heart-tint); }
+.row.heart .chip.reward { background: var(--heart-chip); color: var(--heart-ink); }
+.row.skull { background: var(--skull-tint); }
+.row.skull .chip.reward { background: var(--skull-chip); color: var(--skull-ink); }
+.row.song { background: var(--song-tint); }
+.row.song .chip.reward { background: var(--song-chip); color: var(--song-ink); }
+.row.bottle { background: var(--bottle-tint); }
+.row.bottle .chip.reward { background: var(--bottle-chip); color: var(--bottle-ink); }
+.row.upgrade { background: var(--upgrade-tint); }
+.row.upgrade .chip.reward { background: var(--upgrade-chip); color: var(--upgrade-ink); }
+.row.container { background: var(--container-tint); }
+.row.container .chip.reward { background: var(--container-chip); color: var(--container-ink); }
+.row.done.heart, .row.done.skull, .row.done.song, .row.done.bottle, .row.done.upgrade, .row.done.container { background: var(--surface); }
+.row.done .chip.reward { opacity: .55; }
+
+.hidden { display: none; }
+.empty { padding: 28px 16px; color: var(--muted); text-align: center; font-size: 14.5px; }
+
+/* bottom bar */
+.bar { display: flex; gap: 8px; padding: 10px 12px; background: var(--bg); border-top: 1px solid var(--hair); }
+.bar button { min-height: 48px; padding: 0 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--hair); font-size: 15px; font-weight: 600; }
+.bar .primary { flex: 1; background: var(--accent); color: var(--accent-ink); border-color: transparent; font-size: 16px; }
+
+/* legend */
+.legend { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px; max-width: 640px; margin: 0 auto 8px; }
+.legend span { font-size: 12.5px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+.l-heart { background: var(--heart-chip); color: var(--heart-ink); }
+.l-skull { background: var(--skull-chip); color: var(--skull-ink); }
+.l-song { background: var(--song-chip); color: var(--song-ink); }
+.l-bottle { background: var(--bottle-chip); color: var(--bottle-ink); }
+.l-upgrade { background: var(--upgrade-chip); color: var(--upgrade-ink); }
+.l-container { background: var(--container-chip); color: var(--container-ink); }
+.foot { max-width: 640px; margin: 0 auto; padding: 24px 16px 40px; color: var(--muted); font-size: 14px; }
+.foot ul { padding-left: 18px; margin: 8px 0 0; }
+.foot li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<div class="doc">
+  <h1>Proposed changes</h1>
+  <p>Real steps from your current spot, the Kakariko Graveyard. Tap the filters and the rows to try it. Nothing here touches your progress.</p>
+  <button class="theme" id="theme">Switch to dark</button>
+</div>
+
+<div class="label">
+  <h2>1 · Filter by what you feel like doing</h2>
+  <p>The counter strip becomes the filter. One tap shows only that pursuit, and the whole detour comes with it, not just the step that hands you the item. Tap again to clear.</p>
+</div>
+
+<div class="phone">
+  <div class="top">
+    <div class="title-row"><h3>Ocarina of Time</h3><span class="progress" id="prog">312 / 1676</span></div>
+    <div class="filters" id="filters">
+      <button class="f on" data-f="all">All <b>312</b></button>
+      <button class="f" data-f="story">Story <b>180/918</b></button>
+      <button class="f f-heart" data-f="heart"><span class="dot"></span>Hearts <b>1/36</b></button>
+      <button class="f f-skull" data-f="skulltula"><span class="dot"></span>Skulltulas <b>5/100</b></button>
+      <button class="f f-song" data-f="song"><span class="dot"></span>Songs <b>2/12</b></button>
+      <button class="f f-bottle" data-f="bottle"><span class="dot"></span>Bottles <b>0/4</b></button>
+      <button class="f f-upgrade" data-f="upgrade"><span class="dot"></span>Upgrades <b>1/23</b></button>
+      <button class="f" data-f="quest">Side quests</button>
+      <button class="f" data-f="extra">Extras</button>
+    </div>
+  </div>
+
+  <div class="sec-head">
+    <span><span class="s-title">Kakariko Graveyard</span><span class="s-sub">Child</span></span>
+    <span class="s-count" id="seccount">8/23</span><span class="s-chev"></span>
+  </div>
+  <div class="steps" id="list"></div>
+  <div class="empty hidden" id="empty">Nothing of that kind in this section.</div>
+
+  <div class="bar">
+    <button>Skipped <span>(2)</span></button>
+    <button class="primary">Continue</button>
+    <button>···</button>
+  </div>
+</div>
+
+<div class="label">
+  <h2>2 · Colour by what the step gives you</h2>
+  <p>A tinted row and a matching label, so a reward is obvious while scrolling. No coloured bars down the side. A finished step drops the tint and keeps a faded label, so what is left stands out.</p>
+</div>
+<div class="legend">
+  <span class="l-heart">Piece of Heart</span>
+  <span class="l-container">Heart Container</span>
+  <span class="l-skull">Gold Skulltula</span>
+  <span class="l-song">Song</span>
+  <span class="l-bottle">Bottle</span>
+  <span class="l-upgrade">Upgrade</span>
+</div>
+
+<div class="label">
+  <h2>3 · No more invented numbers</h2>
+  <p>The Sun's Song showed as "Song 4" because 4 is its slot in the game's own song order, not the order you find them. The label now just says what it is, and the counter in the strip does the counting.</p>
+</div>
+
+<div class="foot">
+  <strong style="color:var(--text)">Also included, not visible in a still mockup</strong>
+  <ul>
+    <li><b>Collapsing a finished section</b> takes you to the next step instead of leaving you mid-list.</li>
+    <li><b>Extras</b> are one-off pickups with nothing trackable, like a rupee behind a rock or a chat. 240 steps in the whole game. Filtering to Extras shows them; filtering to anything else hides them.</li>
+    <li><b>Side quests</b> covers long optional runs with no counter, such as the Gerudo Training Ground, the Biggoron's Sword trade and the mask chain.</li>
+  </ul>
+</div>
+
+<script>
+const STEPS = [
+  { id:'oot-0301', kind:'story', text:'Cross Hyrule Field to the north-east and climb the long stone stairway into Kakariko Village.', done:true },
+  { id:'oot-0302', kind:'song', group:'song', text:'Walk across the village to the far right side and take the exit at the top of the steps into the Graveyard.', done:true },
+  { id:'oot-0303', kind:'song', group:'song', text:'At the very back of the Graveyard, read the left and the right grave of the three large ones to summon the Composer Brothers.', done:true },
+  { id:'oot-0304', kind:'song', group:'song', text:"Stand on the Triforce tile in front of the big middle grave and play Zelda's Lullaby.", done:true },
+  { id:'oot-0305', kind:'song', group:'song', text:"Drop into the hole the lightning opened, into the Royal Family's Tomb.", done:true },
+  { id:'oot-0306', kind:'song', group:'song', text:'Walk down the ramp and kill all five Keese with the Fairy Slingshot to open the door at the far end.', done:true },
+  { id:'oot-0307', kind:'song', group:'song', text:'Climb the huge steps and go through the door that opened.', done:true },
+  { id:'oot-0308', kind:'song', group:'song', text:'Cross the next room along the stone ledges to the door on the far side, keeping away from the two ReDeads.', done:true },
+  { id:'oot-0309', kind:'song', group:'song', reward:'Song', text:"Press A at the big stone tablet in the last passage; Navi reads the inscription and you learn the Sun's Song.", current:true },
+  { id:'oot-0310', kind:'song', group:'song', text:'Head back out through the ReDead room, playing the Sun\'s Song to freeze any ReDead that comes at you.' },
+  { id:'oot-0311', kind:'song', group:'song', text:'Step on the coloured pad in the first room to warp back up to the Graveyard.' },
+  { id:'oot-0312', kind:'heart', group:'heart', text:"Stand between the back row of graves and the Royal Family's Tomb facing the entrance, then pull back the grave with your hands." },
+  { id:'oot-0313', kind:'heart', group:'heart', text:"Play the Sun's Song to freeze the ReDead down here, walk around behind it and slash it until it dies." },
+  { id:'oot-0314', kind:'heart', group:'heart', text:"Stand on the steps of the raised platform and play the Sun's Song again to make a large chest appear." },
+  { id:'oot-0315', kind:'heart', group:'heart', reward:'Piece of Heart', text:'Open the chest for a Piece of Heart.' },
+  { id:'oot-0316', kind:'extra', group:'extra', text:'Warp out on the coloured pad, then go to the front row of graves near the entrance and pull back the one with flowers.' },
+  { id:'oot-0317', kind:'extra', group:'extra', text:'Open the small chest for a free Hylian Shield.' },
+  { id:'oot-0318', kind:'extra', group:'extra', text:'Step on the coloured pad to leave the grave.' },
+  { id:'oot-0319', kind:'heart', group:'heart', text:"Play the Sun's Song if it is still daytime, then find Dampe the gravekeeper walking around the Graveyard." },
+  { id:'oot-0320', kind:'heart', group:'heart', text:'Talk to Dampe and pay 10 Rupees to start the Heart-Pounding Gravedigging Tour.' },
+  { id:'oot-0321', kind:'heart', group:'heart', text:'Lead Dampe onto one of the soft soil spots and stand still so he digs there.' },
+  { id:'oot-0322', kind:'heart', group:'heart', text:'Pick up whatever he throws out, pay another 10 Rupees and dig a different spot; keep repeating.' },
+  { id:'oot-0323', kind:'heart', group:'heart', reward:'Piece of Heart', warn:true, text:'The moment a dig throws out a Piece of Heart, run over and pick it up off the ground.' },
+  { id:'oot-0324', kind:'bottle', group:'bottle', text:"Play the Sun's Song to bring back daytime, then walk down out of the Graveyard into Kakariko Village." },
+  { id:'oot-0326', kind:'bottle', group:'bottle', text:"Cucco 1: pick up the one wandering between Anju's pen and the Graveyard steps and drop it inside the fence." },
+  { id:'oot-0336', kind:'bottle', group:'bottle', reward:'Bottle', text:'With all seven Cuccos in the pen, talk to Anju for an Empty Bottle.' },
+  { id:'oot-0337', kind:'skull', group:'skulltula', text:'Go back up to the Graveyard, lift the lone rock in the patch of bushes by the entrance and swipe the Emerald bugs.' },
+  { id:'oot-0338', kind:'skull', group:'skulltula', reward:'Gold Skulltula', text:'Carry the bugs to the patch of soft soil by the five standing graves and drop them in, then kill the Skulltula that bursts out.' },
+  { id:'oot-9999', kind:'container', group:'story', reward:'Heart Container', text:'Take the Heart Container Queen Gohma leaves behind. (Example of a boss reward from another chapter.)' },
+];
+const CLS = { story:'', heart:'heart', skull:'skull', song:'song', bottle:'bottle', upgrade:'upgrade', container:'container', extra:'' };
+const list = document.getElementById('list');
+const empty = document.getElementById('empty');
+let filter = 'all';
+
+function render() {
+  list.innerHTML = '';
+  let shown = 0;
+  for (const s of STEPS) {
+    const match = filter === 'all'
+      || (filter === 'story' && (s.kind === 'story' || s.kind === 'container'))
+      || (filter === 'extra' && s.kind === 'extra')
+      || (filter === 'quest' && false)
+      || (s.group === filter);
+    const row = document.createElement('div');
+    row.className = `row ${CLS[s.kind]} ${s.done ? 'done' : ''} ${s.current && filter === 'all' ? 'current' : ''}`;
+    if (!match) { row.classList.add('hidden'); } else { shown++; }
+    row.innerHTML = `
+      <button class="check" aria-label="toggle"></button>
+      <div class="body">
+        ${s.current && filter === 'all' ? '<div class="next-label">Next</div>' : ''}
+        <div class="text">${s.text}</div>
+        <div class="meta">
+          ${s.reward ? `<span class="chip reward">${s.reward}</span>` : ''}
+          ${s.kind === 'extra' ? '<span class="chip extra">Extra</span>' : ''}
+          ${s.warn ? '<span class="chip" style="background:var(--warn-bg);color:var(--warn-ink)">! Easy to lose</span>' : ''}
+        </div>
+      </div>
+      <button class="dots">···</button>`;
+    row.querySelector('.check').onclick = () => { s.done = !s.done; render(); };
+    row.onclick = (e) => { if (!e.target.closest('.check')) { s.done = !s.done; render(); } };
+    list.append(row);
+  }
+  empty.classList.toggle('hidden', shown > 0);
+  document.getElementById('seccount').textContent = `${STEPS.filter(s => s.done).length}/${STEPS.length}`;
+}
+
+document.getElementById('filters').onclick = (e) => {
+  const b = e.target.closest('.f'); if (!b) return;
+  filter = (filter === b.dataset.f) ? 'all' : b.dataset.f;
+  for (const el of document.querySelectorAll('.f')) el.classList.toggle('on', el.dataset.f === filter);
+  render();
+};
+
+const theme = document.getElementById('theme');
+theme.onclick = () => {
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+  theme.textContent = dark ? 'Switch to dark' : 'Switch to light';
+};
+if (matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  theme.textContent = 'Switch to light';
+} else {
+  document.documentElement.setAttribute('data-theme', 'light');
+}
+render();
+</script>
+</body>
+</html>
